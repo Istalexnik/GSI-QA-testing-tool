@@ -29,6 +29,7 @@ namespace GSI_QA_testing_tool
         {
             InitializeComponent();
             initialSetUpGUI();
+          
         }
 
         public void initialSetUpGUI()
