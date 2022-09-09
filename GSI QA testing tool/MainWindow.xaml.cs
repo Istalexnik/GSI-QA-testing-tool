@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GSI_QA_testing_tool.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -29,7 +30,9 @@ namespace GSI_QA_testing_tool
         {
             InitializeComponent();
             initialSetUpGUI();
-          
+            CustomDialog customDialog = new CustomDialog("Please enter your name:", "John Doe");
+            customDialog.ShowDialog();
+
         }
 
         public void initialSetUpGUI()
@@ -112,6 +115,7 @@ namespace GSI_QA_testing_tool
         {
             Base.killChromeProcess(2);
             initialSetUpGUI();
+            
         }
 
 

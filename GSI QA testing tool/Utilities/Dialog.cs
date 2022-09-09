@@ -16,10 +16,10 @@ namespace GSI_QA_testing_tool.Utilities
             MessageBoxButton button = MessageBoxButton.OK;
             MessageBoxImage icon = MessageBoxImage.Warning;
             MessageBoxResult result;
+            
 
             result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
-
-            result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            
 
             switch (result)
             {
@@ -34,5 +34,6 @@ namespace GSI_QA_testing_tool.Utilities
                     break;
             }
         }
+
     }
 }
