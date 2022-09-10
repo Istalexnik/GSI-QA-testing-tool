@@ -41,6 +41,8 @@ namespace GSI_QA_testing_tool.UI
             // Federal Service
             UI_045_FederalService.GoTo(driver);
 
+            // Military Service
+            UI_050_MilitaryService.GoTo(driver);
 
 
 

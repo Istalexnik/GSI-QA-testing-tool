@@ -82,6 +82,7 @@
     <Compile Include="UI\UI_035_WorkHistoryVerification.cs" />
     <Compile Include="UI\UI_040_StatesYouHaveWorkedIn.cs" />
     <Compile Include="UI\UI_045_FederalService.cs" />
+    <Compile Include="UI\UI_050_MilitaryService.cs" />
     <Compile Include="Utilities\CustomDialog.xaml.cs">
       <DependentUpon>CustomDialog.xaml</DependentUpon>
     </Compile>

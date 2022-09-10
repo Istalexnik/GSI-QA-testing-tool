@@ -59,7 +59,7 @@ namespace GSI_QA_testing_tool
             
             if (Data._Site.Contains("PFL"))
             {
-                PFL.PFL_000.filePFL(driver);
+                PFL.PFL_000.FilePFL(driver);
             } else
             {
                 UI.UI_000.FileUI(driver);
