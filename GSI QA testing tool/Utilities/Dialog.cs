@@ -9,7 +9,7 @@ namespace GSI_QA_testing_tool.Utilities
 {
     public static class Dialog
     {
-        public static void showDialog(string messageText, string captionText)
+        public static void showDialog(string captionText, string messageText)
         {
             string messageBoxText = messageText;
             string caption = captionText;

@@ -13,7 +13,7 @@ namespace GSI_QA_testing_tool
     {
         public static string _URL;
         public static string _ZIP;
-        public static string _site;
+        public static string _Site;
         public static string _Login;
         public static string _SSN;
         public static string _FirstName = "Alex";
@@ -21,6 +21,7 @@ namespace GSI_QA_testing_tool
         public static string _DOB = "11/11/1959";
         public static string _Employer1 = "Amazon";
         public static string _Employer2 = "Walmart";
+        public static string _DataPane = "";
         public static bool _SecondEmployer = false;
         public static string _WorkedFrom1 = "11/11/2020";
         public static string _WorkedTo1 = DateTime.Now.ToString("MM/dd/yyyy");
@@ -43,8 +44,13 @@ namespace GSI_QA_testing_tool
 
         public static void _printing()
         {
-            Debug.WriteLine($"{_site} {_claimType.ToString()} {_Login} {_SSN} {_FirstName} {_LastName} {_DOB} {_ZIP} " +
+            Debug.WriteLine($"{_Site} {_claimType.ToString()} {_Login} {_SSN} {_FirstName} {_LastName} {_DOB} {_ZIP} " +
                 $"{_URL} {_Employer1} {_WorkedFrom1} {_WorkedTo1} {_SecondEmployer} {_Employer2} {_WorkedFrom2} {_WorkedTo2}");
+        }
+
+        public static void _updateDataPane()
+        {
+               _DataPane = $"{_Login} {_SSN} {_Site} \n" + _DataPane;
         }
         static Data()
         {

@@ -36,6 +36,7 @@ public partial class CustomDialog : Window
             txtAnswer.Text = defaultAnswer;
         }
 
+        
         private void btnDialogOk_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;

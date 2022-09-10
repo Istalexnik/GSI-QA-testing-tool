@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using GSI_QA_testing_tool.Utilities;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,6 @@ namespace GSI_QA_testing_tool
         {
             try
             {
-                Data._printing();
                 createClaim(mw);
             }
             catch (Exception ex)
@@ -28,11 +28,17 @@ namespace GSI_QA_testing_tool
                 mw.Dispatcher.Invoke(() => { mw.screenBeforeRunning(); });
                 Debug.WriteLine(ex.Message);
                 if (ex.Message == "Thread was being aborted.")
-                    killChromeProcess(1);
+                { killChromeProcess(1); }
+                else
+                {
+                    Utilities.Dialog.showDialog("Error", ex.Message);
+                }
             }
             finally
             {
                 mw.Dispatcher.Invoke(() => { mw.txtSSN.Text = Data._newSSN(); });
+                mw.Dispatcher.Invoke(() => { mw.txtDataPane.Text = Data._DataPane; });
+           
             }
         }
 
@@ -49,6 +55,8 @@ namespace GSI_QA_testing_tool
 
             mw.Dispatcher.Invoke(() => { mw.screenAfterRunning(); });
             killChromeProcess(2);
+            CustomDialog customDialog = new CustomDialog("Claim Created", Data._Login);
+            customDialog.ShowDialog();
 
         }
 

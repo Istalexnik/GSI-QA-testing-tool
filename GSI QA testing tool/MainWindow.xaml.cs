@@ -30,8 +30,6 @@ namespace GSI_QA_testing_tool
         {
             InitializeComponent();
             initialSetUpGUI();
-            CustomDialog customDialog = new CustomDialog("Please enter your name:", "John Doe");
-            customDialog.ShowDialog();
 
         }
 
@@ -63,6 +61,7 @@ namespace GSI_QA_testing_tool
             txtWorkedFrom2.Text = Data._WorkedFrom2;
             txtWorkedTo2.Text = Data._WorkedTo2;
             chbSecondEmployer.IsChecked = Data._SecondEmployer;
+            
         }
 
         public void screenBeforeRunning()
@@ -154,12 +153,14 @@ namespace GSI_QA_testing_tool
             Data._WorkedFrom2 = txtWorkedFrom2.Text;
             Data._WorkedTo2 = txtWorkedTo2.Text;
             Data._SecondEmployer = (bool)chbSecondEmployer.IsChecked;
-            Data._site = cbxSite.SelectedItem.ToString();
+            Data._Site = cbxSite.SelectedItem.ToString();
             Data._URL = txtURL.Text;
             Data._ZIP = txtZIP.Text;
             Data._claimType = (int)cbxClaimType.SelectedIndex + 1;
             Data._newLogin();
 
+            Data._updateDataPane();
+            Data._printing();
         }
 
         private void btnStopAt_Click(object sender, RoutedEventArgs e)
