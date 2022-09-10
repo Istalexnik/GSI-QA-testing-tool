@@ -8,7 +8,7 @@ namespace GSI_QA_testing_tool.Utilities
 {
     public static class Rand
     {
-        public static String generateRandom(string candidateChars, int length)
+        public static String GenerateRandom(string candidateChars, int length)
         {
             var randomString = new StringBuilder();
             var random = new Random();

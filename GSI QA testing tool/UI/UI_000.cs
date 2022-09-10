@@ -11,13 +11,22 @@ namespace GSI_QA_testing_tool.UI
 {
     internal class UI_000
     {
-        public static void fileUI(IWebDriver driver)
+        public static void FileUI(IWebDriver driver)
         {
             // Home Page
             UI.UI_005_HomePage.homePage(driver);
 
             // individual Page
             UI_010_IndividualPage.individualPage(driver);
+
+            // Unemployment Insurance Compensation
+            UI_015_UnemploymentInsurance.unemploymentInsurance(driver);
+
+            // Welcome to
+            UI_020_WelcomeTo.WelcomeTo(driver);
+
+            // Social Security Number
+            UI_025_SocialSecurityNumber.SocialSecurityNumber(driver);
         }
     }
 }

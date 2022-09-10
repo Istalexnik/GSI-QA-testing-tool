@@ -12,9 +12,9 @@ namespace GSI_QA_testing_tool.UI
         public static void individualPage(IWebDriver driver)
         {
 
-            Finder.click(driver, "//a[@id='ctl00_hlNotRegistered']");
-            Finder.click(driver, "//button[@id='btnguestlogina']");
-            Finder.click(driver, "//input[@id='btnIndRegistration']");
+            Finder.ClickIt(driver, "//a[@id='ctl00_hlNotRegistered']");
+            Finder.ClickIt(driver, "//button[@id='btnguestlogina']");
+            Finder.ClickIt(driver, "//input[@id='btnIndRegistration']");
 
 
             //if (driver.FindElements(By.XPath("//a[@id='ctl00_hlNotRegistered']")).Count != 0)

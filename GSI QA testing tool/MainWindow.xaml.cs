@@ -24,72 +24,72 @@ namespace GSI_QA_testing_tool
     public partial class MainWindow : Window
     {
         Thread thread;
-        List<Environment> envs = Environment.createEnvironments();
+      readonly List<Environment> envs = Environment.createEnvironments();
 
         public MainWindow()
         {
             InitializeComponent();
-            initialSetUpGUI();
+            InitialSetUpGUI();
 
         }
 
-        public void initialSetUpGUI()
+        public void InitialSetUpGUI()
         {
-            cbxSite.Items.Clear();
-            cbxClaimType.Items.Clear();
+            CbxSite.Items.Clear();
+            CbxClaimType.Items.Clear();
 
             foreach (Environment v in envs)
             {
-                cbxSite.Items.Add(v.siteName);
+                CbxSite.Items.Add(v.siteName);
             }
             for (int i = 0; i < Data._claimTypes.Length; i++)
             {
-                cbxClaimType.Items.Add(Data._claimTypes[i]);
+                CbxClaimType.Items.Add(Data._claimTypes[i]);
             }
-            cbxSite.SelectedIndex = 0;
-            cbxClaimType.SelectedIndex = 0;
+            CbxSite.SelectedIndex = 0;
+            CbxClaimType.SelectedIndex = 0;
 
 
-            txtSSN.Text = Data._newSSN();
-            txtFirstName.Text = Data._FirstName;
-            txtLastName.Text = Data._LastName;
-            txtDOB.Text = Data._DOB;
-            txtEmployer1.Text = Data._Employer1;
-            txtWorkedFrom1.Text = Data._WorkedFrom1;
-            txtWorkedTo1.Text = Data._WorkedTo1;
-            txtEmployer2.Text = Data._Employer2;
-            txtWorkedFrom2.Text = Data._WorkedFrom2;
-            txtWorkedTo2.Text = Data._WorkedTo2;
-            chbSecondEmployer.IsChecked = Data._SecondEmployer;
+            TxtSSN.Text = Data.NewSSN();
+            TxtFirstName.Text = Data._FirstName;
+            TxtLastName.Text = Data._LastName;
+            TxtDOB.Text = Data._DOB;
+            TxtEmployer1.Text = Data._Employer1;
+            TxtWorkedFrom1.Text = Data._WorkedFrom1;
+            TxtWorkedTo1.Text = Data._WorkedTo1;
+            TxtEmployer2.Text = Data._Employer2;
+            TxtWorkedFrom2.Text = Data._WorkedFrom2;
+            TxtWorkedTo2.Text = Data._WorkedTo2;
+            ChbSecondEmployer.IsChecked = Data._SecondEmployer;
             
         }
 
-        public void screenBeforeRunning()
+        public void ScreenBeforeRunning()
         {
-            btnStart.Visibility = Visibility.Visible;
-            btnStop.Visibility = Visibility.Hidden;
+            BtnStart.Visibility = Visibility.Visible;
+            BtnStop.Visibility = Visibility.Hidden;
         }
 
-        public void screenWhileRunning()
+        public void ScreenWhileRunning()
         {
-            btnStart.Visibility = Visibility.Hidden;
-            btnStop.Visibility = Visibility.Visible;
+            BtnStart.Visibility = Visibility.Hidden;
+            BtnStop.Visibility = Visibility.Visible;
         }
 
-        public void screenAfterRunning()
+        public void ScreenAfterRunning()
         {
             //pop up about claim created TO-DO
-            screenBeforeRunning();
+            ScreenBeforeRunning();
         }
 
 
-        private void btnStart_Click(object sender, RoutedEventArgs e)
+        private void BtnStart_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                assigningFromGUIToData();
-                screenWhileRunning();
-                thread = new Thread(() => Base.startCreating(this));
+                AssigningFromGUIToData();
+                ScreenWhileRunning();
+                thread = new Thread(() => Base.StartCreating(this));
                 thread.SetApartmentState(ApartmentState.STA);
                 thread.Start();
             }
@@ -104,67 +104,67 @@ namespace GSI_QA_testing_tool
 
         }
 
-        private void btnStop_Click(object sender, RoutedEventArgs e)
+        private void BtnStop_Click(object sender, RoutedEventArgs e)
         {
             thread.Abort();
-            screenBeforeRunning();
+            ScreenBeforeRunning();
         }
 
-        private void btnReset_Click(object sender, RoutedEventArgs e)
+        private void BtnReset_Click(object sender, RoutedEventArgs e)
         {
-            Base.killChromeProcess(2);
-            initialSetUpGUI();
+            Base.KillChromeProcess(2);
+            InitialSetUpGUI();
             
         }
 
 
-        private void cbxSite_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void CbxSite_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
 
             foreach (Environment v in envs)
             {
                 string currentSite = null;
 
-                if (cbxSite.SelectedItem != null)
+                if (CbxSite.SelectedItem != null)
                 {
-                    currentSite = cbxSite.SelectedItem.ToString();
+                    currentSite = CbxSite.SelectedItem.ToString();
                 }
 
                 if (currentSite == v.siteName)
                 {
-                    txtZIP.Text = v.zipCode;
-                    txtURL.Text = v.siteUrl;
+                    TxtZIP.Text = v.zipCode;
+                    TxtURL.Text = v.siteUrl;
                 }
             }
         }
 
 
 
-        public void assigningFromGUIToData()
+        public void AssigningFromGUIToData()
         {
-            Data._SSN = txtSSN.Text;
-            Data._FirstName = txtFirstName.Text;
-            Data._LastName = txtLastName.Text;
-            Data._DOB = txtDOB.Text;
-            Data._Employer1 = txtEmployer1.Text;
-            Data._WorkedFrom1 = txtWorkedFrom1.Text;
-            Data._WorkedTo1 = txtWorkedTo1.Text;
-            Data._Employer2 = txtEmployer2.Text;
-            Data._WorkedFrom2 = txtWorkedFrom2.Text;
-            Data._WorkedTo2 = txtWorkedTo2.Text;
-            Data._SecondEmployer = (bool)chbSecondEmployer.IsChecked;
-            Data._Site = cbxSite.SelectedItem.ToString();
-            Data._URL = txtURL.Text;
-            Data._ZIP = txtZIP.Text;
-            Data._claimType = (int)cbxClaimType.SelectedIndex + 1;
-            Data._newLogin();
+            Data._SSN = TxtSSN.Text;
+            Data._FirstName = TxtFirstName.Text;
+            Data._LastName = TxtLastName.Text;
+            Data._DOB = TxtDOB.Text;
+            Data._Employer1 = TxtEmployer1.Text;
+            Data._WorkedFrom1 = TxtWorkedFrom1.Text;
+            Data._WorkedTo1 = TxtWorkedTo1.Text;
+            Data._Employer2 = TxtEmployer2.Text;
+            Data._WorkedFrom2 = TxtWorkedFrom2.Text;
+            Data._WorkedTo2 = TxtWorkedTo2.Text;
+            Data._SecondEmployer = (bool)ChbSecondEmployer.IsChecked;
+            Data._Site = CbxSite.SelectedItem.ToString();
+            Data._URL = TxtURL.Text;
+            Data._ZIP = TxtZIP.Text;
+            Data._claimType = (int)CbxClaimType.SelectedIndex + 1;
+            Data.NewLogin();
 
-            Data._checkForStateAndAbbr();
-            Data._updateDataPane();
-            Data._printing();
+            Data.CheckForStateAndAbbr();
+            Data.UpdateDataPane();
+            Data.Printing();
         }
 
-        private void btnStopAt_Click(object sender, RoutedEventArgs e)
+        private void BtnStopAt_Click(object sender, RoutedEventArgs e)
         {
 
         }

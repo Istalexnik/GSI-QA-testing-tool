@@ -19,32 +19,32 @@ namespace GSI_QA_testing_tool
         static IWebDriver driver;
 
 
-        public static void startCreating(MainWindow mw)
+        public static void StartCreating(MainWindow mw)
         {
             try
             {
-                createClaim(mw);
+                CreateClaim(mw);
             }
             catch (Exception ex)
             {
-                mw.Dispatcher.Invoke(() => { mw.screenBeforeRunning(); });
+                mw.Dispatcher.Invoke(() => { mw.ScreenBeforeRunning(); });
                 Debug.WriteLine(ex.ToString() + ex.StackTrace);
                 if (ex.Message == "Thread was being aborted.")
-                { killChromeProcess(1); }
+                { KillChromeProcess(1); }
                 else
                 {
-                    Utilities.Dialog.showDialog("Error", ex.Message);
+                    Dialog.showDialog("Error", ex.Message);
                 }
             }
             finally
             {
-                mw.Dispatcher.Invoke(() => { mw.txtSSN.Text = Data._newSSN(); });
-                mw.Dispatcher.Invoke(() => { mw.txtDataPane.Text = Data._DataPane; });
+                mw.Dispatcher.Invoke(() => { mw.TxtSSN.Text = Data.NewSSN(); });
+                mw.Dispatcher.Invoke(() => { mw.TxtDataPane.Text = Data._DataPane; });
            
             }
         }
 
-        public static void createClaim(MainWindow mw)
+        public static void CreateClaim(MainWindow mw)
         {
             
             var chromeDriverService = ChromeDriverService.CreateDefaultService();
@@ -62,25 +62,27 @@ namespace GSI_QA_testing_tool
                 PFL.PFL_000.filePFL(driver);
             } else
             {
-                UI.UI_000.fileUI(driver);
+                UI.UI_000.FileUI(driver);
             }
             
 
 
-            mw.Dispatcher.Invoke(() => { mw.screenAfterRunning(); });
-            killChromeProcess(2);
+            mw.Dispatcher.Invoke(() => { mw.ScreenAfterRunning(); });
+            KillChromeProcess(2);
             CustomDialog customDialog = new CustomDialog("Claim Created", Data._Login);
             customDialog.ShowDialog();
 
         }
 
-        public static void killChromeProcess(int driverOrBothDriverAndBrowser)
+        public static void KillChromeProcess(int driverOrBothDriverAndBrowser)
         {
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startinfo = new ProcessStartInfo();
-            startinfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startinfo.FileName = "cmd.exe";
-            startinfo.Arguments = "/C " + "taskkill /f /im chromedriver.exe";
+            Process process = new Process();
+            ProcessStartInfo startinfo = new ProcessStartInfo
+            {
+                WindowStyle = ProcessWindowStyle.Hidden,
+                FileName = "cmd.exe",
+                Arguments = "/C " + "taskkill /f /im chromedriver.exe"
+            };
             if (driverOrBothDriverAndBrowser == 2)
             {
                 startinfo.Arguments = "/C " + "taskkill /f /im chrome.exe";

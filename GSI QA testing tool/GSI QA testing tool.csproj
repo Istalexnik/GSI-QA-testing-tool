@@ -69,6 +69,9 @@
     <Compile Include="UI\UI_010_IndividualPage.cs" />
     <Compile Include="UI\UI_000.cs" />
     <Compile Include="UI\UI_005_HomePage.cs" />
+    <Compile Include="UI\UI_015_UnemploymentInsurance.cs" />
+    <Compile Include="UI\UI_020_WelcomeTo.cs" />
+    <Compile Include="UI\UI_025_SocialSecurityNumber.cs" />
     <Compile Include="Utilities\CustomDialog.xaml.cs">
       <DependentUpon>CustomDialog.xaml</DependentUpon>
     </Compile>

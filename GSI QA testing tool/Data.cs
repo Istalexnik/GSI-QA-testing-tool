@@ -35,27 +35,27 @@ namespace GSI_QA_testing_tool
 
 
 
-        public static string _newSSN() => "5" + Utilities.Rand.generateRandom("0123456789", 8);
+        public static string NewSSN() => "5" + Utilities.Rand.GenerateRandom("0123456789", 8);
 
-        public static void _newLogin()
+        public static void NewLogin()
         {
-            _Login = "GSIUI" + _hostName().Substring(0, 2) + Utilities.Rand.generateRandom("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 7) + _claimType.ToString();
+            _Login = "GSIUI" + HostName().Substring(0, 2) + Utilities.Rand.GenerateRandom("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 7) + _claimType.ToString();
         }
 
-        public static string _hostName() => System.Net.Dns.GetHostName();
+        public static string HostName() => System.Net.Dns.GetHostName();
 
-        public static void _printing()
+        public static void Printing()
         {
-            Debug.WriteLine($"{_Site} {_claimType.ToString()} {_Login} {_SSN} {_FirstName} {_LastName} {_DOB} {_ZIP} " +
+            Debug.WriteLine($"{_Site} {_claimType} {_Login} {_SSN} {_FirstName} {_LastName} {_DOB} {_ZIP} " +
                 $"{_URL} {_Employer1} {_WorkedFrom1} {_WorkedTo1} {_SecondEmployer} {_Employer2} {_WorkedFrom2} {_WorkedTo2}");
         }
 
-        public static void _updateDataPane()
+        public static void UpdateDataPane()
         {
                _DataPane = $"{_Login} {_SSN} {_Site} \n" + _DataPane;
         }
 
-        public static void _checkForStateAndAbbr()
+        public static void CheckForStateAndAbbr()
         {
             List<Environment> envs = Environment.createEnvironments();
             foreach (Environment v in envs)
