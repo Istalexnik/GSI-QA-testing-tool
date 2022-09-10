@@ -9,7 +9,7 @@ namespace GSI_QA_testing_tool.UI
 {
     internal class UI_010_IndividualPage
     {
-        public static void individualPage(IWebDriver driver)
+        public static void GoTo(IWebDriver driver)
         {
 
             Finder.ClickIt(driver, "//a[@id='ctl00_hlNotRegistered']");

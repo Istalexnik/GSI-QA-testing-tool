@@ -32,6 +32,12 @@ namespace GSI_QA_testing_tool
         public static string[] _Employers = { "Publix", "Target", "Toyota", "Alex" };
         public static string _State;
         public static string _Abbreviation;
+        public static bool _BasePeriod = true;
+        public static string _CreditWeeks = "13";
+        public static string _FIC = "CA";
+        public static string _City = "City";
+        public static string _Wages = "5000";
+
 
 
 
@@ -57,7 +63,7 @@ namespace GSI_QA_testing_tool
 
         public static void CheckForStateAndAbbr()
         {
-            List<Environment> envs = Environment.createEnvironments();
+            List<Environment> envs = Environment.CreateEnvironments();
             foreach (Environment v in envs)
             {
                 if(_Site == v.siteName)

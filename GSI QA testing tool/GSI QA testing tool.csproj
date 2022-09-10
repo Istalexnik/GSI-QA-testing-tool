@@ -72,6 +72,10 @@
     <Compile Include="UI\UI_015_UnemploymentInsurance.cs" />
     <Compile Include="UI\UI_020_WelcomeTo.cs" />
     <Compile Include="UI\UI_025_SocialSecurityNumber.cs" />
+    <Compile Include="UI\UI_030_WorkersCompensation.cs" />
+    <Compile Include="UI\UI_035_WorkHistoryVerification.cs" />
+    <Compile Include="UI\UI_040_StatesYouHaveWorkedIn.cs" />
+    <Compile Include="UI\UI_045_FederalService.cs" />
     <Compile Include="Utilities\CustomDialog.xaml.cs">
       <DependentUpon>CustomDialog.xaml</DependentUpon>
     </Compile>

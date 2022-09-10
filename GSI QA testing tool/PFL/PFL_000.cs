@@ -13,7 +13,7 @@ namespace GSI_QA_testing_tool.PFL
     {
         public static void filePFL(IWebDriver driver)
         {
-            UI.UI_005_HomePage.homePage(driver);
+            UI.UI_005_HomePage.GoTo(driver);
         }
     }
 }

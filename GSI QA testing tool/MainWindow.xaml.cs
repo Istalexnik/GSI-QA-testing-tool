@@ -1,6 +1,7 @@
 ﻿using GSI_QA_testing_tool.Utilities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
@@ -24,7 +25,7 @@ namespace GSI_QA_testing_tool
     public partial class MainWindow : Window
     {
         Thread thread;
-      readonly List<Environment> envs = Environment.createEnvironments();
+      readonly List<Environment> envs = Environment.CreateEnvironments();
 
         public MainWindow()
         {
@@ -168,5 +169,11 @@ namespace GSI_QA_testing_tool
         {
 
         }
+
+
+  
+
+
+
     }
 }
