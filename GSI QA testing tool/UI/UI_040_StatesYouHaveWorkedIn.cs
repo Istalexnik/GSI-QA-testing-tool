@@ -14,7 +14,7 @@ namespace GSI_QA_testing_tool.UI
         public static void GoTo(IWebDriver driver)
         {
             
-            if (Data._claimType == 4-1)
+            if (Data._claimType == 4)
             {
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblStatesWorkedIn_0']");
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_chkStateHostState']");

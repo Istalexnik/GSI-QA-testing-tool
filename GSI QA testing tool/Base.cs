@@ -69,7 +69,7 @@ namespace GSI_QA_testing_tool
 
             mw.Dispatcher.Invoke(() => { mw.ScreenAfterRunning(); });
             //TURN IT ON LATER WHEN YOU ARE DONE WITH SCRIPTS!!!!!!!!!!!!
-           // KillChromeProcess(2);
+          //  driver.Quit();
           //  CustomDialog customDialog = new CustomDialog("Claim Created", Data._Login);
           //  customDialog.ShowDialog();
 
