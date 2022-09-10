@@ -1,10 +1,12 @@
 ﻿using GSI_QA_testing_tool.Utilities;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,7 +28,7 @@ namespace GSI_QA_testing_tool
             catch (Exception ex)
             {
                 mw.Dispatcher.Invoke(() => { mw.screenBeforeRunning(); });
-                Debug.WriteLine(ex.Message);
+                Debug.WriteLine(ex.ToString() + ex.StackTrace);
                 if (ex.Message == "Thread was being aborted.")
                 { killChromeProcess(1); }
                 else
@@ -44,14 +46,26 @@ namespace GSI_QA_testing_tool
 
         public static void createClaim(MainWindow mw)
         {
+            
             var chromeDriverService = ChromeDriverService.CreateDefaultService();
             chromeDriverService.HideCommandPromptWindow = true;
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArguments(new List<string>() { "no-sandbox" });
-
             driver = new ChromeDriver(chromeDriverService, chromeOptions);
+            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(120);
+          //  WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            driver.Url = Data._URL;
 
-            driver.Url = "https://uat-app-vos47000000.geosolinc.com/vosnet/default.aspx";
+            
+            if (Data._Site.Contains("PFL") == true)
+            {
+                PFL.PFL_000.filePFL(driver);
+            } else
+            {
+                UI.UI_000.fileUI(driver);
+            }
+            
+
 
             mw.Dispatcher.Invoke(() => { mw.screenAfterRunning(); });
             killChromeProcess(2);

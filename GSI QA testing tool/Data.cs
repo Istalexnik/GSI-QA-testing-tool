@@ -30,6 +30,8 @@ namespace GSI_QA_testing_tool
         public static int _claimType;
         public static string[] _claimTypes = { "Regular", "UCX", "UCFE", "CWC", "Alien", "PUA" };
         public static string[] _Employers = { "Publix", "Target", "Toyota", "Alex" };
+        public static string _State;
+        public static string _Abbreviation;
 
 
 
@@ -52,6 +54,22 @@ namespace GSI_QA_testing_tool
         {
                _DataPane = $"{_Login} {_SSN} {_Site} \n" + _DataPane;
         }
+
+        public static void _checkForStateAndAbbr()
+        {
+            List<Environment> envs = Environment.createEnvironments();
+            foreach (Environment v in envs)
+            {
+                if(_Site == v.siteName)
+                {
+                    _State = v.state;
+                    _Abbreviation = v.abbreviation;
+                }
+            }
+        }
+
+
+
         static Data()
         {
 

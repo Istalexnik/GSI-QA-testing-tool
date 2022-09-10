@@ -159,6 +159,7 @@ namespace GSI_QA_testing_tool
             Data._claimType = (int)cbxClaimType.SelectedIndex + 1;
             Data._newLogin();
 
+            Data._checkForStateAndAbbr();
             Data._updateDataPane();
             Data._printing();
         }

@@ -42,7 +42,7 @@
         <TextBox Name="txtZIP" Text="" HorizontalAlignment="Left" Height="23" Margin="100,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="txtURL" Text="" HorizontalAlignment="Left" Height="23" Margin="100,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="430"/>
 
-        <TextBox Name="txtDataPane" Text="" HorizontalAlignment="Left" Height="173" Margin="265,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277"/>
+        <TextBox Name="txtDataPane" Text="" HorizontalAlignment="Left" Height="173" Margin="265,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277" IsReadOnly="True"/>
         <CheckBox Name="chbSecondEmployer" HorizontalAlignment="Left" Margin="10,226.5,0,0" VerticalAlignment="Top"/>
 
     </Grid>

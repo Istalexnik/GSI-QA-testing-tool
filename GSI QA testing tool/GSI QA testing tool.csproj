@@ -64,6 +64,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Finder.cs" />
+    <Compile Include="PFL\PFL_000.cs" />
+    <Compile Include="UI\UI_010_IndividualPage.cs" />
+    <Compile Include="UI\UI_000.cs" />
+    <Compile Include="UI\UI_005_HomePage.cs" />
     <Compile Include="Utilities\CustomDialog.xaml.cs">
       <DependentUpon>CustomDialog.xaml</DependentUpon>
     </Compile>
@@ -116,10 +121,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PFL\" />
-    <Folder Include="UI\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Assets\GSI32.png" />
   </ItemGroup>
