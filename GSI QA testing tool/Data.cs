@@ -39,6 +39,7 @@ namespace GSI_QA_testing_tool
         public static string _Wages = "5000";
         public static string _Pass = "Olga2011!!!!!";
         public static string _Email;
+        public static string _Address = "1010 Street Avenue";
 
 
         public static string MakeEmail() => _Email = $"{_Login}@geosolinc.com";
