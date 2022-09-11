@@ -14,6 +14,8 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver)
         {
+
+
             Finder.ClickIt(driver, "//button[@id='btnguestlogina']");
             Finder.ClickIt(driver, "//a[@id='ctl00_hlNotRegistered']");
             Finder.ClickIt(driver, "//*[contains(text(),'File a Claim')]");

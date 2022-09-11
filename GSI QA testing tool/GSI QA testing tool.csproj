@@ -37,9 +37,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Selenium.WebDriver.WaitExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.WebDriver.WaitExtensions.2.0.0\lib\netstandard2.0\Selenium.WebDriver.WaitExtensions.dll</HintPath>
-    </Reference>
     <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
     </Reference>
@@ -75,6 +72,9 @@
     <Compile Include="UI\UI_010_IndividualPage.cs" />
     <Compile Include="UI\UI_000.cs" />
     <Compile Include="UI\UI_005_HomePage.cs" />
+    <Compile Include="UI\UI_012_EqualOpportunity.cs" />
+    <Compile Include="UI\UI_013_PrivacyAgreement.cs" />
+    <Compile Include="UI\UI_014_IndividualRegistration.cs" />
     <Compile Include="UI\UI_015_UnemploymentInsurance.cs" />
     <Compile Include="UI\UI_020_WelcomeTo.cs" />
     <Compile Include="UI\UI_025_SocialSecurityNumber.cs" />
@@ -83,6 +83,7 @@
     <Compile Include="UI\UI_040_StatesYouHaveWorkedIn.cs" />
     <Compile Include="UI\UI_045_FederalService.cs" />
     <Compile Include="UI\UI_050_MilitaryService.cs" />
+    <Compile Include="UI\UI_055_LoginInformation.cs" />
     <Compile Include="Utilities\CustomDialog.xaml.cs">
       <DependentUpon>CustomDialog.xaml</DependentUpon>
     </Compile>

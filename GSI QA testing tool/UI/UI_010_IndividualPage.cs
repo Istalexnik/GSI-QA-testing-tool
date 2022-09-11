@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver)
         {
+ 
 
             Finder.ClickIt(driver, "//a[@id='ctl00_hlNotRegistered']");
             Finder.ClickIt(driver, "//button[@id='btnguestlogina']");

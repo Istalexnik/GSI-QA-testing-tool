@@ -37,9 +37,11 @@ namespace GSI_QA_testing_tool
         public static string _FIC = "CA";
         public static string _City = "City";
         public static string _Wages = "5000";
+        public static string _Pass = "Olga2011!!!!!";
+        public static string _Email;
 
 
-
+        public static string MakeEmail() => _Email = $"{_Login}@geosolinc.com";
 
         public static string NewSSN() => "5" + Utilities.Rand.GenerateRandom("0123456789", 8);
 

@@ -20,6 +20,15 @@ namespace GSI_QA_testing_tool.UI
             // individual Page
             UI_010_IndividualPage.GoTo(driver);
 
+            // Equal Opportunity and Non-Discrimination Notice
+            UI_012_EqualOpportunity.GoTo(driver);
+
+            // Privacy Agreement
+            UI_013_PrivacyAgreement.GoTo(driver);
+
+            // Individual Registration Type
+            UI_014_IndividualRegistration.GoTo(driver);
+
             // Unemployment Insurance Compensation
             UI_015_UnemploymentInsurance.GoTo(driver);
 
@@ -43,6 +52,9 @@ namespace GSI_QA_testing_tool.UI
 
             // Military Service
             UI_050_MilitaryService.GoTo(driver);
+
+            // Login Information
+            UI_055_LoginInformation.GoTo(driver);
 
 
 
