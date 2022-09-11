@@ -63,7 +63,11 @@ namespace GSI_QA_testing_tool.UI
             // Residential Address
             UI_065_ResidentialAddress.GoTo(driver);
 
+            // Phone Numbers
+            UI_070_PhoneNumber.GoTo(driver);
 
+            // Preferred Notification Method
+            UI_075_PreferredNotification.GoTo(driver);
 
         }
     }
