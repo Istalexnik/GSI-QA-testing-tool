@@ -56,6 +56,8 @@ namespace GSI_QA_testing_tool.UI
             // Login Information
             UI_055_LoginInformation.GoTo(driver);
 
+            // Name
+            UI_060_NamePage.GoTo(driver);
 
 
         }

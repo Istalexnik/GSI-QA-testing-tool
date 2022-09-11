@@ -84,6 +84,7 @@
     <Compile Include="UI\UI_045_FederalService.cs" />
     <Compile Include="UI\UI_050_MilitaryService.cs" />
     <Compile Include="UI\UI_055_LoginInformation.cs" />
+    <Compile Include="UI\UI_060_NamePage.cs" />
     <Compile Include="Utilities\CustomDialog.xaml.cs">
       <DependentUpon>CustomDialog.xaml</DependentUpon>
     </Compile>
