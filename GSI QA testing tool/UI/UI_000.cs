@@ -112,7 +112,7 @@ namespace GSI_QA_testing_tool.UI
             UI_140_UnemploymentCompensation.GoTo(driver);
 
             // upload
-            UI_143_UploadPage.GoTo(driver);
+            UI_145_UploadPage.GoTo(driver);
 
 
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GSI_QA_testing_tool.UI
 {
-    internal class UI_143_UploadPage
+    internal class UI_145_UploadPage
     {
         public static void GoTo(IWebDriver driver)
         {
