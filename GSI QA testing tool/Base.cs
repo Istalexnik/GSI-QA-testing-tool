@@ -53,16 +53,16 @@ namespace GSI_QA_testing_tool
             chromeOptions.AddArguments(new List<string>() { "no-sandbox" });
             driver = new ChromeDriver(chromeDriverService, chromeOptions);
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(120);
-
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             driver.Url = Data._URL;
 
             
             if (Data._Site.Contains("PFL"))
             {
-                PFL.PFL_000.FilePFL(driver);
+                PFL.PFL_000.FilePFL(driver, wait);
             } else
             {
-                UI.UI_000.FileUI(driver);
+                UI.UI_000.FileUI(driver, wait);
             }
             
 

@@ -40,11 +40,16 @@ namespace GSI_QA_testing_tool
         public static string _Pass = "Olga2011!!!!!";
         public static string _Email;
         public static string _Address = "1010 Street Avenue";
-
+        public static string _JobTitle = "test";
+        public static string _DriverLicense = "D234765456";
 
         public static string MakeEmail() => _Email = $"{_Login}@geosolinc.com";
 
         public static string NewSSN() => "5" + Utilities.Rand.GenerateRandom("0123456789", 8);
+
+        public static string NewAlienCardNumber() => "GSI" + Utilities.Rand.GenerateRandom("0123456789", 10);
+
+        public static string NewUSCISNumber() => Utilities.Rand.GenerateRandom("0123456789", 9);
 
         public static void NewLogin()
         {

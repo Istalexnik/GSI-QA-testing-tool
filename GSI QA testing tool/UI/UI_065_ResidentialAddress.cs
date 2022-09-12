@@ -14,14 +14,17 @@ namespace GSI_QA_testing_tool.UI
 {
     internal class UI_065_ResidentialAddress
     {
-        public static void GoTo(IWebDriver driver)
+        public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(300);
+
+            if (!Finder.FindIt(driver, "//input[@id='ctl00_Main_content_ucAddress_txtAddress1']")) return;
+
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucAddress_txtAddress1']", Data._Address);
-            Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucAddress_ddlAltGeo']", 2, 10);
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_chkPopulateMailAddress']", 10);
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_rdoCorrectedResidentialAddress_0']", 10);
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_rdoCorrectedMailingAddress_0']", 10);
+            Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucAddress_ddlAltGeo']", 2, wait);
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_chkPopulateMailAddress']", wait);
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_rdoCorrectedResidentialAddress_0']", wait);
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_rdoCorrectedMailingAddress_0']", wait);
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
         }
     }

@@ -88,6 +88,21 @@
     <Compile Include="UI\UI_065_ResidentialAddress.cs" />
     <Compile Include="UI\UI_070_PhoneNumber.cs" />
     <Compile Include="UI\UI_075_PreferredNotification.cs" />
+    <Compile Include="UI\UI_080_CitizenshipPage.cs" />
+    <Compile Include="UI\UI_085_EducationInformation.cs" />
+    <Compile Include="UI\UI_090_EmploymentInformation.cs" />
+    <Compile Include="UI\UI_095_EmploymentStatus.cs" />
+    <Compile Include="UI\UI_100_EmploymentMiscellaneous.cs" />
+    <Compile Include="UI\UI_105_MajorDisaster.cs" />
+    <Compile Include="UI\UI_110_LaborUnion.cs" />
+    <Compile Include="UI\UI_115_JobTitle.cs" />
+    <Compile Include="UI\UI_120_EthnicOrigin.cs" />
+    <Compile Include="UI\UI_125_IdentificationInformation.cs" />
+    <Compile Include="UI\UI_130_MilitaryInformation.cs" />
+    <Compile Include="UI\UI_135_PaymentInformation.cs" />
+    <Compile Include="UI\UI_138_VerifyIdentity.cs" />
+    <Compile Include="UI\UI_140_UnemploymentCompensation.cs" />
+    <Compile Include="UI\UI_143_UploadPage.cs" />
     <Compile Include="Utilities\CustomDialog.xaml.cs">
       <DependentUpon>CustomDialog.xaml</DependentUpon>
     </Compile>

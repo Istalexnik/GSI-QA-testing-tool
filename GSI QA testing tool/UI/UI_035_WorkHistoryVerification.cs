@@ -13,8 +13,7 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver)
         {
-
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");
+            if (!Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblWorkHistoryVerify_0']")) return;
 
 
             if (Data._Site.Contains("PUA"))

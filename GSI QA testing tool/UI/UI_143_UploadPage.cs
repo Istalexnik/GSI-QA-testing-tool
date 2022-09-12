@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace GSI_QA_testing_tool.UI
 {
-    internal class UI_014_IndividualRegistration
+    internal class UI_143_UploadPage
     {
         public static void GoTo(IWebDriver driver)
         {
-            if (!Finder.FindIt(driver, "//a[@id='ctl00_Main_content_lnkCompleteHeader']")) return;
+            if (!Finder.FindIt(driver, "//select[@id='ctl00_Main_content_ddlUploadType1']")) return;
 
-            Finder.ClickIt(driver, "//a[@id='ctl00_Main_content_lnkCompleteHeader']");
+            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
         }
     }
 }

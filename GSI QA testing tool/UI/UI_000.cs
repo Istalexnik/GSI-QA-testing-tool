@@ -13,7 +13,7 @@ namespace GSI_QA_testing_tool.UI
 {
     internal class UI_000
     {
-        public static void FileUI(IWebDriver driver)
+        public static void FileUI(IWebDriver driver, WebDriverWait wait)
         {
             // Home Page
             UI.UI_005_HomePage.GoTo(driver);
@@ -49,25 +49,72 @@ namespace GSI_QA_testing_tool.UI
             UI_040_StatesYouHaveWorkedIn.GoTo(driver);
 
             // Federal Service
-            UI_045_FederalService.GoTo(driver);
+            UI_045_FederalService.GoTo(driver, wait);
 
             // Military Service
             UI_050_MilitaryService.GoTo(driver);
 
             // Login Information
-            UI_055_LoginInformation.GoTo(driver);
+            UI_055_LoginInformation.GoTo(driver, wait);
 
             // Name
             UI_060_NamePage.GoTo(driver);
 
             // Residential Address
-            UI_065_ResidentialAddress.GoTo(driver);
+            UI_065_ResidentialAddress.GoTo(driver, wait);
 
             // Phone Numbers
             UI_070_PhoneNumber.GoTo(driver);
 
             // Preferred Notification Method
             UI_075_PreferredNotification.GoTo(driver);
+
+            // Citizenship
+            UI_080_CitizenshipPage.GoTo(driver, wait);
+
+            // Education Information
+            UI_085_EducationInformation.GoTo(driver, wait);
+
+            // Employment Information
+            UI_090_EmploymentInformation.GoTo(driver, wait);
+
+            // Employment - Status
+            UI_095_EmploymentStatus.GoTo(driver);
+
+            // Employment - Miscellaneous
+            UI_100_EmploymentMiscellaneous.GoTo(driver);
+
+            // Major Disaster Information
+            UI_105_MajorDisaster.GoTo(driver);
+
+            // Labor Union Member
+            UI_110_LaborUnion.GoTo(driver);
+
+            // jobTitle
+            UI_115_JobTitle.GoTo(driver);
+
+            // Ethnic Origin
+            UI_120_EthnicOrigin.GoTo(driver);
+
+            // Identification Information
+            UI_125_IdentificationInformation.GoTo(driver);
+
+            // Military Information
+            UI_130_MilitaryInformation.GoTo(driver, wait);
+
+            // Payment Information
+            UI_135_PaymentInformation.GoTo(driver);
+
+            // Verify Your Identity
+            UI_138_VerifyIdentity.GoTo(driver);
+
+            // Unemployment Compensation Claim
+            UI_140_UnemploymentCompensation.GoTo(driver);
+
+            // upload
+            UI_143_UploadPage.GoTo(driver);
+
+
 
         }
     }

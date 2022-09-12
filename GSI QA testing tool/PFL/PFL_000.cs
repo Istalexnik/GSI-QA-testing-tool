@@ -11,7 +11,7 @@ namespace GSI_QA_testing_tool.PFL
 {
     internal class PFL_000
     {
-        public static void FilePFL(IWebDriver driver)
+        public static void FilePFL(IWebDriver driver, WebDriverWait wait)
         {
             UI.UI_005_HomePage.GoTo(driver);
         }

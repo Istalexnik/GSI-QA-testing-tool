@@ -14,8 +14,11 @@ namespace GSI_QA_testing_tool.UI
 {
     internal class UI_055_LoginInformation
     {
-        public static void GoTo(IWebDriver driver)
+        public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
+            if (!Finder.FindIt(driver, "//input[@id='ctl00_Main_content_ucLogin_txtUsername']")) return;
+
+
 
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucLogin_txtUsername']", Data._Login);
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucLogin_ucPassword_txtPwd']", Data._Pass);
@@ -31,15 +34,17 @@ namespace GSI_QA_testing_tool.UI
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucRegDemographics_txtDOB']", Data._DOB);
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucRegDemographics_txtDOBConfirm']", Data._DOB);
 
-            Finder.SendText(driver, "//label[@for='ctl00_Main_content_ucRegDemographics_txtMothersMaidenName']", Data._Pass);
-            Finder.SendText(driver, "//label[@for='ctl00_Main_content_ucRegDemographics_txtCityOfBirth']", Data._Pass);
+            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucRegDemographics_txtCityOfBirth']", Data._City);
+            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucRegDemographics_txtMothersMaidenName']", "Mother");
+
 
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucRegDemographics_rblGender_0']");
-            Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucRegDemographics_ddlDraftStatus']", 2);
+            Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucRegDemographics_ddlDraftStatus']", 2, wait);
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucRegDemographics_rblArrested_1']");
+                                              
+            Finder.WaitClickableClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']", wait);
 
-            Finder.WaitStaleClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']", 10);
-
-
+            
         }
     }
 }

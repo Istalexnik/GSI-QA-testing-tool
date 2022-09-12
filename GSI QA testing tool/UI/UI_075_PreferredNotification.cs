@@ -12,6 +12,8 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver)
         {
+            if (!Finder.FindIt(driver, "//select[@id='ctl00_Main_content_ucNotificationMethod_ddlPrefDelMethods']")) return;
+
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucNotificationMethod_ddlPrefDelMethods']", 1);
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucNotificationMethod_ddlDeterminationNotificationMethod']", 1);
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucNotificationMethod_ddl1099GNotificationMethod']", 1);

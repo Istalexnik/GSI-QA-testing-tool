@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,12 @@ namespace GSI_QA_testing_tool.UI
 {
     internal class UI_045_FederalService
     {
-        public static void GoTo(IWebDriver driver)
+        public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
+
+            if (!Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblFederalCivilianEmployee_1']")) return;
+
+
             if (Data._claimType == 3)
             {
 
@@ -35,7 +40,7 @@ namespace GSI_QA_testing_tool.UI
                 // Federal Civilian Work History
                 Finder.ActionsSendText(driver, "//*[@id='cmbCustomFIC']", Data._FIC);
                 Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlDestCodes']", "0001");
-                Finder.WaitStaleClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_rblInterveningEmploymentSinceSeparation_1']", 10);
+                Finder.WaitStaleClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_rblInterveningEmploymentSinceSeparation_1']", wait);
                 Finder.UseDropDownByText(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlStateOfEmployment']", Data._State);
                 Thread.Sleep(2000);
                 Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_txtOutofCountryCity']", Data._City);

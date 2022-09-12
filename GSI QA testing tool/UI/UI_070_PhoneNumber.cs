@@ -12,6 +12,8 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver)
         {
+            if (!Finder.FindIt(driver, "//input[@id='ctl00_Main_content_ucPhone_txtPrimePhone1']")) return;
+
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucPhone_txtPrimePhone1']", "813");
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucPhone_txtPrimePhone2']", "654");
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucPhone_txtPrimePhone3']", "6437");
