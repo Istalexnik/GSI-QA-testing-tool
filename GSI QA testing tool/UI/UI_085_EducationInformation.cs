@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,17 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
-            if (!Finder.FindIt(driver, "//select[@id='ctl00_Main_content_ucEducation_ddlIndEduLevel']")) return;
+            if (Finder.FindIt(driver, "//select[@id='ctl00_Main_content_ucEducation_ddlIndEduLevel']"))
+            {
+                Debug.WriteLine("EducationInformation is On");
+            }
+            else
+            {
+                Debug.WriteLine("EducationInformation is Off");
+                return;
+            }
+
+
 
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEducation_ddlIndEduLevel']", 16, wait);
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEducation_ddlSchoolStatus']", 4, wait);

@@ -13,7 +13,18 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver)
         {
-            if (!Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblWorkHistoryVerify_0']")) return;
+            if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblWorkHistoryVerify_0']")) 
+            {
+                Debug.WriteLine("WorkHistoryVerification is On");
+            }
+            else
+            {
+                Debug.WriteLine("WorkHistoryVerification is Off");
+                return;
+            }
+
+
+
 
 
             if (Data._Site.Contains("PUA"))

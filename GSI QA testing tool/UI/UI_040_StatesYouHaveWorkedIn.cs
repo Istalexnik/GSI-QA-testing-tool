@@ -14,7 +14,18 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver)
         {
-            if (!Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblStatesWorkedIn_1']")) return;
+            if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblStatesWorkedIn_1']"))
+            {
+                Debug.WriteLine("StatesYouHaveWorkedIn is On");
+            }
+            else
+            {
+                Debug.WriteLine("StatesYouHaveWorkedIn is Off");
+                return;
+            }
+
+
+
 
             if (Data._claimType == 4)
             {

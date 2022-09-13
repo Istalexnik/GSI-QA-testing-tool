@@ -12,7 +12,18 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver)
         {
- 
+            if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucWorkersCompensation_rblWCReceived_1']"))
+            {
+                Debug.WriteLine("WorkersCompensation is On");
+            }
+            else
+            {
+                Debug.WriteLine("WorkersCompensation is Off");
+                return;
+            }
+
+
+
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucWorkersCompensation_rblWCReceived_1']");
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");
 

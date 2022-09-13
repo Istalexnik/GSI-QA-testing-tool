@@ -13,10 +13,21 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver)
         {
-            if (!Finder.FindIt(driver, "//input[@id='ctl00_Main_content_Wizard1_ucSSN_txtSSN']")) return;
+            if (Finder.FindIt(driver, "//input[@id='ctl00_Main_content_Wizard1_ucSSN_txtSSN']")) 
+            {
+                Debug.WriteLine("SocialSecurityNumber is On");
+            }
+            else
+            {
+                Debug.WriteLine("SocialSecurityNumber is Off");
+                return;
+            }
+
+
 
             Thread.Sleep(300);
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucSSN_txtSSN']", Data._SSN);
+            Thread.Sleep(300);
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucSSN_txtSSNReenter']", Data._SSN);
 
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");

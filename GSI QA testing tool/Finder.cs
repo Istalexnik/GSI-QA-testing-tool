@@ -67,7 +67,7 @@ namespace GSI_QA_testing_tool
 
 
 
-        public static void SendText(IWebDriver driver, String path, String text)
+        public static void SendText(IWebDriver driver, string path, string text)
         {
             if (driver.FindElements(By.XPath(path)).Count != 0)
 
@@ -76,8 +76,19 @@ namespace GSI_QA_testing_tool
             }
         }
 
+        public static void SendText(IWebDriver driver, string path, string text, WebDriverWait wait)
+        {
+            if (driver.FindElements(By.XPath(path)).Count != 0)
 
-        public static void WaitStaleSendText(IWebDriver driver, String path, String text, WebDriverWait wait)
+            {
+                driver.FindElement(By.XPath(path)).SendKeys(text);
+                wait.Until(ExpectedConditions.StalenessOf(driver.FindElement(By.XPath(path))));
+            }
+        }
+
+
+
+        public static void WaitStaleSendText(IWebDriver driver, string path, string text, WebDriverWait wait)
         {
             if (driver.FindElements(By.XPath(path)).Count != 0)
 
@@ -144,7 +155,7 @@ namespace GSI_QA_testing_tool
 
 
 
-        public static void UseDropDownByValue(IWebDriver driver, String path, String value, WebDriverWait wait)
+        public static void UseDropDownByValue(IWebDriver driver, string path, string value, WebDriverWait wait)
         {
             if (driver.FindElements(By.XPath(path)).Count != 0)
             {
@@ -155,7 +166,7 @@ namespace GSI_QA_testing_tool
         }
 
 
-        public static void UseDropDownByText(IWebDriver driver, String path, String value)
+        public static void UseDropDownByText(IWebDriver driver, string path, string value)
         {
             if (driver.FindElements(By.XPath(path)).Count != 0)
             {
@@ -164,7 +175,7 @@ namespace GSI_QA_testing_tool
             }
         }
 
-        public static void UseDropDownByText(IWebDriver driver, String path, String value, WebDriverWait wait)
+        public static void UseDropDownByText(IWebDriver driver, string path, string value, WebDriverWait wait)
         {
             if (driver.FindElements(By.XPath(path)).Count != 0)
             {
@@ -175,7 +186,7 @@ namespace GSI_QA_testing_tool
         }
 
 
-        public static void UseDropDownByIndex(IWebDriver driver, String path, int value)
+        public static void UseDropDownByIndex(IWebDriver driver, string path, int value)
         {
             if (driver.FindElements(By.XPath(path)).Count != 0)
             {
@@ -185,7 +196,7 @@ namespace GSI_QA_testing_tool
         }
 
 
-        public static void UseDropDownByIndex(IWebDriver driver, String path, int value, WebDriverWait wait)
+        public static void UseDropDownByIndex(IWebDriver driver, string path, int value, WebDriverWait wait)
         {
             if (driver.FindElements(By.XPath(path)).Count != 0)
             {

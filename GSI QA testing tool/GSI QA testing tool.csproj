@@ -103,6 +103,9 @@
     <Compile Include="UI\UI_138_VerifyIdentity.cs" />
     <Compile Include="UI\UI_140_UnemploymentCompensation.cs" />
     <Compile Include="UI\UI_145_UploadPage.cs" />
+    <Compile Include="UI\UI_150_EmploymentHistoryBeforeFirst.cs" />
+    <Compile Include="UI\UI_155_EmployerPage.cs" />
+    <Compile Include="UI\UI_160_EmploymentHistoryAfterFirst.cs" />
     <Compile Include="Utilities\CustomDialog.xaml.cs">
       <DependentUpon>CustomDialog.xaml</DependentUpon>
     </Compile>

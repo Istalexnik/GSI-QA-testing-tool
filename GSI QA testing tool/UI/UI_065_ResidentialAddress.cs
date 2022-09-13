@@ -3,6 +3,7 @@ using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -18,7 +19,17 @@ namespace GSI_QA_testing_tool.UI
         {
             Thread.Sleep(300);
 
-            if (!Finder.FindIt(driver, "//input[@id='ctl00_Main_content_ucAddress_txtAddress1']")) return;
+            if (Finder.FindIt(driver, "//input[@id='ctl00_Main_content_ucAddress_txtAddress1']")) 
+            {
+                Debug.WriteLine("ResidentialAddress is On");
+            }
+            else
+            {
+                Debug.WriteLine("ResidentialAddress is Off");
+                return;
+            }
+
+
 
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucAddress_txtAddress1']", Data._Address);
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucAddress_ddlAltGeo']", 2, wait);

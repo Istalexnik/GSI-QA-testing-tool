@@ -114,7 +114,11 @@ namespace GSI_QA_testing_tool.UI
             // upload
             UI_145_UploadPage.GoTo(driver);
 
+            // Employment History Before First Eployer
+            UI_150_EmploymentHistoryBeforeFirst.GoTo(driver, wait);
 
+            // Employment History After First Eployer
+            UI_160_EmploymentHistoryAfterFirst.GoTo(driver, wait);
 
         }
     }

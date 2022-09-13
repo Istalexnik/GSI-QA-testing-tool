@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace GSI_QA_testing_tool.UI
 {
@@ -12,7 +13,17 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
-            if (!Finder.FindIt(driver, "//select[@id='ctl00_Main_content_ucEmployment_ddlEmployStatus']")) return;
+            if (Finder.FindIt(driver, "//select[@id='ctl00_Main_content_ucEmployment_ddlEmployStatus']")) 
+            {
+                Debug.WriteLine("EmploymentInformation is On");
+            }
+            else
+            {
+                Debug.WriteLine("EmploymentInformation is Off");
+                return;
+            }
+
+
 
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEmployment_ddlEmployStatus']", 3);
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEmployment_ddlTypeBusiness']", 1, wait);

@@ -16,8 +16,15 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
-            if (!Finder.FindIt(driver, "//input[@id='ctl00_Main_content_ucLogin_txtUsername']")) return;
-
+            if (Finder.FindIt(driver, "//input[@id='ctl00_Main_content_ucLogin_txtUsername']"))
+            {
+                Debug.WriteLine("LoginInformation is On");
+            }
+            else
+            {
+                Debug.WriteLine("LoginInformation is Off");
+                return;
+            }
 
 
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucLogin_txtUsername']", Data._Login);
