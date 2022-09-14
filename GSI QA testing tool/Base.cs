@@ -51,12 +51,15 @@ namespace GSI_QA_testing_tool
             chromeDriverService.HideCommandPromptWindow = true;
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArguments(new List<string>() { "no-sandbox" });
+            //   chromeOptions.AddArguments(new List<string>() { "user-data-dir=C:/Users/aistomin/source/repos/GSI QA testing tool/GSI QA testing tool/Assets/ChromeProfile" });
+         //   chromeOptions.AddArguments(new List<string>() { "user-data-dir=C:/Users/aistomin/AppData/Local/Google/Chrome/User Data/Default" });
+
             driver = new ChromeDriver(chromeDriverService, chromeOptions);
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(120);
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            driver.Url = Data._URL;
             driver.Url = Data._URL;
 
-            
             if (Data._Site.Contains("PFL"))
             {
                 PFL.PFL_000.FilePFL(driver, wait);
@@ -64,8 +67,15 @@ namespace GSI_QA_testing_tool
             {
                 UI.UI_000.FileUI(driver, wait);
             }
+            
+
 
             mw.Dispatcher.Invoke(() => { mw.ScreenAfterRunning(); });
+            //TURN IT ON LATER WHEN YOU ARE DONE WITH SCRIPTS!!!!!!!!!!!!
+          //  driver.Quit();
+          //  CustomDialog customDialog = new CustomDialog("Claim Created", Data._Login);
+          //  customDialog.ShowDialog();
+
         }
 
         public static void KillChromeProcess(int driverOrBothDriverAndBrowser)

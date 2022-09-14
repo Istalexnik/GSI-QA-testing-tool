@@ -35,18 +35,6 @@ namespace GSI_QA_testing_tool.UI
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblWounded_1']");
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
 
-
-
-
-
-
-
-
-
-            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucDrvLicense_txtDrvLicenseNumber']", Data._DriverLicense);
-            Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucDrvLicense_ddlStateIssued']", 5);
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
-
         }
     }
 }

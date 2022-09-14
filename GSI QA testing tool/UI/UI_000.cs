@@ -103,6 +103,9 @@ namespace GSI_QA_testing_tool.UI
             // Military Information
             UI_130_MilitaryInformation.GoTo(driver, wait);
 
+            // Identification Information //workaround for LA cause this page goes after military page
+            UI_125_IdentificationInformation.GoTo(driver);
+
             // Payment Information
             UI_135_PaymentInformation.GoTo(driver);
 

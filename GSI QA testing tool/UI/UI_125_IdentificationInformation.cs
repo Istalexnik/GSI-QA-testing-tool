@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GSI_QA_testing_tool.UI
@@ -12,6 +13,8 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver)
         {
+
+
             if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucDrvLicense_rblValidLicense_0']")) 
             {
                 Debug.WriteLine("IdentificationInformation is On");
