@@ -5,6 +5,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -52,9 +53,7 @@ namespace GSI_QA_testing_tool
             chromeDriverService.HideCommandPromptWindow = true;
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArguments(new List<string>() { "no-sandbox" });
-         //   chromeOptions.AddArguments(new List<string>() { @"--user-data-dir=C:/Users/Alex/Documents/Microsoft Press/New folder/" });
-
-            
+            chromeOptions.AddArguments(new List<string>() { $@"--user-data-dir={Path.GetFullPath(@"../../Assets/ChromeProfile/")}" });
             driver = new ChromeDriver(chromeDriverService, chromeOptions);
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(120);
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));

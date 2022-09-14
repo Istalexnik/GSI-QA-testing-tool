@@ -1,3 +1,2 @@
-2022/09/14-15:13:12.590 315a0 Reusing MANIFEST C:\Users\aistomin\source\repos\GSI QA testing tool\GSI QA testing tool\Assets\ChromeProfile\Default\Local Storage\leveldb/MANIFEST-000001
-2022/09/14-15:13:12.592 315a0 Recovering log #3
-2022/09/14-15:13:12.594 315a0 Reusing old log C:\Users\aistomin\source\repos\GSI QA testing tool\GSI QA testing tool\Assets\ChromeProfile\Default\Local Storage\leveldb/000003.log 
+2022/09/14-18:35:02.633 6fcc Creating DB C:\Users\Alex\source\repos\Istalexnik\GSI-QA-testing-tool\GSI QA testing tool\Assets\ChromeProfile\Default\Local Storage\leveldb since it was missing.
+2022/09/14-18:35:02.640 6fcc Reusing MANIFEST C:\Users\Alex\source\repos\Istalexnik\GSI-QA-testing-tool\GSI QA testing tool\Assets\ChromeProfile\Default\Local Storage\leveldb/MANIFEST-000001

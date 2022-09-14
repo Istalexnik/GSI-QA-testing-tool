@@ -1,3 +1,2 @@
-2022/09/14-15:13:12.542 315a0 Reusing MANIFEST C:\Users\aistomin\source\repos\GSI QA testing tool\GSI QA testing tool\Assets\ChromeProfile\Default\Session Storage/MANIFEST-000001
-2022/09/14-15:13:12.545 315a0 Recovering log #3
-2022/09/14-15:13:12.547 315a0 Reusing old log C:\Users\aistomin\source\repos\GSI QA testing tool\GSI QA testing tool\Assets\ChromeProfile\Default\Session Storage/000003.log 
+2022/09/14-18:35:02.659 6fcc Creating DB C:\Users\Alex\source\repos\Istalexnik\GSI-QA-testing-tool\GSI QA testing tool\Assets\ChromeProfile\Default\Session Storage since it was missing.
+2022/09/14-18:35:02.665 6fcc Reusing MANIFEST C:\Users\Alex\source\repos\Istalexnik\GSI-QA-testing-tool\GSI QA testing tool\Assets\ChromeProfile\Default\Session Storage/MANIFEST-000001

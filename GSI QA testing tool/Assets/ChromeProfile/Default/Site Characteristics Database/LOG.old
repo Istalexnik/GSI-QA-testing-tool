@@ -1,3 +1,2 @@
-2022/09/14-15:13:12.087 345fc Reusing MANIFEST C:\Users\aistomin\source\repos\GSI QA testing tool\GSI QA testing tool\Assets\ChromeProfile\Default\Site Characteristics Database/MANIFEST-000001
-2022/09/14-15:13:12.091 345fc Recovering log #3
-2022/09/14-15:13:12.095 345fc Reusing old log C:\Users\aistomin\source\repos\GSI QA testing tool\GSI QA testing tool\Assets\ChromeProfile\Default\Site Characteristics Database/000003.log 
+2022/09/14-18:35:02.596 5958 Creating DB C:\Users\Alex\source\repos\Istalexnik\GSI-QA-testing-tool\GSI QA testing tool\Assets\ChromeProfile\Default\Site Characteristics Database since it was missing.
+2022/09/14-18:35:02.602 5958 Reusing MANIFEST C:\Users\Alex\source\repos\Istalexnik\GSI-QA-testing-tool\GSI QA testing tool\Assets\ChromeProfile\Default\Site Characteristics Database/MANIFEST-000001
