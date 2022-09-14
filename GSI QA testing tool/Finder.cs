@@ -24,7 +24,7 @@ namespace GSI_QA_testing_tool
         }
 
 
-        public static void ClickIt(IWebDriver driver, String path)
+        public static void ClickIt(IWebDriver driver, string path)
         {
 
             if (driver.FindElements(By.XPath(path)).Count != 0)
@@ -35,7 +35,7 @@ namespace GSI_QA_testing_tool
         }
 
 
-        public static void ClickIt(IWebDriver driver, String path, WebDriverWait wait)
+        public static void ClickIt(IWebDriver driver, string path, WebDriverWait wait)
         {
             if (driver.FindElements(By.XPath(path)).Count != 0)
             { 
@@ -45,7 +45,7 @@ namespace GSI_QA_testing_tool
         }
 
 
-        public static void WaitStaleClickIt(IWebDriver driver, String path, WebDriverWait wait)
+        public static void WaitStaleClickIt(IWebDriver driver, string path, WebDriverWait wait)
         {
             if (driver.FindElements(By.XPath(path)).Count != 0)
             {
@@ -101,22 +101,30 @@ namespace GSI_QA_testing_tool
 
 
 
-        public static void ActionsSendText(IWebDriver driver, String path, String text)
+        public static void ActionsSendText(IWebDriver driver, string path, string text, WebDriverWait wait = null)
         {
             if (driver.FindElements(By.XPath(path)).Count != 0)
             {
                 Actions act = new Actions(driver);
                 act.MoveToElement(driver.FindElement(By.XPath(path)));
                 act.Click();
+                act.Pause(new TimeSpan(300));
                 act.SendKeys(text);
-                act.Pause(new TimeSpan(7000));
+                act.DoubleClick();
+                act.Pause(new TimeSpan(1000));
                 act.SendKeys(Keys.Down);
-                act.Pause(new TimeSpan(1000));
                 act.SendKeys(Keys.Enter);
-                act.Pause(new TimeSpan(1000));
                 act.Build().Perform();
             }
+            if (wait != null)
+            {
+                wait.Until(ExpectedConditions.StalenessOf(driver.FindElement(By.XPath(path))));
+            }
+
         }
+
+
+
 
 
 
@@ -133,14 +141,6 @@ namespace GSI_QA_testing_tool
                 Debug.WriteLine(nap.Message);
             }
         }
-
-
-        public static void WaitDocToLoad(IWebDriver driver, WebDriverWait wait)
-        {
-            wait.Until(driver1 => ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete"));
-        }
-
-
 
 
 

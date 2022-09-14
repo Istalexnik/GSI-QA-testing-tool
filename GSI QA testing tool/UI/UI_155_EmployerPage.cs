@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,7 +15,8 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver, WebDriverWait wait, string Employer, string From, string To)
         {
-            if (Finder.FindIt(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboSeparationReason']"))
+                                                         
+            if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName' or 'ctl00_Main_content_ucIndEmpHistory_txtEmpName']"))
             {
                 Debug.WriteLine("EmployerPage is On");
             }
@@ -27,28 +29,29 @@ namespace GSI_QA_testing_tool.UI
 
             if (!Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblLastEmployer_0']"))
             {
-                Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName']", Employer);
+                Finder.ActionsSendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName']", Employer, wait);
 
-                if (driver.FindElements(By.CssSelector("[id$=ac_results]")).Count() == 0)
+                if (Finder.FindIt(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_gvFindEmployerResults_ctl02_rbSelectedEmployer']"))
                 {
-                    for (int i = 0; i < Data._Employers.Length; i++)
-                    {
-                        driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName']")).Clear();
-                        Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName']", Data._Employers[i].ToString());
-                        Thread.Sleep(1000);
-                        if (driver.FindElements(By.CssSelector("[id$=ac_results]")).Count() > 0) {
-                            break; 
-                        }
-                    }
-                }
-
-                Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName']", Keys.ArrowDown + Keys.Enter);
-
-                if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_gvFindEmployerResults_ctl02_rbSelectedEmployer']"))
-                {
-                    Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_gvFindEmployerResults_ctl02_rbSelectedEmployer']");
+                    Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_gvFindEmployerResults_ctl02_rbSelectedEmployer']");
                     Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_btnSelectEmployer']");
                 }
+
+
+                //if (!Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblLastEmployer_0']"))
+                //{
+                //    for (int i = 0; i < Data._Employers.Length; i++)
+                //    {
+                //        driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName']")).Clear();
+                //        Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName']", Data._Employers[i].ToString());
+                //        Thread.Sleep(2500);
+                //        if (driver.FindElements(By.CssSelector("[id$=ac_results]")).Count() > 0) {
+                //            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName']", Keys.ArrowDown);
+                //            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName']", Keys.Enter);
+                //            break; 
+                //        }
+                //    }
+                //}
 
             }
             else
@@ -59,10 +62,11 @@ namespace GSI_QA_testing_tool.UI
                     Finder.ActionsSendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']", Employer);
                 }
             }
+           
 
-
+            Thread.Sleep(3500);//////////////////////////////////
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblLastEmployer_0']", wait);
-            Finder.WaitClickableClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblEmployerLiable_0']", wait);
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblEmployerLiable_0']", wait);
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1']");
             
 
@@ -81,15 +85,18 @@ namespace GSI_QA_testing_tool.UI
             Thread.Sleep(2500);
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Keys.ArrowDown + Keys.Enter, wait);
 
+
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ONETDropDownList']", 1);
-            Finder.UseDropDownByIndex(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblSalaryCommission_1']", 1, wait);
+            Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboEmpType']", 1, wait);
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboFullPartTime']", 1);
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ddlScheduleOfWork']", 1);
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ddlWholeHours']", 2);
             Finder.SendText(driver, "//*[@id='ctl00_Main_content_ucIndEmpHistory_txtSalary']", "10");
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboSalaryBase']", 1);
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblSalaryCommission_1']");
             Finder.SendText(driver, "//*[@id='ctl00_Main_content_ucIndEmpHistory_txtStartDate']", From);
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblCurrentlyEmployed_1']", wait);
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblCurrentlyEmployed_1']");
+            Thread.Sleep(3500);
             Finder.SendText(driver, "//*[@id='ctl00_Main_content_ucIndEmpHistory_txtGrossEarningsThisWeek']", "0");
             Finder.SendText(driver, "//*[@id='ctl00_Main_content_ucIndEmpHistory_txtHoursWorkedThisWeek']", "0");
 
@@ -102,7 +109,7 @@ namespace GSI_QA_testing_tool.UI
 
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblVoluntaryLayoff_1']");
             Finder.SendText(driver, "//*[@id='ctl00_Main_content_ucIndEmpHistory_txtEndDate']", To);
-            Finder.ClickIt(driver, "//input[@id='//label[@for='ctl00_Main_content_ucIndEmpHistory_rblIntendToRecall_1']", wait);
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblIntendToRecall_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblFamilyResponsibilities_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblEducationalInstitution_1']");
             Thread.Sleep(300);

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GSI_QA_testing_tool.UI
@@ -13,7 +14,7 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
-            if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblServedConsecutiveDaysInActiveDuty_1']")) 
+            if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblSpouseactivedutyBase_1']")) 
             {
                 Debug.WriteLine("MilitaryInformation is On");
             }
@@ -24,12 +25,11 @@ namespace GSI_QA_testing_tool.UI
             }
 
 
-
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblSpouseactivedutyBase_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblCaregiver_1']");
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblTAPWorkshop_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblSpouse_1']", wait);
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblMilitaryService_1']", wait);
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblTAPWorkshop_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblServedConsecutiveDaysInActiveDuty_1']");
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucVeteran_ddlClassifiedAsDisabledVeteran']", 1);
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblWounded_1']");

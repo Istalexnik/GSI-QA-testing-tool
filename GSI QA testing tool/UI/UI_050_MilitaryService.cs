@@ -37,7 +37,7 @@ namespace GSI_QA_testing_tool.UI
                     Finder.ClickIt(driver, "//button[@id='btn-dialog-ok']");
                 }
 
-                Finder.ClickIt(driver, "//*[@for='ctl00_Main_content_Wizard1_rblPhysicallyInState_1']");
+                Finder.ClickIt(driver, "//*[@for='ctl00_Main_content_Wizard1_rblPhysicallyInState_0']");
                 Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");
 
                 // Military Work

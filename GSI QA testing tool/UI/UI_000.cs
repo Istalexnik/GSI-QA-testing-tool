@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using GSI_QA_testing_tool.Utilities;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -119,6 +120,25 @@ namespace GSI_QA_testing_tool.UI
 
             // Employment History After First Eployer
             UI_160_EmploymentHistoryAfterFirst.GoTo(driver, wait);
+
+            // Gap Analysis
+            UI_165_GapAnalysis.GoTo(driver, wait);
+
+            // Claim Confirmation
+            UI_170_ClaimConfirmation.GoTo(driver);
+
+            // Important Agreement
+            UI_175_ImportantAgreement.GoTo(driver);
+
+            // What You Must Do
+            UI_180_WhatYouMustDo.GoTo(driver);
+
+            // Unemployment Claim Confirmation
+            UI_185_UnemploymentClaimConfirmation.GoTo(driver);
+
+            driver.Quit();
+            CustomDialog customDialog = new CustomDialog("Claim Created", Data._Login);
+            customDialog.ShowDialog();
 
         }
     }
