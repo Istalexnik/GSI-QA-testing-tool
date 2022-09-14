@@ -36,7 +36,7 @@ namespace GSI_QA_testing_tool.UI
                 Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");
 
                 // Credit Weeks(PA)
-                if (Finder.FindIt(driver, "//*[@id='ctl00_Main_content_Wizard1_ucEnterOOSCreditWeeks_rptCreditWeeks_ctl00_txtQ1']"));
+                if (Finder.FindIt(driver, "//*[@id='ctl00_Main_content_Wizard1_ucEnterOOSCreditWeeks_rptCreditWeeks_ctl00_txtQ1']"))
                 {
                     Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucEnterOOSCreditWeeks_rptCreditWeeks_ctl00_txtQ1']", Data._CreditWeeks);
                     Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucEnterOOSCreditWeeks_rptCreditWeeks_ctl00_txtQ2']", Data._CreditWeeks);
