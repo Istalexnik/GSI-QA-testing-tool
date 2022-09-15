@@ -99,6 +99,18 @@ namespace GSI_QA_testing_tool
         }
 
 
+        public static void WaitClickableSendText(IWebDriver driver, string path, string text, WebDriverWait wait)
+        {
+            if (driver.FindElements(By.XPath(path)).Count != 0)
+
+            {
+                wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(path)));
+                driver.FindElement(By.XPath(path)).SendKeys(text);
+            }
+        }
+
+
+
 
 
         public static void ActionsSendText(IWebDriver driver, string path, string text, WebDriverWait wait = null)

@@ -1,6 +1,7 @@
 ﻿using GSI_QA_testing_tool.Utilities;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -56,9 +57,11 @@ namespace GSI_QA_testing_tool
             //keep this for the final version
             //chromeOptions.AddArguments(new List<string>() { $@"--user-data-dir={Path.GetFullPath(@"../../Assets/ChromeProfile/")}" });
             chromeOptions.AddArguments(new List<string>() { $@"--user-data-dir={Path.GetFullPath(@"C:/ChromeProfile/")}" });
+            chromeOptions.AddExcludedArgument("enable-automation");
             driver = new ChromeDriver(chromeDriverService, chromeOptions);
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(120);
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             driver.Url = Data._URL;
 
             
@@ -67,7 +70,7 @@ namespace GSI_QA_testing_tool
                 PFL.PFL_000.FilePFL(driver, wait);
             } else
             {
-                UI.UI_000.FileUI(driver, wait);
+                UI.UI_000.FileUI(driver, wait, js);
             }
 
             mw.Dispatcher.Invoke(() => { mw.ScreenAfterRunning(); });

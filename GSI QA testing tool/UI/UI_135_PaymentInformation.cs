@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace GSI_QA_testing_tool.UI
 {
     internal class UI_135_PaymentInformation
     {
-        public static void GoTo(IWebDriver driver)
+        public static void GoTo(IWebDriver driver, IJavaScriptExecutor js)
         {
             if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucUIPayment_rblPaymentMethod_1']"))
             {
@@ -24,10 +25,14 @@ namespace GSI_QA_testing_tool.UI
             }
 
 
-
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIPayment_rblPaymentMethod_1']");
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIPayment_cbdebitcardacklongform']");
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIPayment_cbdebitcardack']");
+            //Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIPayment_cbdebitcardacklongform']");
+            //Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIPayment_cbdebitcardack']");
+            var checkboxes = driver.FindElements(By.XPath("//input[@type='checkbox']"));
+            foreach (var checkbox in checkboxes)
+            {
+                js.ExecuteScript("arguments[0].click();", checkbox);
+            }
             Finder.ClickIt(driver, "//*[@id='btn-dialog-ok']");
 
 

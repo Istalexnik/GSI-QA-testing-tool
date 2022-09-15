@@ -20,7 +20,7 @@ namespace GSI_QA_testing_tool
         public static string _LastName = "Istomin";
         public static string _DOB = "11/11/1959";
         public static string _Employer1 = "Target";
-        public static string _Employer2 = "Walmart";
+        public static string _Employer2 = "Toyota";
         public static string _DataPane = "";
         public static bool _SecondEmployer = false;
         public static string _WorkedFrom1 = "11/11/2020";
@@ -29,7 +29,7 @@ namespace GSI_QA_testing_tool
         public static string _WorkedTo2 = DateTime.Now.ToString("MM/dd/yyyy");
         public static int _claimType;
         public static string[] _claimTypes = { "Regular", "UCX", "UCFE", "CWC", "Alien", "PUA" };
-        public static string[] _Employers = { "Publix", "Amazon", "Toyota", "Alex" };
+        public static string[] _Employers = { "Publix", "Amazon", "Walmart", "Alex" };
         public static string _State;
         public static string _Abbreviation;
         public static bool _BasePeriod = true;

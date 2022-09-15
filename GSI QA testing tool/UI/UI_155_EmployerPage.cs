@@ -37,7 +37,7 @@ namespace GSI_QA_testing_tool.UI
                     Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_btnSelectEmployer']");
                 }
 
-
+                wait.Until(ExpectedConditions.ElementExists(By.XPath("//label[@for='ctl00_Main_content_ucIndEmpHistory_rblLastEmployer_0']")));
                 //if (!Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblLastEmployer_0']"))
                 //{
                 //    for (int i = 0; i < Data._Employers.Length; i++)
@@ -56,9 +56,9 @@ namespace GSI_QA_testing_tool.UI
             }
             else
             {
-                if (Data._claimType != 2 || Data._claimType != 3)
+                if (Data._claimType != 2  && Data._claimType != 3)
                 {
-                 //   driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']")).Clear();
+                    driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']")).Clear();
                 //    Finder.ActionsSendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']", Employer);
                     Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']", Employer);
                     Thread.Sleep(2500);
@@ -70,7 +70,7 @@ namespace GSI_QA_testing_tool.UI
 
 
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblLastEmployer_0']", wait);
-            Finder.WaitClickableClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblEmployerLiable_0']", wait);
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblEmployerLiable_0']", wait);
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1']");
             
 
@@ -85,7 +85,7 @@ namespace GSI_QA_testing_tool.UI
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblCurrentlyEmployed_1']", wait);
             }
                                                   
-            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Data._JobTitle);
+            Finder.WaitClickableSendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Data._JobTitle, wait);
             Thread.Sleep(2500);
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Keys.ArrowDown + Keys.Enter, wait);
 
@@ -114,6 +114,7 @@ namespace GSI_QA_testing_tool.UI
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblVoluntaryLayoff_1']");
             Finder.SendText(driver, "//*[@id='ctl00_Main_content_ucIndEmpHistory_txtEndDate']", To);
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblIntendToRecall_1']");
+            Thread.Sleep(300);
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblFamilyResponsibilities_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblEducationalInstitution_1']");
             Thread.Sleep(300);
@@ -154,12 +155,31 @@ namespace GSI_QA_testing_tool.UI
 
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucWizardButtons_btnSave']");
 
-     
+            Finder.ClickIt(driver, "//div[@id='ui-id-13']//following-sibling::div/div/button[@id='btn-dialog-save']");
+            Finder.ClickIt(driver, "//div[@id='ui-id-11']//following-sibling::div/div/button[@id='btn-dialog-save']");
+            Finder.ClickIt(driver, "//div[@id='ui-id-9']//following-sibling::div/div/button[@id='btn-dialog-save']");
             Finder.ClickIt(driver, "//div[@id='ui-id-5']//following-sibling::div/div/button[@id='btn-dialog-save']");
             Finder.ClickIt(driver, "//div[@id='ui-id-3']//following-sibling::div/div/button[@id='btn-dialog-save']");
-          //  Finder.ClickIt(driver, "//div[@id='ui-id-1']//following-sibling::div/div/button[@id='btn-dialog-save']");
+            Finder.ClickIt(driver, "//div[@id='ui-id-1']//following-sibling::div/div/button[@id='btn-dialog-save']");
+
+            wait.Until(ExpectedConditions.ElementExists(By.XPath("//label[@for='ctl00_Main_content_rblAddAnotherEntry_1']")));
 
 
+            //if this is the second employer creation then on the next page(emp history) do this
+            if (Employer == Data._Employer2)
+            {
+
+                //   Thread.Sleep(8000);
+
+                if (Data._SecondEmployer == false)
+                {
+                    Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_grdIndEmpHistory_ctl02_RowSelect_LastEmployer']");
+                }
+
+                Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_rblAddAnotherEntry_1']");
+                Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
+
+            }
         }
 
     }

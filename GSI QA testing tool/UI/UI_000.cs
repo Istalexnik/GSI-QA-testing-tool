@@ -14,7 +14,7 @@ namespace GSI_QA_testing_tool.UI
 {
     internal class UI_000
     {
-        public static void FileUI(IWebDriver driver, WebDriverWait wait)
+        public static void FileUI(IWebDriver driver, WebDriverWait wait, IJavaScriptExecutor js)
         {
             // Home Page
             UI.UI_005_HomePage.GoTo(driver);
@@ -107,7 +107,7 @@ namespace GSI_QA_testing_tool.UI
             UI_125_IdentificationInformation.GoTo(driver);
 
             // Payment Information
-            UI_135_PaymentInformation.GoTo(driver);
+            UI_135_PaymentInformation.GoTo(driver, js);
 
             // Verify Your Identity
             UI_138_VerifyIdentity.GoTo(driver);
@@ -134,7 +134,7 @@ namespace GSI_QA_testing_tool.UI
             UI_175_ImportantAgreement.GoTo(driver);
 
             // What You Must Do
-            UI_180_WhatYouMustDo.GoTo(driver);
+            UI_180_WhatYouMustDo.GoTo(driver, wait, js);
 
             // Unemployment Claim Confirmation
             UI_185_UnemploymentClaimConfirmation.GoTo(driver);

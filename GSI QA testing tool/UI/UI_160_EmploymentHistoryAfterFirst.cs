@@ -14,7 +14,7 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
-            Thread.Sleep(500);
+   
                                                   
             if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_rblAddAnotherEntry_0']"))
             {
@@ -49,13 +49,11 @@ namespace GSI_QA_testing_tool.UI
                 }
 
                 //Employer
+                Data._claimType = 1; //so that there is no UCX/UCFE triggers on employer page for second employer
                 UI_155_EmployerPage.GoTo(driver, wait, Data._Employer2, Data._WorkedFrom2, Data._WorkedTo2);
 
             }
-                if (Data._SecondEmployer == false)
-                {
-                    Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_grdIndEmpHistory_ctl02_RowSelect_LastEmployer']");
-                }
+
 
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_rblAddAnotherEntry_1']");
                 Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");

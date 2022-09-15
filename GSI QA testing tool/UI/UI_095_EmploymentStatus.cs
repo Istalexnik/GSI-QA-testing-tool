@@ -13,7 +13,7 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver)
         {
-            if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucUIEmployment_rblOfferedJobToday_0']"))
+            if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucUIEmployment_rblSelfEmployed_1']"))
             {
                 Debug.WriteLine("EmploymentStatus is On");
             }
