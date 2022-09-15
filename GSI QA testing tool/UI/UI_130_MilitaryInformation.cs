@@ -14,14 +14,14 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
-            if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblSpouseactivedutyBase_1']")) 
+            if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblTAPWorkshop_1']")) 
             {
                 Debug.WriteLine("MilitaryInformation is On");
             }
             else
             {
-                Debug.WriteLine("MilitaryInformation is Off");
-                return;
+                Debug.WriteLine("MilitaryInformation is maybe On");
+              //  return;
             }
 
 

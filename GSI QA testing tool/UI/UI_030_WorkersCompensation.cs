@@ -10,7 +10,7 @@ namespace GSI_QA_testing_tool.UI
 {
     internal class UI_030_WorkersCompensation
     {
-        public static void GoTo(IWebDriver driver)
+        public static void GoTo(IWebDriver driver, IJavaScriptExecutor js)
         {
             if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucWorkersCompensation_rblWCReceived_1']"))
             {
@@ -25,7 +25,8 @@ namespace GSI_QA_testing_tool.UI
 
 
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucWorkersCompensation_rblWCReceived_1']");
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");
+            js.ExecuteScript("arguments[0].click();", driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']")));
+          //  Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");
 
         }
     }

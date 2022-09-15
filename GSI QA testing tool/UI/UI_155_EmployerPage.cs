@@ -13,7 +13,7 @@ namespace GSI_QA_testing_tool.UI
 {
     internal class UI_155_EmployerPage
     {
-        public static void GoTo(IWebDriver driver, WebDriverWait wait, string Employer, string From, string To)
+        public static void GoTo(IWebDriver driver, WebDriverWait wait, IJavaScriptExecutor js, string Employer, string From, string To)
         {
                                                          
             if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName' or 'ctl00_Main_content_ucIndEmpHistory_txtEmpName']"))
@@ -70,8 +70,8 @@ namespace GSI_QA_testing_tool.UI
 
 
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblLastEmployer_0']", wait);
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblEmployerLiable_0']", wait);
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1']");
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblEmployerLiable_0']");
+            Finder.WaitClickableClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1']", wait);
             
 
 
@@ -85,7 +85,7 @@ namespace GSI_QA_testing_tool.UI
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblCurrentlyEmployed_1']", wait);
             }
                                                   
-            Finder.WaitClickableSendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Data._JobTitle, wait);
+            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Data._JobTitle);
             Thread.Sleep(2500);
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Keys.ArrowDown + Keys.Enter, wait);
 
@@ -155,15 +155,23 @@ namespace GSI_QA_testing_tool.UI
 
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucWizardButtons_btnSave']");
 
-            Finder.ClickIt(driver, "//div[@id='ui-id-13']//following-sibling::div/div/button[@id='btn-dialog-save']");
-            Finder.ClickIt(driver, "//div[@id='ui-id-11']//following-sibling::div/div/button[@id='btn-dialog-save']");
-            Finder.ClickIt(driver, "//div[@id='ui-id-9']//following-sibling::div/div/button[@id='btn-dialog-save']");
-            Finder.ClickIt(driver, "//div[@id='ui-id-5']//following-sibling::div/div/button[@id='btn-dialog-save']");
-            Finder.ClickIt(driver, "//div[@id='ui-id-3']//following-sibling::div/div/button[@id='btn-dialog-save']");
-            Finder.ClickIt(driver, "//div[@id='ui-id-1']//following-sibling::div/div/button[@id='btn-dialog-save']");
+
+            var forms = driver.FindElements(By.XPath("//button[@id='btn-dialog-save']"));
+            foreach (var form in forms)
+            {
+                js.ExecuteScript("arguments[0].click();", form);
+            }
+
+
+
+            //js.ExecuteScript("arguments[0].click();", driver.FindElement(By.XPath("//div[@id='ui-id-1']//following-sibling::div/div/button[@id='btn-dialog-save']")));
+            //Finder.ClickIt(driver, "//div[@id='ui-id-13']//following-sibling::div/div/button[@id='btn-dialog-save']");
+            //Finder.ClickIt(driver, "//div[@id='ui-id-11']//following-sibling::div/div/button[@id='btn-dialog-save']");
+            //Finder.ClickIt(driver, "//div[@id='ui-id-9']//following-sibling::div/div/button[@id='btn-dialog-save']");
+            //Finder.ClickIt(driver, "//div[@id='ui-id-5']//following-sibling::div/div/button[@id='btn-dialog-save']");
+            //Finder.ClickIt(driver, "//div[@id='ui-id-3']//following-sibling::div/div/button[@id='btn-dialog-save']");
 
             wait.Until(ExpectedConditions.ElementExists(By.XPath("//label[@for='ctl00_Main_content_rblAddAnotherEntry_1']")));
-
 
             //if this is the second employer creation then on the next page(emp history) do this
             if (Employer == Data._Employer2)

@@ -53,7 +53,7 @@ namespace GSI_QA_testing_tool.UI
                 Finder.ActionsSendText(driver, "//*[@id='cmbCustomFIC']", Data._FIC);
                 Thread.Sleep(3000);
                 Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlDestCodes']", "0001");
-                Finder.WaitStaleClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_rblInterveningEmploymentSinceSeparation_1']", wait);
+                Finder.WaitClickableClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_rblInterveningEmploymentSinceSeparation_1']", wait);
                 Finder.UseDropDownByText(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlStateOfEmployment']", Data._State);
                 Thread.Sleep(2000);
                 Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_txtOutofCountryCity']", Data._City);

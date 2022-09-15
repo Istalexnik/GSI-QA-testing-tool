@@ -41,7 +41,7 @@ namespace GSI_QA_testing_tool.UI
             UI_025_SocialSecurityNumber.GoTo(driver);
 
             // Worker's Compensation
-            UI_030_WorkersCompensation.GoTo(driver);
+            UI_030_WorkersCompensation.GoTo(driver, js);
 
             // Work History Verification
             UI_035_WorkHistoryVerification.GoTo(driver);
@@ -119,10 +119,10 @@ namespace GSI_QA_testing_tool.UI
             UI_145_UploadPage.GoTo(driver);
 
             // Employment History Before First Eployer
-            UI_150_EmploymentHistoryBeforeFirst.GoTo(driver, wait);
+            UI_150_EmploymentHistoryBeforeFirst.GoTo(driver, wait, js);
 
             // Employment History After First Eployer
-            UI_160_EmploymentHistoryAfterFirst.GoTo(driver, wait);
+            UI_160_EmploymentHistoryAfterFirst.GoTo(driver, wait, js);
 
             // Gap Analysis
             UI_165_GapAnalysis.GoTo(driver, wait);
