@@ -13,6 +13,9 @@ namespace GSI_QA_testing_tool.UI
 {
     internal class UI_155_EmployerPage
     {
+
+
+
         public static void GoTo(IWebDriver driver, WebDriverWait wait, IJavaScriptExecutor js, string Employer, string From, string To)
         {
                                                          
@@ -25,9 +28,30 @@ namespace GSI_QA_testing_tool.UI
                 Debug.WriteLine("EmployerPage is Off");
                 return;
             }
-         
 
-            if (!Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblLastEmployer_0']"))
+
+
+
+            if (Data._Site.Contains("DC PFL"))
+            {
+                CreatePFLEmployer(driver, wait, js, Employer, From, To);
+                return;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                if (!Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblLastEmployer_0']"))
             {
                 Finder.ActionsSendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName']", Employer, wait);
 
@@ -189,6 +213,53 @@ namespace GSI_QA_testing_tool.UI
 
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+        public static void CreatePFLEmployer(IWebDriver driver, WebDriverWait wait, IJavaScriptExecutor js, string Employer, string From, string To)
+        {
+            driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']")).Clear();
+            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']", Employer);
+            Thread.Sleep(2500);
+            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']", Keys.ArrowDown + Keys.Enter, wait);
+            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtSupervisorName']", "Test");
+            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtSupervisorEmail']", Data._Email);
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_chkPopulateEmpWorkSiteAddress']", wait);
+
+            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Data._JobTitle);
+            Thread.Sleep(2500);
+            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Keys.ArrowDown + Keys.Enter, wait);
+            Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboFullPartTime']", 1);
+            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']", From);
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblReceivedPFLProgramNotice_1']", wait);
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblCurrentlyEmployed_1']", wait);
+            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucWizardButtons_btnSave']", wait);
+
+
+
+            if (Employer == Data._Employer2)
+            {
+                if (Data._SecondEmployer == false)
+                {
+                    Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_grdIndEmpHistory_ctl02_RowSelect_LastEmployer']");
+                }
+
+                Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_rblAddAnotherEntry_1']");
+                Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
+
+            }
+
+        }
+
 
     }
 }

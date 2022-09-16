@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GSI_QA_testing_tool.UI
 {
-    internal class UI_140_UnemploymentCompensation
+    internal class UI_138_UnemploymentCompensation
     {
         public static void GoTo(IWebDriver driver)
         {

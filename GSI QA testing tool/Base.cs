@@ -49,7 +49,7 @@ namespace GSI_QA_testing_tool
 
         public static void CreateClaim(MainWindow mw)
         {
-            
+
             var chromeDriverService = ChromeDriverService.CreateDefaultService();
             chromeDriverService.HideCommandPromptWindow = true;
             var chromeOptions = new ChromeOptions();
@@ -67,7 +67,7 @@ namespace GSI_QA_testing_tool
             
             if (Data._Site.Contains("PFL"))
             {
-                PFL.PFL_000.FilePFL(driver, wait);
+                UI.UI_000.FileUI(driver, wait, js);
             } else
             {
                 UI.UI_000.FileUI(driver, wait, js);

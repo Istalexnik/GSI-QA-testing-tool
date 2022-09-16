@@ -100,9 +100,14 @@
     <Compile Include="UI\UI_125_IdentificationInformation.cs" />
     <Compile Include="UI\UI_130_MilitaryInformation.cs" />
     <Compile Include="UI\UI_135_PaymentInformation.cs" />
-    <Compile Include="UI\UI_138_VerifyIdentity.cs" />
-    <Compile Include="UI\UI_140_UnemploymentCompensation.cs" />
-    <Compile Include="UI\UI_145_UploadPage.cs" />
+    <Compile Include="UI\UI_136_VerifyIdentity.cs" />
+    <Compile Include="UI\UI_138_UnemploymentCompensation.cs" />
+    <Compile Include="UI\UI_139_PFL_ClaimFiling.cs" />
+    <Compile Include="UI\UI_140_PFL_WhoIsFiling.cs" />
+    <Compile Include="UI\UI_141_PFL_PaidFamilyLeaveTypes.cs" />
+    <Compile Include="UI\UI_142_PFL_InformationAboutYourParentalLeaveEvent.cs" />
+    <Compile Include="UI\UI_143_PFL_AdditionalClaimInformation.cs" />
+    <Compile Include="UI\UI_148_UploadPage.cs" />
     <Compile Include="UI\UI_150_EmploymentHistoryBeforeFirst.cs" />
     <Compile Include="UI\UI_155_EmployerPage.cs" />
     <Compile Include="UI\UI_160_EmploymentHistoryAfterFirst.cs" />
@@ -114,6 +119,7 @@
     <Compile Include="Utilities\CustomDialog.xaml.cs">
       <DependentUpon>CustomDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\DateMaker.cs" />
     <Compile Include="Utilities\Dialog.cs" />
     <Compile Include="Utilities\Rand.cs" />
     <Page Include="MainWindow.xaml">

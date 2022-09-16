@@ -8,23 +8,23 @@ using System.Threading.Tasks;
 
 namespace GSI_QA_testing_tool.UI
 {
-    internal class UI_138_VerifyIdentity
+    internal class UI_139_PFL_ClaimFiling
     {
         public static void GoTo(IWebDriver driver)
         {
-            if (Finder.FindIt(driver, "//input[@id='ctl00_Main_content_btnNext']")) 
+            if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_rblPFLClaimProceed_0']"))
             {
-                Debug.WriteLine("VerifyIdentity is On");
+                Debug.WriteLine("PFL_ClaimFiling is On");
             }
             else
             {
-                Debug.WriteLine("VerifyIdentity is Off");
+                Debug.WriteLine("PFL_ClaimFiling is Off");
                 return;
             }
 
 
 
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_rblPFLClaimProceed_0']");
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
 
         }

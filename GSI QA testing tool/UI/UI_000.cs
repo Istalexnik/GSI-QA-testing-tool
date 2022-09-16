@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Runtime.Remoting.Lifetime;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -80,13 +81,13 @@ namespace GSI_QA_testing_tool.UI
             UI_090_EmploymentInformation.GoTo(driver, wait);
 
             // Employment - Status
-            UI_095_EmploymentStatus.GoTo(driver);
+            UI_095_EmploymentStatus.GoTo(driver, js);
 
             // Employment - Miscellaneous
             UI_100_EmploymentMiscellaneous.GoTo(driver);
 
             // Major Disaster Information
-            UI_105_MajorDisaster.GoTo(driver);
+            UI_105_MajorDisaster.GoTo(driver, wait);
 
             // Labor Union Member
             UI_110_LaborUnion.GoTo(driver);
@@ -110,13 +111,28 @@ namespace GSI_QA_testing_tool.UI
             UI_135_PaymentInformation.GoTo(driver, js);
 
             // Verify Your Identity
-            UI_138_VerifyIdentity.GoTo(driver);
+            UI_136_VerifyIdentity.GoTo(driver);
 
             // Unemployment Compensation Claim
-            UI_140_UnemploymentCompensation.GoTo(driver);
+            UI_138_UnemploymentCompensation.GoTo(driver);
 
-            // upload
-            UI_145_UploadPage.GoTo(driver);
+            // Claim Filing
+            UI_139_PFL_ClaimFiling.GoTo(driver);
+
+            // Claim Filing
+            UI_140_PFL_WhoIsFiling.GoTo(driver, wait);
+
+            // Claim Filing
+            UI_141_PFL_PaidFamilyLeaveTypes.GoTo(driver, wait);
+
+            // Claim Filing
+            UI_142_PFL_InformationAboutYourParentalLeaveEvent.GoTo(driver, wait, js);
+
+            // Claim Filing
+            UI_143_PFL_AdditionalClaimInformation.GoTo(driver, wait);
+
+            // Upload
+            UI_148_UploadPage.GoTo(driver);
 
             // Employment History Before First Eployer
             UI_150_EmploymentHistoryBeforeFirst.GoTo(driver, wait, js);
@@ -139,7 +155,7 @@ namespace GSI_QA_testing_tool.UI
             // Unemployment Claim Confirmation
             UI_185_UnemploymentClaimConfirmation.GoTo(driver);
 
-            driver.Quit();
+         //   driver.Quit();
             CustomDialog customDialog = new CustomDialog("Claim Created", Data._Login);
             customDialog.ShowDialog();
 

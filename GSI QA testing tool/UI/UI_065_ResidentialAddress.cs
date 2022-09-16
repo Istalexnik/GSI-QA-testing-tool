@@ -29,8 +29,7 @@ namespace GSI_QA_testing_tool.UI
                 return;
             }
 
-
-
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_rbACPEnrollment_1']");
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucAddress_txtAddress1']", Data._Address);
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucAddress_ddlAltGeo']", 2, wait);
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_chkPopulateMailAddress']", wait);

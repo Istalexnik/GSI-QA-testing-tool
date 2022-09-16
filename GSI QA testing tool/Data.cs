@@ -28,7 +28,7 @@ namespace GSI_QA_testing_tool
         public static string _WorkedFrom2 = "11/11/2020";
         public static string _WorkedTo2 = DateTime.Now.ToString("MM/dd/yyyy");
         public static int _claimType;
-        public static string[] _claimTypes = { "Regular", "UCX", "UCFE", "CWC", "Alien", "PUA" };
+        public static string[] _claimTypes = { "Regular", "UCX", "UCFE", "CWC", "Alien", "DUA" };
         public static string[] _Employers = { "Publix", "Amazon", "Walmart", "Alex" };
         public static string _State;
         public static string _Abbreviation;

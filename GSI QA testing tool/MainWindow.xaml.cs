@@ -121,10 +121,10 @@ namespace GSI_QA_testing_tool
 
         private void CbxSite_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-
+            string currentSite = null;
             foreach (Environment v in envs)
             {
-                string currentSite = null;
+                
 
                 if (CbxSite.SelectedItem != null)
                 {
@@ -136,6 +136,11 @@ namespace GSI_QA_testing_tool
                     TxtZIP.Text = v.zipCode;
                     TxtURL.Text = v.siteUrl;
                 }
+            }
+
+            if (currentSite == "AZ UAT")
+            {
+                CbxClaimType.SelectedItem = "DUA";
             }
         }
 

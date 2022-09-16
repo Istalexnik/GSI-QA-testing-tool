@@ -11,7 +11,7 @@ namespace GSI_QA_testing_tool.UI
 {
     internal class UI_095_EmploymentStatus
     {
-        public static void GoTo(IWebDriver driver)
+        public static void GoTo(IWebDriver driver, IJavaScriptExecutor js)
         {
             if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucUIEmployment_rblSelfEmployed_1']"))
             {
@@ -26,7 +26,7 @@ namespace GSI_QA_testing_tool.UI
 
 
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIEmployment_rblPhysicallyAbleToWork_0']");
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIEmployment_rblOfferedJobToday_0']");
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIEmployment_rblAvailableToWork_0']");                                           
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIEmployment_rblSelfEmployed_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIEmployment_rblElectedOfficial_1']");
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
