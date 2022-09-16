@@ -115,6 +115,7 @@
     <Compile Include="UI\UI_170_ClaimConfirmation.cs" />
     <Compile Include="UI\UI_175_ImportantAgreement.cs" />
     <Compile Include="UI\UI_180_WhatYouMustDo.cs" />
+    <Compile Include="UI\UI_183_PFL_BenefitsInformation.cs" />
     <Compile Include="UI\UI_185_UnemploymentClaimConfirmation.cs" />
     <Compile Include="Utilities\CustomDialog.xaml.cs">
       <DependentUpon>CustomDialog.xaml</DependentUpon>

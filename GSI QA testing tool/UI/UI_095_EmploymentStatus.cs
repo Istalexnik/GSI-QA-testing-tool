@@ -24,7 +24,8 @@ namespace GSI_QA_testing_tool.UI
             }
 
 
-
+            
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIEmployment_rblOfferedJobToday_0']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIEmployment_rblPhysicallyAbleToWork_0']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIEmployment_rblAvailableToWork_0']");                                           
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIEmployment_rblSelfEmployed_1']");

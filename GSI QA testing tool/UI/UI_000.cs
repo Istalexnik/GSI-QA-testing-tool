@@ -150,7 +150,10 @@ namespace GSI_QA_testing_tool.UI
             UI_175_ImportantAgreement.GoTo(driver);
 
             // What You Must Do
-            UI_180_WhatYouMustDo.GoTo(driver, wait, js);
+            UI_180_WhatYouMustDo.GoTo(driver, js);
+
+            // Unemployment Claim Confirmation
+            UI_183_PFL_BenefitsInformation.GoTo(driver);
 
             // Unemployment Claim Confirmation
             UI_185_UnemploymentClaimConfirmation.GoTo(driver);

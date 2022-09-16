@@ -38,7 +38,7 @@ namespace GSI_QA_testing_tool.UI
                     Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
 
                     // Employer
-                    UI_155_EmployerPage.GoTo(driver, wait, js, Data._Employer1, Data._WorkedFrom1, Data._WorkedTo1);
+                    UI_155_EmployerPage.CreateUIEmployer(driver, wait, js, Data._Employer1, Data._WorkedFrom1, Data._WorkedTo1);
 
                     Data._Emp2EnteredWhenUCXandWagesin = true;
                     Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
@@ -79,7 +79,7 @@ namespace GSI_QA_testing_tool.UI
                 }
             }
 
-            UI_155_EmployerPage.GoTo(driver, wait, js, Data._Employer1, Data._WorkedFrom1, Data._WorkedTo1);
+            UI_155_EmployerPage.CreateUIEmployer(driver, wait, js, Data._Employer1, Data._WorkedFrom1, Data._WorkedTo1);
 
 
         }

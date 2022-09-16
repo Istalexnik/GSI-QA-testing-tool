@@ -43,8 +43,12 @@ namespace GSI_QA_testing_tool
         public static string _JobTitle = "test";
         public static string _DriverLicense = "D234765456";
         public static bool _Emp2EnteredWhenUCXandWagesin = false;
-        public static bool _SecondEmpIsLast = true;
 
+
+        public static bool FirstEmpIsLast()
+        {
+            return _SecondEmployer == false || (_SecondEmployer == true && (DateTime.Parse(_WorkedTo1) > DateTime.Parse(_WorkedTo2)));
+        }
 
         public static string MakeEmail() => _Email = $"{_Login}@geosolinc.com";
 

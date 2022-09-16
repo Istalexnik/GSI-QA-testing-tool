@@ -50,7 +50,7 @@ namespace GSI_QA_testing_tool.UI
 
                 //Employer
                 Data._claimType = 1; //so that there is no UCX/UCFE triggers on employer page for second employer
-                UI_155_EmployerPage.GoTo(driver, wait, js, Data._Employer2, Data._WorkedFrom2, Data._WorkedTo2);
+                UI_155_EmployerPage.CreateUIEmployer(driver, wait, js, Data._Employer2, Data._WorkedFrom2, Data._WorkedTo2);
 
             }
 

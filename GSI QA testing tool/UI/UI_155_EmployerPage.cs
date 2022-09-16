@@ -16,7 +16,7 @@ namespace GSI_QA_testing_tool.UI
 
 
 
-        public static void GoTo(IWebDriver driver, WebDriverWait wait, IJavaScriptExecutor js, string Employer, string From, string To)
+        public static void CreateUIEmployer(IWebDriver driver, WebDriverWait wait, IJavaScriptExecutor js, string Employer, string From, string To)
         {
                                                          
             if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName' or 'ctl00_Main_content_ucIndEmpHistory_txtEmpName']"))
@@ -200,12 +200,9 @@ namespace GSI_QA_testing_tool.UI
             //if this is the second employer creation then on the next page(emp history) do this
             if (Employer == Data._Employer2)
             {
-
-                //   Thread.Sleep(8000);
-
-                if (Data._SecondEmployer == false)
+                if (Data.FirstEmpIsLast())
                 {
-                    Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_grdIndEmpHistory_ctl02_RowSelect_LastEmployer']");
+                    Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_grdIndEmpHistory_ctl02_RowSelect_LastEmployer']", wait);
                 }
 
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_rblAddAnotherEntry_1']");
@@ -233,24 +230,31 @@ namespace GSI_QA_testing_tool.UI
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']", Keys.ArrowDown + Keys.Enter, wait);
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtSupervisorName']", "Test");
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtSupervisorEmail']", Data._Email);
+
+            if (driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmployerPhone1']")).Text == "")
+            {
+                driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmployerPhone1']")).SendKeys("333");
+                driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmployerPhone2']")).SendKeys("333");
+                driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmployerPhone3']")).SendKeys("3333");
+            }
+
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_chkPopulateEmpWorkSiteAddress']", wait);
 
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Data._JobTitle);
             Thread.Sleep(2500);
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Keys.ArrowDown + Keys.Enter, wait);
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboFullPartTime']", 1);
-            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']", From);
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblReceivedPFLProgramNotice_1']", wait);
+            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtStartDate']", From);
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblReceivedPFLProgramNotice_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblCurrentlyEmployed_1']", wait);
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucWizardButtons_btnSave']", wait);
-
+            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucWizardButtons_btnSave']");
 
 
             if (Employer == Data._Employer2)
             {
-                if (Data._SecondEmployer == false)
+                if (Data.FirstEmpIsLast())
                 {
-                    Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_grdIndEmpHistory_ctl02_RowSelect_LastEmployer']");
+                    Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_grdIndEmpHistory_ctl02_RowSelect_LastEmployer']", wait);
                 }
 
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_rblAddAnotherEntry_1']");
