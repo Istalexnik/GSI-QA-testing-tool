@@ -19,7 +19,7 @@ namespace GSI_QA_testing_tool.UI
             else
             {
                 Debug.WriteLine("UnemploymentClaimConfirmation is Off");
-                return;
+                throw new Exception("The claim is not completed"); 
             }
 
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");

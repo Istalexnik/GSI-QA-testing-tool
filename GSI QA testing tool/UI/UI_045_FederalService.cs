@@ -64,6 +64,8 @@ namespace GSI_QA_testing_tool.UI
                 Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_txtDateBeganWork']", Data._WorkedFrom1);
                 Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_txtLastDayWorked']", Data._WorkedTo1);
                 Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlReasonForSeparation']", "0001");
+                Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_rblSepDueToGovShutdown_1']");
+
                 Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlEmployerNAICS']", 1);
                 Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlPositionOccGroupCode']", 1);
 

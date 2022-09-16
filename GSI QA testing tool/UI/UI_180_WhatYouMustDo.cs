@@ -22,6 +22,7 @@ namespace GSI_QA_testing_tool.UI
             }
             else
             {
+                Debug.WriteLine("WhatYouMustDo is Off");
                 throw new Exception("The claim is not completed");
             }
 
