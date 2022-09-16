@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using GSI_QA_testing_tool.Utilities;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,16 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
+
+            if (Data._StopAt.Contains("Federal Service"))
+            {
+                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                customDialog.ShowDialog();
+            }
+
+
+
+
 
             if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblFederalCivilianEmployee_1']")) 
             {
@@ -46,10 +57,22 @@ namespace GSI_QA_testing_tool.UI
 
 
                 // Federal Work
+                if (Data._StopAt.Contains("Federal Service Federal Work 1"))
+                {
+                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                    customDialog.ShowDialog();
+                }
+
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucFederalCivilEmploymentHistory_rbAddNewEmp_0']");
                 Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");
 
                 // Federal Civilian Work History
+                if (Data._StopAt.Contains("Federal Service Federal Work History"))
+                {
+                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                    customDialog.ShowDialog();
+                }
+
                 Finder.ActionsSendText(driver, "//*[@id='cmbCustomFIC']", Data._FIC);
                 Thread.Sleep(3000);
                 Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlDestCodes']", "0001");
@@ -84,6 +107,14 @@ namespace GSI_QA_testing_tool.UI
                 Finder.ClickIt(driver, "//*[@for='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_rblWorkedInStateAfterFederalEmployment_1']");
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_rblOtherEmploymentLastNMonths_1']");
                 Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");
+
+                if (Data._StopAt.Contains("Federal Service Federal Work 2"))
+                {
+                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                    customDialog.ShowDialog();
+                }
+
+
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucFederalCivilEmploymentHistory_rbAddNewEmp_1']");
                 Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");
 

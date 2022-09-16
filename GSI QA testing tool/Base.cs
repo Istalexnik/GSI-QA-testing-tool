@@ -36,7 +36,7 @@ namespace GSI_QA_testing_tool
                 { KillChromeProcess(1); }
                 else
                 {
-                    Dialog.showDialog("Error", ex.Message);
+                    Dialog.ShowDialog("Error", ex.Message);
                 }
             }
             finally

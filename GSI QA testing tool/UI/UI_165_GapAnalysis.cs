@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using GSI_QA_testing_tool.Utilities;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
@@ -15,6 +16,16 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
+
+            if (Data._StopAt.Contains("Gap Analysis"))
+            {
+                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                customDialog.ShowDialog();
+            }
+
+
+
+
             if (Finder.FindIt(driver, "//*[@id='ctl00_Main_content_ddlCorrectEmpsAndWages_0']"))
             {
                 Debug.WriteLine("GapAnalysis is On");

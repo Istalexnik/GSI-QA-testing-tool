@@ -1,0 +1,79 @@
+﻿<Window x:Class="GSI_QA_testing_tool.Utilities.StopAtScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GSI_QA_testing_tool.Utilities"
+        mc:Ignorable="d"
+        Title="StopAtScreen" Height="450" Width="800">
+    <Grid>
+
+        <ListBox x:Name="LbxStopAt"  SelectionMode="Multiple">
+            <ListBoxItem>Home Page</ListBoxItem>
+            <ListBoxItem>Individual Page</ListBoxItem>
+            <ListBoxItem>Equal Opportunity</ListBoxItem>
+            <ListBoxItem>Privacy Agreement</ListBoxItem>
+            <ListBoxItem>Individual Registration Type</ListBoxItem>
+            <ListBoxItem>Unemployment Insurance Compensation</ListBoxItem>
+            <ListBoxItem>Welcome To</ListBoxItem>
+            <ListBoxItem>Social Security Number</ListBoxItem>
+            <ListBoxItem>Worker's Compensation</ListBoxItem>
+            <ListBoxItem>Work History Verification</ListBoxItem>
+            <ListBoxItem>States You Have Worked In</ListBoxItem>
+            <ListBoxItem>States You Have Worked In Credit Weeks</ListBoxItem>
+            <ListBoxItem>States You Have Worked In Interstate Claim</ListBoxItem>
+            <ListBoxItem>Federal Service</ListBoxItem>
+            <ListBoxItem>Federal Service Work 1</ListBoxItem>
+            <ListBoxItem>Federal Service Work History</ListBoxItem>
+            <ListBoxItem>Federal Service Work 2</ListBoxItem>
+            <ListBoxItem>Military Service</ListBoxItem>
+            <ListBoxItem>Military Service Work 1</ListBoxItem>
+            <ListBoxItem>Military Service Employment Information</ListBoxItem>
+            <ListBoxItem>Military Service Work 2</ListBoxItem>
+            <ListBoxItem>Login Information Not Filled Out</ListBoxItem>
+            <ListBoxItem>Login Information Filled Out</ListBoxItem>
+            <ListBoxItem>Name Page</ListBoxItem>
+            <ListBoxItem>Residential Address</ListBoxItem>
+            <ListBoxItem>Phone Numbers</ListBoxItem>
+            <ListBoxItem>Preferred Notification Method</ListBoxItem>
+            <ListBoxItem>Citizenship Page</ListBoxItem>
+            <ListBoxItem>Education Information</ListBoxItem>
+            <ListBoxItem>Employment Information</ListBoxItem>
+            <ListBoxItem>Employment - Status</ListBoxItem>
+            <ListBoxItem>Employment - Miscellaneous</ListBoxItem>
+            <ListBoxItem>Major Disaster Information Not Filled Out</ListBoxItem>
+            <ListBoxItem>Major Disaster Information Filled Out</ListBoxItem>
+            <ListBoxItem>Labor Union Member</ListBoxItem>
+            <ListBoxItem>Job Title</ListBoxItem>
+            <ListBoxItem>Ethnic Origin</ListBoxItem>
+            <ListBoxItem>Identification Information</ListBoxItem>
+            <ListBoxItem>Military Information</ListBoxItem>
+            <ListBoxItem>Payment Information</ListBoxItem>
+            <ListBoxItem>Verify Your Identity</ListBoxItem>
+            <ListBoxItem>Unemployment Compensation Claim</ListBoxItem>
+            <ListBoxItem>PFL Claim Filing</ListBoxItem>
+            <ListBoxItem>PFL Who Is Filing</ListBoxItem>
+            <ListBoxItem>PFL Paid Family Leave Types</ListBoxItem>
+            <ListBoxItem>PFL Information About Your Parental Leave Event</ListBoxItem>
+            <ListBoxItem>PFL Additional ClaimInformation</ListBoxItem>
+            <ListBoxItem>Upload Page</ListBoxItem>
+            <ListBoxItem>Employment History Before First Eployer</ListBoxItem>
+            <ListBoxItem>Employer Page Not Filled Out</ListBoxItem>
+            <ListBoxItem>Employer Page Filled Out</ListBoxItem>
+            <ListBoxItem>PFL Employer Page Not Filled Out</ListBoxItem>
+            <ListBoxItem>Employment History After First Eployer</ListBoxItem>
+            <ListBoxItem>Gap Analysis</ListBoxItem>
+            <ListBoxItem>Claim Confirmation</ListBoxItem>
+            <ListBoxItem>Important Agreement  (FFF)</ListBoxItem>
+            <ListBoxItem>What You Must Do</ListBoxItem>
+            <ListBoxItem>PFL Unemployment Claim Confirmation</ListBoxItem>
+            <ListBoxItem>Unemployment Claim Confirmation</ListBoxItem>
+         </ListBox>
+        <!--<Button Content="Button" HorizontalAlignment="Left" Margin="534,385,0,0" VerticalAlignment="Top"/>-->
+
+        <Button Name="BtnStopAtScreenOk" Content="Ok" Width="200" HorizontalAlignment="Left"  Margin="300,385,0,0" VerticalAlignment="Top" Click="BtnStopAtScreenOk_Click"/>
+
+
+    </Grid>
+
+</Window>

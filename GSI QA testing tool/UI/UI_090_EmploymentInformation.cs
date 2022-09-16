@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using GSI_QA_testing_tool.Utilities;
 
 namespace GSI_QA_testing_tool.UI
 {
@@ -13,6 +14,16 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
+
+            if (Data._StopAt.Contains("Employment Information"))
+            {
+                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                customDialog.ShowDialog();
+            }
+
+
+
+
             if (Finder.FindIt(driver, "//select[@id='ctl00_Main_content_ucEmployment_ddlEmployStatus']")) 
             {
                 Debug.WriteLine("EmploymentInformation is On");

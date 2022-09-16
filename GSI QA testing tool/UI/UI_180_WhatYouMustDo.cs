@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using GSI_QA_testing_tool.Utilities;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
@@ -16,6 +17,16 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver, IJavaScriptExecutor js)
         {
+
+            if (Data._StopAt.Contains("What You Must Do"))
+            {
+                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                customDialog.ShowDialog();
+            }
+
+
+
+
             if (Finder.FindIt(driver, "//input[@id='ctl00_Main_content_Wizard1_FinishNavigationTemplateContainerID_FinishCompleteButton' or @*='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']"))
             {
                 Debug.WriteLine("WhatYouMustDo is On");

@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using GSI_QA_testing_tool.Utilities;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,6 +15,16 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver)
         {
+
+            if (Data._StopAt.Contains("Military Service"))
+            {
+                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                customDialog.ShowDialog();
+            }
+
+
+
+
             if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblMilitaryService_1']"))
             {
                 Debug.WriteLine("MilitaryService is On");
@@ -41,10 +52,22 @@ namespace GSI_QA_testing_tool.UI
                 Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");
 
                 // Military Work
+                if (Data._StopAt.Contains("Military Service Work 1"))
+                {
+                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                    customDialog.ShowDialog();
+                }
+
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucMilitaryServiceHistory_rbAddNewEmp_0']");
                 Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");
 
                 // Military Service Employment Information
+                if (Data._StopAt.Contains("Military Service Employment Information"))
+                {
+                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                    customDialog.ShowDialog();
+                }
+
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucMilitaryService_rblFiledInStateAfterSeparation_1']");
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucMilitaryService_rblMember4OfDD214_0']");
 
@@ -66,6 +89,12 @@ namespace GSI_QA_testing_tool.UI
                 Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");
 
                 // Military Work
+                if (Data._StopAt.Contains("Military Service Work 2"))
+                {
+                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                    customDialog.ShowDialog();
+                }
+
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucMilitaryServiceHistory_rbAddNewEmp_1']");
                 Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");
             }

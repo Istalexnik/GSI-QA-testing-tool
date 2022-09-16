@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using GSI_QA_testing_tool.Utilities;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
@@ -16,6 +17,16 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
+
+            if (Data._StopAt.Contains("Login Information Not Filled Out"))
+            {
+                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                customDialog.ShowDialog();
+            }
+
+
+
+
             if (Finder.FindIt(driver, "//input[@id='ctl00_Main_content_ucLogin_txtUsername']"))
             {
                 Debug.WriteLine("LoginInformation is On");
@@ -48,7 +59,15 @@ namespace GSI_QA_testing_tool.UI
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucRegDemographics_rblGender_0']");
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucRegDemographics_ddlDraftStatus']", 2, wait);
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucRegDemographics_rblArrested_1']");
-                                              
+
+
+            if (Data._StopAt.Contains("Login Information Filled Out"))
+            {
+                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                customDialog.ShowDialog();
+            }
+
+
             Finder.WaitClickableClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']", wait);
 
             

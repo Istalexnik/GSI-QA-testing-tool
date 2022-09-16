@@ -11,6 +11,7 @@ namespace GSI_QA_testing_tool
 {
     public static class Data
     {
+        public static string _StopAt;
         public static string _URL;
         public static string _ZIP;
         public static string _Site;
@@ -44,7 +45,10 @@ namespace GSI_QA_testing_tool
         public static string _DriverLicense = "D234765456";
         public static bool _Emp2EnteredWhenUCXandWagesin = false;
 
-
+        public static void SetUpInitialData()
+        {
+            _StopAt = "";
+        }
         public static bool FirstEmpIsLast()
         {
             return _SecondEmployer == false || (_SecondEmployer == true && (DateTime.Parse(_WorkedTo1) > DateTime.Parse(_WorkedTo2)));

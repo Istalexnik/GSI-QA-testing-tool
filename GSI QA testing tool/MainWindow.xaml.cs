@@ -62,7 +62,7 @@ namespace GSI_QA_testing_tool
             TxtWorkedFrom2.Text = Data._WorkedFrom2;
             TxtWorkedTo2.Text = Data._WorkedTo2;
             ChbSecondEmployer.IsChecked = Data._SecondEmployer;
-            
+            Data.SetUpInitialData();
         }
 
         public void ScreenBeforeRunning()
@@ -172,7 +172,8 @@ namespace GSI_QA_testing_tool
 
         private void BtnStopAt_Click(object sender, RoutedEventArgs e)
         {
-
+            StopAtScreen StopAtSceen = new StopAtScreen();
+            StopAtSceen.Show();
         }
 
 

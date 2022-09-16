@@ -20,10 +20,10 @@ namespace GSI_QA_testing_tool.UI
             // Home Page
             UI.UI_005_HomePage.GoTo(driver);
 
-            // individual Page
+            // Individual Page
             UI_010_IndividualPage.GoTo(driver);
 
-            // Equal Opportunity and Non-Discrimination Notice
+            // Equal Opportunity
             UI_012_EqualOpportunity.GoTo(driver);
 
             // Privacy Agreement
@@ -35,7 +35,7 @@ namespace GSI_QA_testing_tool.UI
             // Unemployment Insurance Compensation
             UI_015_UnemploymentInsurance.GoTo(driver);
 
-            // Welcome to
+            // Welcome To
             UI_020_WelcomeTo.GoTo(driver);
 
             // Social Security Number
@@ -59,7 +59,7 @@ namespace GSI_QA_testing_tool.UI
             // Login Information
             UI_055_LoginInformation.GoTo(driver, wait);
 
-            // Name
+            // Name Page
             UI_060_NamePage.GoTo(driver);
 
             // Residential Address
@@ -71,7 +71,7 @@ namespace GSI_QA_testing_tool.UI
             // Preferred Notification Method
             UI_075_PreferredNotification.GoTo(driver);
 
-            // Citizenship
+            // Citizenship Page
             UI_080_CitizenshipPage.GoTo(driver, wait);
 
             // Education Information
@@ -92,7 +92,7 @@ namespace GSI_QA_testing_tool.UI
             // Labor Union Member
             UI_110_LaborUnion.GoTo(driver);
 
-            // jobTitle
+            // Job Title
             UI_115_JobTitle.GoTo(driver);
 
             // Ethnic Origin
@@ -116,22 +116,22 @@ namespace GSI_QA_testing_tool.UI
             // Unemployment Compensation Claim
             UI_138_UnemploymentCompensation.GoTo(driver);
 
-            // Claim Filing
+            // PFL Claim Filing
             UI_139_PFL_ClaimFiling.GoTo(driver);
 
-            // Claim Filing
+            // PFL Who Is Filing
             UI_140_PFL_WhoIsFiling.GoTo(driver, wait);
 
-            // Claim Filing
+            // PFL Paid Family Leave Types
             UI_141_PFL_PaidFamilyLeaveTypes.GoTo(driver, wait);
 
-            // Claim Filing
+            // PFL Information About Your Parental Leave Event
             UI_142_PFL_InformationAboutYourParentalLeaveEvent.GoTo(driver, js);
 
-            // Claim Filing
+            // PFL Additional ClaimInformation
             UI_143_PFL_AdditionalClaimInformation.GoTo(driver, wait);
 
-            // Upload
+            // Upload Page
             UI_148_UploadPage.GoTo(driver);
 
             // Employment History Before First Eployer
@@ -152,7 +152,7 @@ namespace GSI_QA_testing_tool.UI
             // What You Must Do
             UI_180_WhatYouMustDo.GoTo(driver, js);
 
-            // Unemployment Claim Confirmation
+            // PFL Unemployment Claim Confirmation
             UI_183_PFL_BenefitsInformation.GoTo(driver);
 
             // Unemployment Claim Confirmation

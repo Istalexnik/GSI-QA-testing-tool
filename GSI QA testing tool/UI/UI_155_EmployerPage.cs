@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using GSI_QA_testing_tool.Utilities;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
@@ -18,7 +19,17 @@ namespace GSI_QA_testing_tool.UI
 
         public static void CreateUIEmployer(IWebDriver driver, WebDriverWait wait, IJavaScriptExecutor js, string Employer, string From, string To)
         {
-                                                         
+
+            if (Data._StopAt.Contains("Employer Page Not Filled Out"))
+            {
+                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                customDialog.ShowDialog();
+            }
+
+
+
+
+
             if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName' or 'ctl00_Main_content_ucIndEmpHistory_txtEmpName']"))
             {
                 Debug.WriteLine("EmployerPage is On");
@@ -177,6 +188,15 @@ namespace GSI_QA_testing_tool.UI
                 driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmployerPhone3']")).SendKeys("3333");
             }
 
+
+            if (Data._StopAt.Contains("Employer Page Filled Out"))
+            {
+                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                customDialog.ShowDialog();
+            }
+
+
+
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucWizardButtons_btnSave']");
 
 
@@ -224,6 +244,14 @@ namespace GSI_QA_testing_tool.UI
 
         public static void CreatePFLEmployer(IWebDriver driver, WebDriverWait wait, string Employer, string From)
         {
+
+            if (Data._StopAt.Contains("PFL Employer Page Not Filled Out"))
+            {
+                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                customDialog.ShowDialog();
+            }
+
+
             driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']")).Clear();
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']", Employer);
             Thread.Sleep(2500);

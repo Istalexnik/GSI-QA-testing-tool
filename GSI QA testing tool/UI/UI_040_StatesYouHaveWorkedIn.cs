@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using GSI_QA_testing_tool.Utilities;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,6 +15,16 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver)
         {
+
+            if (Data._StopAt.Contains("States You Have Worked In"))
+            {
+                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                customDialog.ShowDialog();
+            }
+
+
+
+
             if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblStatesWorkedIn_1']"))
             {
                 Debug.WriteLine("StatesYouHaveWorkedIn is On");
@@ -36,6 +47,12 @@ namespace GSI_QA_testing_tool.UI
                 Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");
 
                 // Credit Weeks(PA)
+                if (Data._StopAt.Contains("States You Have Worked In Credit Weeks"))
+                {
+                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                    customDialog.ShowDialog();
+                }
+
                 if (Finder.FindIt(driver, "//*[@id='ctl00_Main_content_Wizard1_ucEnterOOSCreditWeeks_rptCreditWeeks_ctl00_txtQ1']"))
                 {
                     Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucEnterOOSCreditWeeks_rptCreditWeeks_ctl00_txtQ1']", Data._CreditWeeks);
@@ -52,6 +69,13 @@ namespace GSI_QA_testing_tool.UI
                 }
 
                 // Interstate Claim
+                if (Data._StopAt.Contains("States You Have Worked In Interstate Claim"))
+                {
+                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                    customDialog.ShowDialog();
+                }
+
+
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblFileInHostState_0']");
                 Finder.UseAlert(driver, 1500);
                 Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");

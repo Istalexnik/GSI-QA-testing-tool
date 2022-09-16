@@ -123,6 +123,9 @@
     <Compile Include="Utilities\DateMaker.cs" />
     <Compile Include="Utilities\Dialog.cs" />
     <Compile Include="Utilities\Rand.cs" />
+    <Compile Include="Utilities\StopAtScreen.xaml.cs">
+      <DependentUpon>StopAtScreen.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -139,6 +142,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Utilities\CustomDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utilities\StopAtScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

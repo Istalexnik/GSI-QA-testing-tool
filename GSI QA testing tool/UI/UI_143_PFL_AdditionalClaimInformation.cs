@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GSI_QA_testing_tool.Utilities;
 
 namespace GSI_QA_testing_tool.UI
 {
@@ -13,6 +14,16 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
+
+            if (Data._StopAt.Contains("PFL Additional ClaimInformation"))
+            {
+                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                customDialog.ShowDialog();
+            }
+
+
+
+
             if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucPFLAdditionalClaimInformation_rblCurrentlyReceivingUIBenefits_1']"))
             {
                 Debug.WriteLine("PFL_AdditionalClaimInformation is On");

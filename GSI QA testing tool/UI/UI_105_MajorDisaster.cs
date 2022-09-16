@@ -14,6 +14,16 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
+
+            if (Data._StopAt.Contains("Major Disaster Information Not Filled Out"))
+            {
+                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                customDialog.ShowDialog();
+            }
+
+
+
+
             if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucUIDUA_radUnempDueToDisaster_1']"))
             {
                 Debug.WriteLine("MajorDisaster is On");
@@ -45,6 +55,14 @@ namespace GSI_QA_testing_tool.UI
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIDUA_radInjury_1']");
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIDUA_radFisherman_1']");
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIDUA_radAgriculturalSeasonal_1']");
+
+                if (Data._StopAt.Contains("Major Disaster Information Filled Out"))
+                {
+                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                    customDialog.ShowDialog();
+                }
+
+
                 Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
 
             }

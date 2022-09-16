@@ -15,6 +15,16 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver, IJavaScriptExecutor js)
         {
+
+            if (Data._StopAt.Contains("PFL Information About Your Parental Leave Event"))
+            {
+                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
+                customDialog.ShowDialog();
+            }
+
+
+
+
             if (Finder.FindIt(driver, "//input[@id='ctl00_Main_content_Wizard1_ucPFLParentalLeave_txtPFLBeginDate']"))
             {
                 Debug.WriteLine("PFL_InformationAboutYourParentalLeaveEvent is On");
