@@ -126,7 +126,7 @@ namespace GSI_QA_testing_tool.UI
             UI_141_PFL_PaidFamilyLeaveTypes.GoTo(driver, wait);
 
             // Claim Filing
-            UI_142_PFL_InformationAboutYourParentalLeaveEvent.GoTo(driver, wait, js);
+            UI_142_PFL_InformationAboutYourParentalLeaveEvent.GoTo(driver, js);
 
             // Claim Filing
             UI_143_PFL_AdditionalClaimInformation.GoTo(driver, wait);

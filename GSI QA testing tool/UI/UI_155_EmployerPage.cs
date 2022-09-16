@@ -34,7 +34,7 @@ namespace GSI_QA_testing_tool.UI
 
             if (Data._Site.Contains("DC PFL"))
             {
-                CreatePFLEmployer(driver, wait, js, Employer, From, To);
+                CreatePFLEmployer(driver, wait, Employer, From);
                 return;
             }
 
@@ -225,7 +225,7 @@ namespace GSI_QA_testing_tool.UI
 
 
 
-        public static void CreatePFLEmployer(IWebDriver driver, WebDriverWait wait, IJavaScriptExecutor js, string Employer, string From, string To)
+        public static void CreatePFLEmployer(IWebDriver driver, WebDriverWait wait, string Employer, string From)
         {
             driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']")).Clear();
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']", Employer);
