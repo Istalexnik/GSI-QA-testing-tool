@@ -43,11 +43,12 @@ namespace GSI_QA_testing_tool
         public static string _Address = "1010 Street Avenue";
         public static string _JobTitle = "test";
         public static string _DriverLicense = "D234765456";
-        public static bool _Emp2EnteredWhenUCXandWagesin = false;
+        public static bool _Emp2EnteredWhenUCXandWagesin;
 
         public static void SetUpInitialData()
         {
             _StopAt = "";
+            _Emp2EnteredWhenUCXandWagesin = false;
         }
         public static bool FirstEmpIsLast()
         {
