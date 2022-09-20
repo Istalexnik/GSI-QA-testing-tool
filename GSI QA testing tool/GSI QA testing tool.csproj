@@ -68,7 +68,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Finder.cs" />
-    <Compile Include="PFL\PFL_000.cs" />
     <Compile Include="UI\UI_010_IndividualPage.cs" />
     <Compile Include="UI\UI_000.cs" />
     <Compile Include="UI\UI_005_HomePage.cs" />

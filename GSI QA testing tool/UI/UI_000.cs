@@ -158,9 +158,6 @@ namespace GSI_QA_testing_tool.UI
             // Unemployment Claim Confirmation
             UI_185_UnemploymentClaimConfirmation.GoTo(driver);
 
-         //   driver.Quit();
-            CustomDialog customDialog = new CustomDialog("Claim Created", Data._Login);
-            customDialog.ShowDialog();
 
         }
     }

@@ -65,16 +65,18 @@ namespace GSI_QA_testing_tool
             driver.Url = Data._URL;
 
             
-            if (Data._Site.Contains("PFL"))
-            {
-                UI.UI_000.FileUI(driver, wait, js);
-            } else
-            {
-                UI.UI_000.FileUI(driver, wait, js);
-            }
+            //Start
+            UI.UI_000.FileUI(driver, wait, js);
+             
 
             mw.Dispatcher.Invoke(() => { mw.ScreenAfterRunning(); });
+
+            driver.Quit();
+            CustomDialog customDialog = new CustomDialog("Claim Created", Data._Login);
+            customDialog.ShowDialog();
         }
+
+
 
         public static void KillChromeProcess(int driverOrBothDriverAndBrowser)
         {
