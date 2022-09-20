@@ -40,10 +40,10 @@ namespace GSI_QA_testing_tool
                 }
             }
             finally
-            {            
-                mw.Dispatcher.Invoke(() => { mw.TxtDataPane.Text = Data._DataPane; });
-                mw.Dispatcher.Invoke(() => { mw.TxtSSN.Text = Data._SSN; });
+            {
                 Data.SetUpInitialData();
+                mw.Dispatcher.Invoke(() => { mw.TxtSSN.Text = Data._SSN; });
+                mw.Dispatcher.Invoke(() => { mw.TxtDataPane.Text = Data._DataPane; });
             }
         }
 

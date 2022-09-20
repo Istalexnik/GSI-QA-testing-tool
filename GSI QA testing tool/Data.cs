@@ -100,7 +100,7 @@ namespace GSI_QA_testing_tool
 
         public static void StopAtDialog()
         {
-            CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok after clicking the Next button");
+            CustomDialog customDialog = new CustomDialog("Stop At Dialog", "Make changes and click ok after clicking the Next button");
             customDialog.ShowDialog();
             return;
         }
