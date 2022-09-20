@@ -16,8 +16,7 @@ namespace GSI_QA_testing_tool.UI
 
             if (Data._StopAt.Contains("Welcome To"))
             {
-                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                customDialog.ShowDialog();
+                Data.StopAtDialog();
             }
 
 

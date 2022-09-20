@@ -18,8 +18,7 @@ namespace GSI_QA_testing_tool.UI
 
             if (Data._StopAt.Contains("Military Service"))
             {
-                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                customDialog.ShowDialog();
+                Data.StopAtDialog();
             }
 
 
@@ -54,8 +53,7 @@ namespace GSI_QA_testing_tool.UI
                 // Military Work
                 if (Data._StopAt.Contains("Military Service Work 1"))
                 {
-                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                    customDialog.ShowDialog();
+                    Data.StopAtDialog();
                 }
 
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucMilitaryServiceHistory_rbAddNewEmp_0']");
@@ -64,8 +62,7 @@ namespace GSI_QA_testing_tool.UI
                 // Military Service Employment Information
                 if (Data._StopAt.Contains("Military Service Employment Information"))
                 {
-                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                    customDialog.ShowDialog();
+                    Data.StopAtDialog();
                 }
 
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucMilitaryService_rblFiledInStateAfterSeparation_1']");
@@ -91,8 +88,7 @@ namespace GSI_QA_testing_tool.UI
                 // Military Work
                 if (Data._StopAt.Contains("Military Service Work 2"))
                 {
-                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                    customDialog.ShowDialog();
+                    Data.StopAtDialog();
                 }
 
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucMilitaryServiceHistory_rbAddNewEmp_1']");

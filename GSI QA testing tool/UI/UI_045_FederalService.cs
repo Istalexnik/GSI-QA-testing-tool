@@ -20,8 +20,7 @@ namespace GSI_QA_testing_tool.UI
 
             if (Data._StopAt.Contains("Federal Service"))
             {
-                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                customDialog.ShowDialog();
+                Data.StopAtDialog();
             }
 
 
@@ -59,8 +58,7 @@ namespace GSI_QA_testing_tool.UI
                 // Federal Work
                 if (Data._StopAt.Contains("Federal Service Federal Work 1"))
                 {
-                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                    customDialog.ShowDialog();
+                    Data.StopAtDialog();
                 }
 
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucFederalCivilEmploymentHistory_rbAddNewEmp_0']");
@@ -69,8 +67,7 @@ namespace GSI_QA_testing_tool.UI
                 // Federal Civilian Work History
                 if (Data._StopAt.Contains("Federal Service Federal Work History"))
                 {
-                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                    customDialog.ShowDialog();
+                    Data.StopAtDialog();
                 }
 
                 Finder.ActionsSendText(driver, "//*[@id='cmbCustomFIC']", Data._FIC);
@@ -110,8 +107,7 @@ namespace GSI_QA_testing_tool.UI
 
                 if (Data._StopAt.Contains("Federal Service Federal Work 2"))
                 {
-                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                    customDialog.ShowDialog();
+                    Data.StopAtDialog();
                 }
 
 

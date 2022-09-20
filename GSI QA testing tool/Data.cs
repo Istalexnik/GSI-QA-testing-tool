@@ -47,7 +47,8 @@ namespace GSI_QA_testing_tool
 
         public static void SetUpInitialData()
         {
-            _StopAt = "";
+            _StopAt = ""; 
+             NewSSN();
             _Emp2EnteredWhenUCXandWagesin = false;
         }
         public static bool FirstEmpIsLast()
@@ -57,7 +58,10 @@ namespace GSI_QA_testing_tool
 
         public static string MakeEmail() => _Email = $"{_Login}@geosolinc.com";
 
-        public static string NewSSN() => "4" + Utilities.Rand.GenerateRandom("0123456789", 8);
+        public static void  NewSSN()
+        {
+          _SSN =  "4" + Utilities.Rand.GenerateRandom("0123456789", 8);
+        }
 
         public static string NewAlienCardNumber() => "GSI" + Utilities.Rand.GenerateRandom("0123456789", 10);
 
@@ -94,7 +98,12 @@ namespace GSI_QA_testing_tool
             }
         }
 
-
+        public static void StopAtDialog()
+        {
+            CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok after clicking the Next button");
+            customDialog.ShowDialog();
+            return;
+        }
 
         static Data()
         {

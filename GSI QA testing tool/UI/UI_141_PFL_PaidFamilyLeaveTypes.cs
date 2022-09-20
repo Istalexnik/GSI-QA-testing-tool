@@ -17,8 +17,7 @@ namespace GSI_QA_testing_tool.UI
 
             if (Data._StopAt.Contains("PFL Paid Family Leave Types"))
             {
-                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                customDialog.ShowDialog();
+                Data.StopAtDialog();
             }
 
 

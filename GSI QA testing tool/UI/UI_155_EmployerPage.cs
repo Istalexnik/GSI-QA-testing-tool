@@ -22,8 +22,7 @@ namespace GSI_QA_testing_tool.UI
 
             if (Data._StopAt.Contains("Employer Page Not Filled Out"))
             {
-                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                customDialog.ShowDialog();
+                Data.StopAtDialog();
             }
 
 
@@ -191,8 +190,7 @@ namespace GSI_QA_testing_tool.UI
 
             if (Data._StopAt.Contains("Employer Page Filled Out"))
             {
-                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                customDialog.ShowDialog();
+                Data.StopAtDialog();
             }
 
 
@@ -247,8 +245,7 @@ namespace GSI_QA_testing_tool.UI
 
             if (Data._StopAt.Contains("PFL Employer Page Not Filled Out"))
             {
-                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                customDialog.ShowDialog();
+                Data.StopAtDialog();
             }
 
 

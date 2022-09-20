@@ -51,7 +51,8 @@ namespace GSI_QA_testing_tool
             CbxClaimType.SelectedIndex = 0;
 
 
-            TxtSSN.Text = Data.NewSSN();
+            Data.SetUpInitialData();
+            TxtSSN.Text = Data._SSN;
             TxtFirstName.Text = Data._FirstName;
             TxtLastName.Text = Data._LastName;
             TxtDOB.Text = Data._DOB;
@@ -62,7 +63,6 @@ namespace GSI_QA_testing_tool
             TxtWorkedFrom2.Text = Data._WorkedFrom2;
             TxtWorkedTo2.Text = Data._WorkedTo2;
             ChbSecondEmployer.IsChecked = Data._SecondEmployer;
-            Data.SetUpInitialData();
         }
 
         public void ScreenBeforeRunning()

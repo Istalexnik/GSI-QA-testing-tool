@@ -18,8 +18,7 @@ namespace GSI_QA_testing_tool.UI
 
             if (Data._StopAt.Contains("States You Have Worked In"))
             {
-                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                customDialog.ShowDialog();
+                Data.StopAtDialog();
             }
 
 
@@ -49,9 +48,9 @@ namespace GSI_QA_testing_tool.UI
                 // Credit Weeks(PA)
                 if (Data._StopAt.Contains("States You Have Worked In Credit Weeks"))
                 {
-                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                    customDialog.ShowDialog();
+                    Data.StopAtDialog();
                 }
+
 
                 if (Finder.FindIt(driver, "//*[@id='ctl00_Main_content_Wizard1_ucEnterOOSCreditWeeks_rptCreditWeeks_ctl00_txtQ1']"))
                 {
@@ -71,8 +70,7 @@ namespace GSI_QA_testing_tool.UI
                 // Interstate Claim
                 if (Data._StopAt.Contains("States You Have Worked In Interstate Claim"))
                 {
-                    CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                    customDialog.ShowDialog();
+                    Data.StopAtDialog();
                 }
 
 

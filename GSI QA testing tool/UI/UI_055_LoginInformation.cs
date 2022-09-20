@@ -20,8 +20,7 @@ namespace GSI_QA_testing_tool.UI
 
             if (Data._StopAt.Contains("Login Information Not Filled Out"))
             {
-                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                customDialog.ShowDialog();
+                Data.StopAtDialog();
             }
 
 
@@ -63,8 +62,7 @@ namespace GSI_QA_testing_tool.UI
 
             if (Data._StopAt.Contains("Login Information Filled Out"))
             {
-                CustomDialog customDialog = new CustomDialog("Make Selection", "Select pages you want to stop at, make changes and click ok before clicking the Next button");
-                customDialog.ShowDialog();
+                Data.StopAtDialog();
             }
 
 
