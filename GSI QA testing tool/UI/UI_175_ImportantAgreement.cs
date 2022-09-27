@@ -32,7 +32,7 @@ namespace GSI_QA_testing_tool.UI
                 return;
             }
 
-
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_chkSelfCertification']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblAcceptTerms_0']");
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StartNavigationTemplateContainerID_StartNextButton']");
         }
