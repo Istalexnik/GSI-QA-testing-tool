@@ -24,7 +24,7 @@ namespace GSI_QA_testing_tool.UI
 
 
 
-            if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_rblAddAnotherEntry_0']"))
+            if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_rblAddAnotherEntry_0']") || Finder.FindIt(driver, "/a[@id='ctl00_Main_content_lbHaveNotWorked']"))
             {
                 Debug.WriteLine("EmploymentHistoryBeforeFirst is On");
             }
