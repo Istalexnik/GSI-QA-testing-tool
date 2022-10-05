@@ -14,7 +14,7 @@ namespace GSI_QA_testing_tool.UI
 {
     internal class UI_165_GapAnalysis
     {
-        public static void GoTo(IWebDriver driver, WebDriverWait wait)
+        public static void GoTo(IWebDriver driver, WebDriverWait wait, IJavaScriptExecutor js)
         {
 
             if (Data._StopAt.Contains("Gap Analysis"))
@@ -36,8 +36,9 @@ namespace GSI_QA_testing_tool.UI
             }
 
 
+            js.ExecuteScript("arguments[0].click();", driver.FindElement(By.XPath("//*[@id='ctl00_Main_content_ddlCorrectEmpsAndWages_0']")));
 
-            Finder.ClickIt(driver, "//*[@id='ctl00_Main_content_ddlCorrectEmpsAndWages_0']");
+        //    Finder.ClickIt(driver, "//*[@id='ctl00_Main_content_ddlCorrectEmpsAndWages_0']");
             if(Finder.FindIt(driver, "//*[@id='ctl00_Main_content_ucEmployerGapAnalysis_grdEmploymentGaps_ctl02_btnGapSummary']"))
             {
                 Finder.ClickIt(driver, "//*[@id='ctl00_Main_content_ucEmployerGapAnalysis_grdEmploymentGaps_ctl02_btnGapSummary']");

@@ -20,8 +20,8 @@ namespace GSI_QA_testing_tool
         public static string _FirstName = "Alex";
         public static string _LastName = "Istomin";
         public static string _DOB = "11/11/1959";
-        public static string _Employer1 = "Target";
-        public static string _Employer2 = "Toy";
+        public static string _Employer1 = "";
+        public static string _Employer2 = "";
         public static string _DataPane = "";
         public static bool _SecondEmployer = false;
         public static string _WorkedFrom1 = "11/11/2020";

@@ -34,9 +34,9 @@ namespace GSI_QA_testing_tool.UI
             }
 
 
-
+            Thread.Sleep(500);
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucJobTitleToOcc_txtJobTitle']", Data._JobTitle);
-            Thread.Sleep(2500);
+            Thread.Sleep(3500);
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucJobTitleToOcc_txtJobTitle']", Keys.ArrowDown + Keys.Enter);
             Thread.Sleep(1500);
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucJobTitleToOcc_ONETDropDownList']", 1);

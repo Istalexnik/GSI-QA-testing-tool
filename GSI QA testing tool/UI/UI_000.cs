@@ -141,7 +141,7 @@ namespace GSI_QA_testing_tool.UI
             UI_160_EmploymentHistoryAfterFirst.GoTo(driver, wait, js);
 
             // Gap Analysis
-            UI_165_GapAnalysis.GoTo(driver, wait);
+            UI_165_GapAnalysis.GoTo(driver, wait, js);
 
             // Claim Confirmation
             UI_170_ClaimConfirmation.GoTo(driver);

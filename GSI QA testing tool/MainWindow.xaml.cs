@@ -135,6 +135,8 @@ namespace GSI_QA_testing_tool
                 {
                     TxtZIP.Text = v.zipCode;
                     TxtURL.Text = v.siteUrl;
+                    TxtEmployer1.Text = v.employer1;
+                    TxtEmployer2.Text = v.employer2;
                 }
             }
 
