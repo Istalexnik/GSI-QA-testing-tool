@@ -56,10 +56,8 @@ namespace GSI_QA_testing_tool
             TxtFirstName.Text = Data._FirstName;
             TxtLastName.Text = Data._LastName;
             TxtDOB.Text = Data._DOB;
-            TxtEmployer1.Text = Data._Employer1;
             TxtWorkedFrom1.Text = Data._WorkedFrom1;
             TxtWorkedTo1.Text = Data._WorkedTo1;
-            TxtEmployer2.Text = Data._Employer2;
             TxtWorkedFrom2.Text = Data._WorkedFrom2;
             TxtWorkedTo2.Text = Data._WorkedTo2;
             ChbSecondEmployer.IsChecked = Data._SecondEmployer;
