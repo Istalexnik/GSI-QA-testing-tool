@@ -35,9 +35,9 @@ namespace GSI_QA_testing_tool.UI
 
 
 
-            Thread.Sleep(300);
+            Thread.Sleep(500);
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucSSN_txtSSN']", Data._SSN);
-            Thread.Sleep(300);
+            Thread.Sleep(500);
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucSSN_txtSSNReenter']", Data._SSN);
 
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");

@@ -50,8 +50,6 @@ namespace GSI_QA_testing_tool
             _StopAt = ""; 
             NewSSN();
             _Emp2EnteredWhenUCXandWagesin = false;
-            _Employer1 = "Target";
-            _Employer2 = "Toy";
             _SecondEmployer = false;
     }
         public static bool FirstEmpIsLast()
