@@ -51,10 +51,11 @@ namespace GSI_QA_testing_tool.UI
             {
                 js.ExecuteScript("arguments[0].click();", checkbox);
             }
-           
+
+            Thread.Sleep(500);
 
             if (Finder.FindIt(driver, "//input[@id='ctl00_Main_content_Wizard1_ucAcknowledgements_txtBRISignName']"))
-            {
+            {               
                 Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucAcknowledgements_txtBRISignName']", "Sam");
                 Finder.ClickIt(driver, "//a[@id='ctl00_Main_content_Wizard1_ucAcknowledgements_txtBRISignDate_DateInputImage']");
             }

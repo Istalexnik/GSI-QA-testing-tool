@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -20,9 +21,9 @@ namespace GSI_QA_testing_tool.UI
             {
                 Data.StopAtDialog();
             }
-            
 
-
+            Thread.Sleep(500);
+;
 
             if (Data._claimType == 6)
             {

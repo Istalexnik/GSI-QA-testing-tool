@@ -25,9 +25,9 @@ namespace GSI_QA_testing_tool.UI
             }
 
 
+            Thread.Sleep(500);
 
 
-            Thread.Sleep(300);
 
             if (Finder.FindIt(driver, "//input[@id='ctl00_Main_content_ucAddress_txtAddress1']")) 
             {
@@ -39,9 +39,15 @@ namespace GSI_QA_testing_tool.UI
                 return;
             }
 
+
+
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_rbACPEnrollment_1']");
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucAddress_txtAddress1']", Data._Address);
-            Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucAddress_ddlAltGeo']", 2, wait);
+
+            Thread.Sleep(3000);
+
+
+            Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucAddress_ddlAltGeo']", 2);
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_chkPopulateMailAddress']", wait);
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_rdoCorrectedResidentialAddress_0']", wait);
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_rdoCorrectedMailingAddress_0']", wait);

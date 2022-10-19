@@ -42,6 +42,7 @@ namespace GSI_QA_testing_tool.UI
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucLogin_ucPassword_txtPwdConfirm']", Data._Pass);
 
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucLogin_ddlSecurityQuestion']", 2);
+            driver.FindElement(By.XPath("//input[@id='txtSecurityQuestionResponse']")).Clear();
             Finder.SendText(driver, "//input[@id='txtSecurityQuestionResponse']", "lol");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_radAuthorizedToWork_0']");
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_txtZip']", Data._ZIP);

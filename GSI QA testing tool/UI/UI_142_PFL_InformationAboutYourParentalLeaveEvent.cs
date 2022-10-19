@@ -22,7 +22,7 @@ namespace GSI_QA_testing_tool.UI
             }
 
 
-
+            Thread.Sleep(500);
 
             if (Finder.FindIt(driver, "//input[@id='ctl00_Main_content_Wizard1_ucPFLParentalLeave_txtPFLBeginDate']"))
             {

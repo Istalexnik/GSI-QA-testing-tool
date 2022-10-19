@@ -34,6 +34,8 @@ namespace GSI_QA_testing_tool.UI
                 return;
             }
 
+            Thread.Sleep(500);
+
 
 
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucDrvLicense_rblValidLicense_0']");
