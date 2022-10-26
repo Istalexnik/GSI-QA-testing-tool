@@ -25,7 +25,7 @@ namespace GSI_QA_testing_tool.UI
 
 
 
-            if (Finder.FindIt(driver, "//*[@id='ctl00_Main_content_ddlCorrectEmpsAndWages_0']"))
+            if (Finder.FindIt(driver, "//input[@id='ctl00_Main_content_btnNextMonetaryReview']"))
             {
                 Debug.WriteLine("GapAnalysis is On");
             }
@@ -35,8 +35,10 @@ namespace GSI_QA_testing_tool.UI
                 return;
             }
 
-
-            js.ExecuteScript("arguments[0].click();", driver.FindElement(By.XPath("//*[@id='ctl00_Main_content_ddlCorrectEmpsAndWages_0']")));
+            if (Finder.FindIt(driver, "//*[@id='ctl00_Main_content_ddlCorrectEmpsAndWages_0']"))
+            {
+                js.ExecuteScript("arguments[0].click();", driver.FindElement(By.XPath("//*[@id='ctl00_Main_content_ddlCorrectEmpsAndWages_0']")));
+            }
 
         //    Finder.ClickIt(driver, "//*[@id='ctl00_Main_content_ddlCorrectEmpsAndWages_0']");
             if(Finder.FindIt(driver, "//*[@id='ctl00_Main_content_ucEmployerGapAnalysis_grdEmploymentGaps_ctl02_btnGapSummary']"))
@@ -53,9 +55,9 @@ namespace GSI_QA_testing_tool.UI
                 Finder.SendText(driver, "//*[@id='ctl00_Main_content_ucEmployerGapAnalysis_txtGapExplanation']", "test");
                 Finder.ClickIt(driver, "//*[@id='ctl00_Main_content_ucEmployerGapAnalysis_btnSave']");
             }
+         //   Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNextMonetaryReview']");
 
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNextMonetaryReview']");
-
+            driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_btnNextMonetaryReview']")).Click();
 
 
         }

@@ -96,8 +96,13 @@ namespace GSI_QA_testing_tool.UI
                 //    Finder.ActionsSendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']", Employer);
                     Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']", Employer);
                     Thread.Sleep(2500);
-                    Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']", Keys.ArrowDown + Keys.Enter, wait);
-
+                    try
+                    {
+                        Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmpName']", Keys.ArrowDown + Keys.Enter, wait);
+                    } catch(Exception e)
+                    {
+                        Console.WriteLine("Employer Field  is not using javasCript and Employer is not picking up from  system");
+                    }
                 }
             }
            

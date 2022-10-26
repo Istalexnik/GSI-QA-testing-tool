@@ -24,15 +24,15 @@ namespace GSI_QA_testing_tool.UI
 
 
 
-            if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_rblAddAnotherEntry_0']") || Finder.FindIt(driver, "/a[@id='ctl00_Main_content_lbHaveNotWorked']"))
-            {
-                Debug.WriteLine("EmploymentHistoryBeforeFirst is On");
-            }
-            else
-            {
-                Debug.WriteLine("EmploymentHistoryBeforeFirst is Off");
-                return;
-            }
+            //if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_rblAddAnotherEntry_0']") || Finder.FindIt(driver, "/a[@id='ctl00_Main_content_lbHaveNotWorked']"))
+            //{
+            //    Debug.WriteLine("EmploymentHistoryBeforeFirst is On");
+            //}
+            //else
+            //{
+            //    Debug.WriteLine("EmploymentHistoryBeforeFirst is Off");
+            //    return;
+            //}
 
 
             string EmpReverse;
@@ -60,7 +60,7 @@ namespace GSI_QA_testing_tool.UI
             }
             else
             {
-                if (Finder.FindIt(driver, "/a[@id='ctl00_Main_content_lbHaveNotWorked']"))
+                if (Finder.FindIt(driver, "//a[@id='ctl00_Main_content_lbHaveNotWorked']"))
                 {
                     try
                     {
