@@ -47,6 +47,7 @@ namespace GSI_QA_testing_tool.UI
 
 
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIPayment_cb1099GConsent_0']");
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIPayment_rblWeeklyCert_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucPaymentDeductions_rblStateTaxWithheld_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucPaymentDeductions_rblFederalTaxWithheld_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucPaymentDeductions_rblSNAPOverpayment_1']");
