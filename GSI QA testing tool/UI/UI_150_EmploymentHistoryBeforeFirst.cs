@@ -41,7 +41,7 @@ namespace GSI_QA_testing_tool.UI
 
             if (Data._claimType == 2 || Data._claimType == 3)
             {
-                if (Finder.FindIt(driver, "/a[@id='ctl00_Main_content_lbHaveNotWorked']"))
+                if (Finder.FindIt(driver, "//a[@id='ctl00_Main_content_lbHaveNotWorked']"))
                 {
                     Finder.ClickIt(driver, "//td[contains(text(),'" + Data._Employer2 + "')]/following-sibling::td/a");
                     Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_rblBasePeriodEmployerConfirm_0']");
