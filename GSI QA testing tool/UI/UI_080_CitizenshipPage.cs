@@ -50,6 +50,9 @@ namespace GSI_QA_testing_tool.UI
             {
                 Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucDemographics_ddl_UI_Citizen' or @id='ctl00_Main_content_ucDemographics_ddlCitizen']", 1, wait);
             }
+
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucDemographics_rblChildSupport_1']", wait);
+
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
 
         }
