@@ -51,7 +51,9 @@ namespace GSI_QA_testing_tool
             NewSSN();
             _Emp2EnteredWhenUCXandWagesin = false;
             _SecondEmployer = false;
-    }
+            _FirstName = "Alex";
+            _LastName = "Istomin";
+        }
         public static bool FirstEmpIsLast()
         {
             return _SecondEmployer == false || (_SecondEmployer == true && (DateTime.Parse(_WorkedTo1) > DateTime.Parse(_WorkedTo2)));

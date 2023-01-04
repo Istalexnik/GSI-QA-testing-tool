@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GSI_QA_testing_tool.UI
@@ -32,7 +33,7 @@ namespace GSI_QA_testing_tool.UI
                 return;
             }
 
-
+            Thread.Sleep(500);
 
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIEmploymentStatus_rblCommissionBasis_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIEmploymentStatus_rblAttendingTraining_1']");

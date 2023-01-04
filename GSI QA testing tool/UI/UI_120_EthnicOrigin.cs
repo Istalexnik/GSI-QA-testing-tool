@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GSI_QA_testing_tool.UI
@@ -13,6 +14,10 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver)
         {
+
+
+            Thread.Sleep(800);
+
 
             if (Data._StopAt.Contains("Ethnic Origin"))
             {
@@ -36,8 +41,12 @@ namespace GSI_QA_testing_tool.UI
 
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucEthnicity_rblHispanic_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucEthnicity_chkRaceList_1']");
+            Thread.Sleep(300);
+
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucEthnicity_rblLangSecondary_1']");
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEthnicity_ddlMaritalStatus']", 1);
+
+            Thread.Sleep(300);
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
 
         }

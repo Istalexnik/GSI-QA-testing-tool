@@ -37,7 +37,7 @@ namespace GSI_QA_testing_tool.UI
 
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblSpouseactivedutyBase_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblCaregiver_1']");
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblSpouse_1']", wait);
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblSpouse_1']"); //deleted ,wait for PR
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblMilitaryService_1']", wait);
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblTAPWorkshop_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblServedConsecutiveDaysInActiveDuty_1']");

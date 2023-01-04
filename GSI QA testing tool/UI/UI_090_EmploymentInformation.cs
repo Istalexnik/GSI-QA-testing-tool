@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using GSI_QA_testing_tool.Utilities;
+using System.Threading;
 
 namespace GSI_QA_testing_tool.UI
 {
@@ -14,6 +15,8 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
+
+            Thread.Sleep(500);
 
             if (Data._StopAt.Contains("Employment Information"))
             {

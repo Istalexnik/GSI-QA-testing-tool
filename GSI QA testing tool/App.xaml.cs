@@ -17,7 +17,7 @@ namespace GSI_QA_testing_tool
     {
         private void App_Exit(object sender, ExitEventArgs e)
         {
-            Base.KillChromeProcess(2);
+            Base.KillChromeProcess(1);
         }
     }
 }

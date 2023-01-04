@@ -57,7 +57,7 @@ namespace GSI_QA_testing_tool.UI
 
 
 
-
+            Thread.Sleep(500);
 
 
 

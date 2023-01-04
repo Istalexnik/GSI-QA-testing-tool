@@ -48,12 +48,18 @@ namespace GSI_QA_testing_tool.UI
 
 
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucAddress_ddlAltGeo']", 2);
-            Thread.Sleep(3000);
+            Thread.Sleep(4000);
 
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_chkPopulateMailAddress']", wait);
+             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_chkPopulateMailAddress']");
+            //Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_chkPopulateMailAddress']");
+            Thread.Sleep(5000);
+
+
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_rdoCorrectedResidentialAddress_0']", wait);
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_rdoCorrectedMailingAddress_0']", wait);
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
+
+
+            Finder.WaitClickableClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']", wait);
         }
     }
 }

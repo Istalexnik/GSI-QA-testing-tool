@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Controls.Primitives;
 
@@ -15,6 +16,9 @@ namespace GSI_QA_testing_tool.UI
     {
         public static void GoTo(IWebDriver driver)
         {
+
+            Thread.Sleep(500);
+
 
             if (Data._StopAt.Contains("Military Service"))
             {

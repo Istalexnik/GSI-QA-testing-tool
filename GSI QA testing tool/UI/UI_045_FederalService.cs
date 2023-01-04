@@ -27,7 +27,7 @@ namespace GSI_QA_testing_tool.UI
 
 
 
-            if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblFederalCivilianEmployee_1']")) 
+            if (Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblFederalCivilianEmployee_1']"))
             {
                 Debug.WriteLine("FederalService is On");
             }
@@ -50,7 +50,10 @@ namespace GSI_QA_testing_tool.UI
 
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblFederalCivilianEmployeeAnotherState_1']");
                 Finder.ClickIt(driver, "//*[@for='ctl00_Main_content_Wizard1_rblHasOtherStateWages_1']");
-                Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblLastOfficialDutyStationOutsideUS_1']");
+                if (!Data._Site.Contains("TN"))
+                {
+                    Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblLastOfficialDutyStationOutsideUS_1']");
+                }
                 Finder.SendText(driver, "//*[@id='ctl00_Main_content_Wizard1_txtLastOfficialDutyStationLocation']", Data._State);
                 Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']");
 
@@ -70,9 +73,36 @@ namespace GSI_QA_testing_tool.UI
                     Data.StopAtDialog();
                 }
 
-                Finder.ActionsSendText(driver, "//*[@id='cmbCustomFIC']", Data._FIC);
-                Thread.Sleep(3000);
-                Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlDestCodes']", "0001");
+
+                Thread.Sleep(500);
+
+
+                if (Data._Site.Contains("TN"))
+                {
+
+                    Finder.SendText(driver, "//*[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_FedEmpManEntry_txtEmpName']", "US Senate");
+                    Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_FedEmpManEntry_ddlCountry_ddlCountry']", "US");
+                    Finder.SendText(driver, "//*[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_FedEmpManEntry_txtAddress1']", "1010 Street");
+                    Finder.SendText(driver, "//*[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_FedEmpManEntry_txtCity']", "Nashville");
+                    Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_FedEmpManEntry_ddlState']", "TN");
+                    Finder.SendText(driver, "//*[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_FedEmpManEntry_txtZip']", "37243");
+
+                }
+
+
+                if (Data._Site.Contains("PR"))
+                {
+                    Finder.ActionsSendText(driver, "//*[@id='cmbCustomFIC']", "AD");
+                    Thread.Sleep(3000);
+                }
+                else
+                {
+                    Finder.ActionsSendText(driver, "//*[@id='cmbCustomFIC']", Data._FIC);
+                    Thread.Sleep(3000);
+                    Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlDestCodes']", "0001");
+                }
+
+
                 Finder.WaitClickableClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_rblInterveningEmploymentSinceSeparation_1']", wait);
                 Finder.UseDropDownByText(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlStateOfEmployment']", Data._State);
                 Thread.Sleep(2000);

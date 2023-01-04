@@ -24,7 +24,7 @@ namespace GSI_QA_testing_tool.UI
             UI_010_IndividualPage.GoTo(driver);
 
             // Equal Opportunity
-            UI_012_EqualOpportunity.GoTo(driver);
+            UI_012_EqualOpportunity.GoTo(driver, js);
 
             // Privacy Agreement
             UI_013_PrivacyAgreement.GoTo(driver);

@@ -11,7 +11,7 @@ namespace GSI_QA_testing_tool.UI
 {
     internal class UI_012_EqualOpportunity
     {
-        public static void GoTo(IWebDriver driver)
+        public static void GoTo(IWebDriver driver, IJavaScriptExecutor js)
         {
 
             if (Data._StopAt.Contains("Equal Opportunity"))
@@ -31,9 +31,8 @@ namespace GSI_QA_testing_tool.UI
                 return;
             }
 
-
-
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnAgree']");
+            js.ExecuteScript("arguments[0].click();", driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_btnAgree']")));
+          //  Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnAgree']");
         }
     }
 }

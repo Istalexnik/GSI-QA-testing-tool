@@ -18,6 +18,9 @@ namespace GSI_QA_testing_tool.UI
         public static void GoTo(IWebDriver driver, WebDriverWait wait)
         {
 
+            Thread.Sleep(500);
+
+
             if (Data._StopAt.Contains("Login Information Not Filled Out"))
             {
                 Data.StopAtDialog();

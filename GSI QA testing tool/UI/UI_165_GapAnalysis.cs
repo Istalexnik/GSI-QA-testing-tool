@@ -17,6 +17,9 @@ namespace GSI_QA_testing_tool.UI
         public static void GoTo(IWebDriver driver, WebDriverWait wait, IJavaScriptExecutor js)
         {
 
+            Thread.Sleep(800);
+
+
             if (Data._StopAt.Contains("Gap Analysis"))
             {
                 Data.StopAtDialog();

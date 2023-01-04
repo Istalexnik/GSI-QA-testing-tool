@@ -16,6 +16,9 @@ namespace GSI_QA_testing_tool.UI
         public static void GoTo(IWebDriver driver)
         {
 
+            Thread.Sleep(800);
+
+
             if (Data._StopAt.Contains("Phone Numbers"))
             {
                 Data.StopAtDialog();
@@ -34,12 +37,16 @@ namespace GSI_QA_testing_tool.UI
                 return;
             }
 
-            Thread.Sleep(500);
 
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucPhone_txtPrimePhone1']", "813");
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucPhone_txtPrimePhone2']", "654");
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucPhone_txtPrimePhone3']", "6437");
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucPhone_ddlPrimePhoneType']", 1);
+
+            Thread.Sleep(500);
+
+
+
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
         }
     }
