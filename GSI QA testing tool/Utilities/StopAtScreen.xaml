@@ -11,6 +11,7 @@
         <ListBox x:Name="LbxStopAt"  SelectionMode="Multiple">
             <ListBoxItem>Home Page</ListBoxItem>
             <ListBoxItem>Individual Page</ListBoxItem>
+            <ListBoxItem>StaffDashBoard Page</ListBoxItem>
             <ListBoxItem>Equal Opportunity</ListBoxItem>
             <ListBoxItem>Privacy Agreement</ListBoxItem>
             <ListBoxItem>Individual Registration Type</ListBoxItem>
@@ -66,6 +67,7 @@
             <ListBoxItem>Claim Confirmation</ListBoxItem>
             <ListBoxItem>Important Agreement  (FFF)</ListBoxItem>
             <ListBoxItem>What You Must Do</ListBoxItem>
+            <ListBoxItem>Computer Access</ListBoxItem>
             <ListBoxItem>PFL Unemployment Claim Confirmation</ListBoxItem>
             <ListBoxItem>Unemployment Claim Confirmation</ListBoxItem>
          </ListBox>

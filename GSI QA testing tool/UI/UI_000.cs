@@ -23,6 +23,9 @@ namespace GSI_QA_testing_tool.UI
             // Individual Page
             UI_010_IndividualPage.GoTo(driver);
 
+            //Staff DashBoard
+            UI_011_StaffDashBoard.GoTo(driver);
+
             // Equal Opportunity
             UI_012_EqualOpportunity.GoTo(driver, js);
 
@@ -151,6 +154,9 @@ namespace GSI_QA_testing_tool.UI
 
             // What You Must Do
             UI_180_WhatYouMustDo.GoTo(driver, js);
+
+            //Computer Access
+            UI_181_ComputerAccess.GoTo(driver);
 
             // PFL Unemployment Claim Confirmation
             UI_183_PFL_BenefitsInformation.GoTo(driver);

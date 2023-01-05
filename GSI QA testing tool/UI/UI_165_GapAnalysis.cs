@@ -43,8 +43,10 @@ namespace GSI_QA_testing_tool.UI
                 js.ExecuteScript("arguments[0].click();", driver.FindElement(By.XPath("//*[@id='ctl00_Main_content_ddlCorrectEmpsAndWages_0']")));
             }
 
-        //    Finder.ClickIt(driver, "//*[@id='ctl00_Main_content_ddlCorrectEmpsAndWages_0']");
-            if(Finder.FindIt(driver, "//*[@id='ctl00_Main_content_ucEmployerGapAnalysis_grdEmploymentGaps_ctl02_btnGapSummary']"))
+            Thread.Sleep(800);
+
+            //    Finder.ClickIt(driver, "//*[@id='ctl00_Main_content_ddlCorrectEmpsAndWages_0']");
+            if (Finder.FindIt(driver, "//*[@id='ctl00_Main_content_ucEmployerGapAnalysis_grdEmploymentGaps_ctl02_btnGapSummary']"))
             {
                 Finder.ClickIt(driver, "//*[@id='ctl00_Main_content_ucEmployerGapAnalysis_grdEmploymentGaps_ctl02_btnGapSummary']");
                 Thread.Sleep(1000);

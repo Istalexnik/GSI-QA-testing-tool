@@ -51,6 +51,9 @@ namespace GSI_QA_testing_tool.UI
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucPaymentDeductions_rblStateTaxWithheld_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucPaymentDeductions_rblFederalTaxWithheld_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucPaymentDeductions_rblSNAPOverpayment_1']");
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucBackDateEffectiveDate_rblBackDate_1']");
+
+            
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
 
         }

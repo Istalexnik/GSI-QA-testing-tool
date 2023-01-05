@@ -24,6 +24,7 @@ namespace GSI_QA_testing_tool
         public static string _Employer2 = "";
         public static string _DataPane = "";
         public static bool _SecondEmployer = false;
+        public static bool _Staff = false;
         public static string _WorkedFrom1 = "11/11/2020";
         public static string _WorkedTo1 = DateTime.Now.ToString("MM/dd/yyyy");
         public static string _WorkedFrom2 = "11/11/2020";
@@ -43,6 +44,8 @@ namespace GSI_QA_testing_tool
         public static string _Address = "1010 Street Avenue";
         public static string _JobTitle = "test";
         public static string _DriverLicense = "D234765456";
+        public static string _StaffLogin;
+        public static string _StaffPass;
         public static bool _Emp2EnteredWhenUCXandWagesin;
 
         public static void SetUpInitialData()
@@ -51,6 +54,7 @@ namespace GSI_QA_testing_tool
             NewSSN();
             _Emp2EnteredWhenUCXandWagesin = false;
             _SecondEmployer = false;
+            _Staff = false;
             _FirstName = "Alex";
             _LastName = "Istomin";
         }

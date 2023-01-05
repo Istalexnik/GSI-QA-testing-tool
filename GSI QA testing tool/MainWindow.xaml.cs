@@ -61,6 +61,8 @@ namespace GSI_QA_testing_tool
             TxtWorkedFrom2.Text = Data._WorkedFrom2;
             TxtWorkedTo2.Text = Data._WorkedTo2;
             ChbSecondEmployer.IsChecked = Data._SecondEmployer;
+            ChbStaff.IsChecked = Data._Staff;
+
         }
 
         public void ScreenBeforeRunning()
@@ -135,6 +137,8 @@ namespace GSI_QA_testing_tool
                     TxtURL.Text = v.siteUrl;
                     TxtEmployer1.Text = v.employer1;
                     TxtEmployer2.Text = v.employer2;
+                    Data._StaffLogin = v.staffLogin;
+                    Data._StaffPass = v.staffPass;
                 }
             }
 
@@ -159,6 +163,7 @@ namespace GSI_QA_testing_tool
             Data._WorkedFrom2 = TxtWorkedFrom2.Text;
             Data._WorkedTo2 = TxtWorkedTo2.Text;
             Data._SecondEmployer = (bool)ChbSecondEmployer.IsChecked;
+            Data._Staff = (bool)ChbStaff.IsChecked;
             Data._Site = CbxSite.SelectedItem.ToString();
             Data._URL = TxtURL.Text;
             Data._ZIP = TxtZIP.Text;

@@ -16,34 +16,36 @@
         </ComboBox>
         <ComboBox Name="CbxClaimType" HorizontalAlignment="Left" Margin="140,10,0,0" VerticalAlignment="Top" Width="120" >
         </ComboBox>
-        <Label Name="LblSSN" Content="SSN:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top"/>
-        <Label Name="LblFirstName" Content="First Name:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
-        <Label Name="LblLastName" Content="Last Name:" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
-        <Label Name="LblDOB" Content="DOB:" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
-        <Label Name="LblEmployer" Content="Employer:" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
-        <Label Name="LblWorkedFrom1" Content="Worked from:" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
-        <Label Name="LblWorkedTo1" Content="to:" HorizontalAlignment="Left" Margin="230,190,0,0" VerticalAlignment="Top"/>
-        <Label Name="LblEmployer2" Content="Employer #2:" HorizontalAlignment="Left" Margin="25,220,0,0" VerticalAlignment="Top"/>
-        <Label Name="LblWorkedFrom2" Content="Worked from:" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top"/>
-        <Label Name="LblWorkedTo2" Content="to:" HorizontalAlignment="Left" Margin="230,250,0,0" VerticalAlignment="Top"/>
-        <Label Name="LblZIP" Content="ZIP:" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top"/>
-        <Label Name="LblURL" Content="URL:" HorizontalAlignment="Left" Margin="10,310,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblStaff" Content="Staff:" HorizontalAlignment="Left" Margin="190,40,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblSSN" Content="SSN:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblFirstName" Content="First Name:" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblLastName" Content="Last Name:" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblDOB" Content="DOB:" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblEmployer" Content="Employer:" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblWorkedFrom1" Content="Worked from:" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblWorkedTo1" Content="to:" HorizontalAlignment="Left" Margin="230,220,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblEmployer2" Content="Employer #2:" HorizontalAlignment="Left" Margin="25,250,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblWorkedFrom2" Content="Worked from:" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblWorkedTo2" Content="to:" HorizontalAlignment="Left" Margin="230,280,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblZIP" Content="ZIP:" HorizontalAlignment="Left" Margin="10,310,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblURL" Content="URL:" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top"/>
 
-        <TextBox Name="TxtSSN" Text="" HorizontalAlignment="Left" Height="23" Margin="100,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="TxtFirstName" Text="" HorizontalAlignment="Left" Height="23" Margin="100,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="TxtLastName" Text="" HorizontalAlignment="Left" Height="23" Margin="100,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="TxtDOB" Text="" HorizontalAlignment="Left" Height="23" Margin="100,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="TxtEmployer1" Text="" HorizontalAlignment="Left" Height="23" Margin="100,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="TxtWorkedFrom1" Text="" HorizontalAlignment="Left" Height="23" Margin="100,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="TxtWorkedTo1" HorizontalAlignment="Left" Height="23" Margin="265,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="TxtEmployer2" Text="" HorizontalAlignment="Left" Height="23" Margin="100,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="TxtWorkedFrom2" Text="" HorizontalAlignment="Left" Height="23" Margin="100,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="TxtWorkedTo2" HorizontalAlignment="Left" Height="23" Margin="265,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="TxtZIP" Text="" HorizontalAlignment="Left" Height="23" Margin="100,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="TxtURL" Text="" HorizontalAlignment="Left" Height="23" Margin="100,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="430"/>
+        <TextBox Name="TxtSSN" Text="" HorizontalAlignment="Left" Height="23" Margin="100,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TxtFirstName" Text="" HorizontalAlignment="Left" Height="23" Margin="100,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TxtLastName" Text="" HorizontalAlignment="Left" Height="23" Margin="100,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TxtDOB" Text="" HorizontalAlignment="Left" Height="23" Margin="100,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TxtEmployer1" Text="" HorizontalAlignment="Left" Height="23" Margin="100,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TxtWorkedFrom1" Text="" HorizontalAlignment="Left" Height="23" Margin="100,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TxtWorkedTo1" HorizontalAlignment="Left" Height="23" Margin="265,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TxtEmployer2" Text="" HorizontalAlignment="Left" Height="23" Margin="100,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TxtWorkedFrom2" Text="" HorizontalAlignment="Left" Height="23" Margin="100,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TxtWorkedTo2" HorizontalAlignment="Left" Height="23" Margin="265,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TxtZIP" Text="" HorizontalAlignment="Left" Height="23" Margin="100,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TxtURL" Text="" HorizontalAlignment="Left" Height="23" Margin="100,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="430"/>
 
         <TextBox Name="TxtDataPane" Text="" HorizontalAlignment="Left" Height="173" Margin="265,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277" IsReadOnly="True"/>
-        <CheckBox Name="ChbSecondEmployer" HorizontalAlignment="Left" Margin="10,226.5,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="ChbStaff" HorizontalAlignment="Left" Margin="225,45,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="ChbSecondEmployer" HorizontalAlignment="Left" Margin="10,256.5,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

@@ -19,9 +19,21 @@ namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog();
             }
 
-            Finder.ClickIt(driver, "//a[@id='ctl00_hlNotRegistered']");
-            Finder.ClickIt(driver, "//button[@id='btnguestlogina']");
-            Finder.ClickIt(driver, "//input[@id='btnIndRegistration']");
+
+            if(Data._Staff == true)
+            {
+                Finder.SendText(driver, "//input[@id='txtUserName']", Data._StaffLogin);
+                Finder.SendText(driver, "//input[@id='txtPassword']", Data._StaffPass);
+                Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_cmdLoginButt']");
+            }
+            else
+            {
+                Finder.ClickIt(driver, "//a[@id='ctl00_hlNotRegistered']");
+                Finder.ClickIt(driver, "//button[@id='btnguestlogina']");
+                Finder.ClickIt(driver, "//input[@id='btnIndRegistration']");
+            }
+
+
 
 
             //if (driver.FindElements(By.XPath("//a[@id='ctl00_hlNotRegistered']")).Count != 0)
