@@ -25,7 +25,7 @@ namespace GSI_QA_testing_tool
     public partial class MainWindow : Window
     {
         Thread thread;
-      readonly List<Environment> envs = Environment.CreateEnvironments();
+        readonly List<Environment> envs = Environment.CreateEnvironments();
 
         public MainWindow()
         {
@@ -62,6 +62,9 @@ namespace GSI_QA_testing_tool
             TxtWorkedTo2.Text = Data._WorkedTo2;
             ChbSecondEmployer.IsChecked = Data._SecondEmployer;
             ChbStaff.IsChecked = Data._Staff;
+            TxtEmail.Text = "Random";
+            TxtPhone.Text = "Random";
+
 
         }
 
@@ -115,7 +118,7 @@ namespace GSI_QA_testing_tool
         {
             Base.KillChromeProcess(2);
             InitialSetUpGUI();
-            
+
         }
 
 
@@ -124,7 +127,7 @@ namespace GSI_QA_testing_tool
             string currentSite = null;
             foreach (Environment v in envs)
             {
-                
+
 
                 if (CbxSite.SelectedItem != null)
                 {
@@ -167,8 +170,24 @@ namespace GSI_QA_testing_tool
             Data._Site = CbxSite.SelectedItem.ToString();
             Data._URL = TxtURL.Text;
             Data._ZIP = TxtZIP.Text;
+
+
             Data._claimType = (int)CbxClaimType.SelectedIndex + 1;
             Data.NewLogin();
+            Data.MakeEmail();
+            Data.MakePhone();
+
+            if (TxtEmail.Text != "Random")
+            {
+                Data._Email = TxtEmail.Text;
+            }
+
+            if (TxtPhone.Text != "Random")
+            {
+                Data._Phone = TxtPhone.Text;
+            }
+
+
 
             Data.CheckForStateAndAbbr();
             Data.UpdateDataPane();
@@ -182,7 +201,7 @@ namespace GSI_QA_testing_tool
         }
 
 
-  
+
 
 
 

@@ -77,6 +77,9 @@ namespace GSI_QA_testing_tool.UI
                 Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucMilitaryService_txtServiceSeparationDate']", Data._WorkedTo1);
                 Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_Wizard1_ucMilitaryService_ddlDischargeStatus']", "01");
                 Finder.UseDropDownByValue(driver, "//*[@id='ctl00_Main_content_Wizard1_ucMilitaryService_ddlReasonForSeparation']", "1");
+                Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucMilitaryService_rblSepDueToGovShutdown_1']");
+
+                
                 Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_Wizard1_ucMilitaryService_ddlPayGrade']", "27");
                 Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucMilitaryService_txtAccuredDaysOfLeave']", "0");
                 Finder.SendText(driver, "//*[@id='ctl00_Main_content_Wizard1_ucMilitaryService_txtLostDays']", "0");

@@ -50,8 +50,8 @@ namespace GSI_QA_testing_tool.UI
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_radAuthorizedToWork_0']");
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_txtZip']", Data._ZIP);
 
-            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucEmailTextBox_txtEmail']", Data.MakeEmail());
-            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucEmailTextBox_txtEmailConfirm']", Data.MakeEmail());
+            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucEmailTextBox_txtEmail']", Data._Email);
+            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucEmailTextBox_txtEmailConfirm']", Data._Email);
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucRegDemographics_txtDOB']", Data._DOB);
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucRegDemographics_txtDOBConfirm']", Data._DOB);
 

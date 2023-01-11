@@ -4,12 +4,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="550">
+        Title="MainWindow" Height="625" Width="549">
     <Grid Name="grdMainGrid" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}">
-        <Button Name="BtnStart" Content="Run" HorizontalAlignment="Center"  Margin="8,455,10,10" VerticalAlignment="Center" Width="530" Height="60" FontSize="25" FontWeight="Bold" BorderThickness="8" BorderBrush="Black" Click="BtnStart_Click"/>
-        <Button Name="BtnStop" Content="Stop" HorizontalAlignment="Center"  Margin="8,455,10,10" VerticalAlignment="Center" Width="530" Height="60" FontSize="25" FontWeight="Bold" BorderThickness="8" BorderBrush="Black" Click="BtnStop_Click" Visibility="Hidden"/>
+        <Button Name="BtnStart" Content="Run" HorizontalAlignment="Center"  Margin="4,524,7,10" VerticalAlignment="Center" Width="530" Height="60" FontSize="25" FontWeight="Bold" BorderThickness="2" BorderBrush="Black" Click="BtnStart_Click"/>
+        <Button Name="BtnStop" Content="Stop" HorizontalAlignment="Center"  Margin="4,524,7,10" VerticalAlignment="Center" Width="530" Height="60" FontSize="25" FontWeight="Bold" BorderThickness="2" BorderBrush="Black" Click="BtnStop_Click" Visibility="Hidden"/>
         <Button Name="BtnReset" Content="RESET" HorizontalAlignment="Left"  Margin="400,280,10,10" VerticalAlignment="Top" Width="120" Height="25" Click="BtnReset_Click" />
-        <Button Name="BtnStopAt" Content="Select a page to pause on" HorizontalAlignment="Center"  Margin="10,330,10,0" VerticalAlignment="Center" Width="500" Height="30" Click="BtnStopAt_Click" />
+        <Button Name="BtnStopAt" Content="Select a page to pause on" HorizontalAlignment="Center"  Margin="20,480,21,84" VerticalAlignment="Center" Width="500" Height="30" Click="BtnStopAt_Click" />
 
 
         <ComboBox Name="CbxSite" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbxSite_SelectionChanged" >
@@ -29,6 +29,8 @@
         <Label Name="LblWorkedTo2" Content="to:" HorizontalAlignment="Left" Margin="230,280,0,0" VerticalAlignment="Top"/>
         <Label Name="LblZIP" Content="ZIP:" HorizontalAlignment="Left" Margin="10,310,0,0" VerticalAlignment="Top"/>
         <Label Name="LblURL" Content="URL:" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblEmail" Content="Email:" HorizontalAlignment="Left" Margin="10,370,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblPhone" Content="Phone:" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top"/>
 
         <TextBox Name="TxtSSN" Text="" HorizontalAlignment="Left" Height="23" Margin="100,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="TxtFirstName" Text="" HorizontalAlignment="Left" Height="23" Margin="100,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -42,6 +44,8 @@
         <TextBox Name="TxtWorkedTo2" HorizontalAlignment="Left" Height="23" Margin="265,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="TxtZIP" Text="" HorizontalAlignment="Left" Height="23" Margin="100,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="TxtURL" Text="" HorizontalAlignment="Left" Height="23" Margin="100,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="430"/>
+        <TextBox Name="TxtEmail" Text="" HorizontalAlignment="Left" Height="23" Margin="100,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
+        <TextBox Name="TxtPhone" Text="" HorizontalAlignment="Left" Height="23" Margin="100,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
 
         <TextBox Name="TxtDataPane" Text="" HorizontalAlignment="Left" Height="173" Margin="265,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277" IsReadOnly="True"/>
         <CheckBox Name="ChbStaff" HorizontalAlignment="Left" Margin="225,45,0,0" VerticalAlignment="Top"/>

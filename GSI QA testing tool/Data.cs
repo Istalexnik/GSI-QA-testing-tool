@@ -40,7 +40,8 @@ namespace GSI_QA_testing_tool
         public static string _City = "City";
         public static string _Wages = "5000";
         public static string _Pass = "Olga2011!!!!!";
-        public static string _Email;
+        public static string _Email = "Random";
+        public static string _Phone = "Random";
         public static string _Address = "1010 Street Avenue";
         public static string _JobTitle = "test";
         public static string _DriverLicense = "D234765456";
@@ -64,6 +65,9 @@ namespace GSI_QA_testing_tool
         }
 
         public static string MakeEmail() => _Email = $"{_Login}@geosolinc.com";
+
+        public static string MakePhone() => _Phone = "5" + Utilities.Rand.GenerateRandom("0123456789", 9);
+
 
         public static void  NewSSN()
         {
