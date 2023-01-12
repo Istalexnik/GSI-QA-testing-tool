@@ -177,12 +177,12 @@ namespace GSI_QA_testing_tool
             Data.MakeEmail();
             Data.MakePhone();
 
-            if (TxtEmail.Text != "Random")
+            if (TxtEmail.Text != "Random" && TxtEmail.Text != "")
             {
                 Data._Email = TxtEmail.Text;
             }
 
-            if (TxtPhone.Text != "Random")
+            if (TxtPhone.Text != "Random" && TxtPhone.Text != "")
             {
                 Data._Phone = TxtPhone.Text;
             }
