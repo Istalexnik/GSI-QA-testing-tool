@@ -24,6 +24,17 @@ namespace GSI_QA_testing_tool
         }
 
 
+        public static void JSClickIt(IWebDriver driver, string CSSpath, IJavaScriptExecutor js)
+        {
+
+            if (driver.FindElements(By.CssSelector(CSSpath)).Count != 0)
+
+            {
+                js.ExecuteScript("arguments[0].click();", driver.FindElement(By.CssSelector(CSSpath)));
+            }
+        }
+
+
         public static void ClickIt(IWebDriver driver, string path)
         {
 

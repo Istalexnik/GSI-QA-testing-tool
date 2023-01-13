@@ -50,7 +50,7 @@ namespace GSI_QA_testing_tool.UI
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucEmployment_rblInterestedInRegisteredApprenticeship_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucEmployment_rblCertifications_1']");
 
-            js.ExecuteScript("arguments[0].click();", driver.FindElement(By.CssSelector("*[for='ctl00_Main_content_ucEmployment_rblMigrant_1']")));
+            Finder.JSClickIt(driver, "*[for='ctl00_Main_content_ucEmployment_rblMigrant_1']", js);
 
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
         }
