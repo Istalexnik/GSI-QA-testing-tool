@@ -45,6 +45,8 @@ namespace GSI_QA_testing_tool.UI
             Thread.Sleep(1500);
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucJobTitleToOcc_ONETDropDownList']", 1);
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucJobTitleToOcc_rbl18MoPartTime_1']");
+            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucEthnicity_rblLangSecondary_1']");
+
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
         }
     }

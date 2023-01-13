@@ -81,7 +81,7 @@ namespace GSI_QA_testing_tool.UI
             UI_085_EducationInformation.GoTo(driver, wait);
 
             // Employment Information
-            UI_090_EmploymentInformation.GoTo(driver, wait);
+            UI_090_EmploymentInformation.GoTo(driver, wait, js);
 
             // Employment - Status
             UI_095_EmploymentStatus.GoTo(driver, js);
@@ -105,7 +105,7 @@ namespace GSI_QA_testing_tool.UI
             UI_125_IdentificationInformation.GoTo(driver);
 
             // Military Information
-            UI_130_MilitaryInformation.GoTo(driver, wait);
+            UI_130_MilitaryInformation.GoTo(driver, wait, js);
 
             // Identification Information //workaround for LA cause this page goes after military page
             UI_125_IdentificationInformation.GoTo(driver);

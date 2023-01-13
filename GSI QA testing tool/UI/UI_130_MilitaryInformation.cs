@@ -13,7 +13,7 @@ namespace GSI_QA_testing_tool.UI
 {
     internal class UI_130_MilitaryInformation
     {
-        public static void GoTo(IWebDriver driver, WebDriverWait wait)
+        public static void GoTo(IWebDriver driver, WebDriverWait wait, IJavaScriptExecutor js)
         {
 
             if (Data._StopAt.Contains("Military Information"))
@@ -38,12 +38,18 @@ namespace GSI_QA_testing_tool.UI
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblSpouseactivedutyBase_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblCaregiver_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblSpouse_1']"); //deleted ,wait for PR
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblMilitaryService_1']", wait);
+
+            js.ExecuteScript("arguments[0].click();", driver.FindElement(By.CssSelector("*[for='ctl00_Main_content_ucVeteran_rblMilitaryService_1']")));
+
+            
+           // Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblMilitaryService_1']", wait);
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblTAPWorkshop_1']");
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblServedConsecutiveDaysInActiveDuty_1']");
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucVeteran_ddlClassifiedAsDisabledVeteran']", 1);
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucVeteran_rblWounded_1']");
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
+
+            
+            Finder.WaitClickableClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']", wait);
 
         }
     }
