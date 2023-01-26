@@ -1,0 +1,234 @@
+﻿<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4B7C4E8-8855-49FB-985D-53753EC7E86A}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GSI_QA_testing_tool</RootNamespace>
+    <AssemblyName>GSI QA testing tool</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>true</IncrementalBuild>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>GSI QA testing tool.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>false</IncrementalBuild>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>GSI QA testing tool.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WebDriver, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.4.8.0\lib\net48\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.4.8.0\lib\net48\WebDriver.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Application.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="UI\UI_000.vb" />
+    <Compile Include="Utilities\CustomDialog.xaml.vb">
+      <DependentUpon>CustomDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\DateMaker.vb" />
+    <Compile Include="Utilities\Dialog.vb" />
+    <Compile Include="Utilities\Rand.vb" />
+    <Compile Include="Utilities\StopAtScreen.xaml.vb">
+      <DependentUpon>StopAtScreen.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Application.xaml.vb">
+      <DependentUpon>Application.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Base.vb" />
+    <Compile Include="Data.vb" />
+    <Compile Include="Environment.vb" />
+    <Compile Include="Finder.vb" />
+    <Compile Include="MainWindow.xaml.vb">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Utilities\CustomDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utilities\StopAtScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System.Threading.Tasks" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows" />
+    <Import Include="System.Windows.Controls" />
+    <Import Include="System.Windows.Data" />
+    <Import Include="System.Windows.Documents" />
+    <Import Include="System.Windows.Input" />
+    <Import Include="System.Windows.Shapes" />
+    <Import Include="System.Windows.Media" />
+    <Import Include="System.Windows.Media.Imaging" />
+    <Import Include="System.Windows.Navigation" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWpfExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.WPF.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\GSI.png" />
+    <Resource Include="Assets\GSI32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="UI\UI_005_HomePage.vb" />
+    <Compile Include="UI\UI_010_IndividualPage.vb" />
+    <Compile Include="UI\UI_011_StaffDashBoard.vb" />
+    <Compile Include="UI\UI_012_EqualOpportunity.vb" />
+    <Compile Include="UI\UI_013_PrivacyAgreement.vb" />
+    <Compile Include="UI\UI_014_IndividualRegistration.vb" />
+    <Compile Include="UI\UI_015_UnemploymentInsurance.vb" />
+    <Compile Include="UI\UI_020_WelcomeTo.vb" />
+    <Compile Include="UI\UI_025_SocialSecurityNumber.vb" />
+    <Compile Include="UI\UI_030_WorkersCompensation.vb" />
+    <Compile Include="UI\UI_035_WorkHistoryVerification.vb" />
+    <Compile Include="UI\UI_040_StatesYouHaveWorkedIn.vb" />
+    <Compile Include="UI\UI_045_FederalService.vb" />
+    <Compile Include="UI\UI_050_MilitaryService.vb" />
+    <Compile Include="UI\UI_055_LoginInformation.vb" />
+    <Compile Include="UI\UI_060_NamePage.vb" />
+    <Compile Include="UI\UI_065_ResidentialAddress.vb" />
+    <Compile Include="UI\UI_070_PhoneNumber.vb" />
+    <Compile Include="UI\UI_075_PreferredNotification.vb" />
+    <Compile Include="UI\UI_080_CitizenshipPage.vb" />
+    <Compile Include="UI\UI_085_EducationInformation.vb" />
+    <Compile Include="UI\UI_090_EmploymentInformation.vb" />
+    <Compile Include="UI\UI_095_EmploymentStatus.vb" />
+    <Compile Include="UI\UI_100_EmploymentMiscellaneous.vb" />
+    <Compile Include="UI\UI_105_MajorDisaster.vb" />
+    <Compile Include="UI\UI_110_LaborUnion.vb" />
+    <Compile Include="UI\UI_115_JobTitle.vb" />
+    <Compile Include="UI\UI_120_EthnicOrigin.vb" />
+    <Compile Include="UI\UI_125_IdentificationInformation.vb" />
+    <Compile Include="UI\UI_130_MilitaryInformation.vb" />
+    <Compile Include="UI\UI_135_PaymentInformation.vb" />
+    <Compile Include="UI\UI_136_VerifyIdentity.vb" />
+    <Compile Include="UI\UI_138_UnemploymentCompensation.vb" />
+    <Compile Include="UI\UI_139_PFL_ClaimFiling.vb" />
+    <Compile Include="UI\UI_140_PFL_WhoIsFiling.vb" />
+    <Compile Include="UI\UI_141_PFL_PaidFamilyLeaveTypes.vb" />
+    <Compile Include="UI\UI_142_PFL_InformationAboutYourParentalLeaveEvent.vb" />
+    <Compile Include="UI\UI_143_PFL_AdditionalClaimInformation.vb" />
+    <Compile Include="UI\UI_148_UploadPage.vb" />
+    <Compile Include="UI\UI_150_EmploymentHistoryBeforeFirst.vb" />
+    <Compile Include="UI\UI_155_EmployerPage.vb" />
+    <Compile Include="UI\UI_160_EmploymentHistoryAfterFirst.vb" />
+    <Compile Include="UI\UI_165_GapAnalysis.vb" />
+    <Compile Include="UI\UI_170_ClaimConfirmation.vb" />
+    <Compile Include="UI\UI_175_ImportantAgreement.vb" />
+    <Compile Include="UI\UI_180_WhatYouMustDo.vb" />
+    <Compile Include="UI\UI_181_ComputerAccess.vb" />
+    <Compile Include="UI\UI_183_PFL_BenefitsInformation.vb" />
+    <Compile Include="UI\UI_185_UnemploymentClaimConfirmation.vb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="..\packages\Selenium.WebDriver.4.8.0\build\Selenium.WebDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.4.8.0\build\Selenium.WebDriver.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.4.8.0\build\Selenium.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.4.8.0\build\Selenium.WebDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.109.0.5414.7400\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.109.0.5414.7400\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+  </Target>
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.109.0.5414.7400\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.109.0.5414.7400\build\Selenium.WebDriver.ChromeDriver.targets')" />
+</Project>
