@@ -46,7 +46,7 @@ namespace GSI_QA_testing_tool.UI
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucEthnicity_rblLangSecondary_1']");
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEthnicity_ddlMaritalStatus']", 1);
 
-            Thread.Sleep(300);
+            Thread.Sleep(600);
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']");
 
         }

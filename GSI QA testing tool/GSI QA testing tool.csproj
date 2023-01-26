@@ -67,6 +67,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Class1.cs" />
     <Compile Include="Finder.cs" />
     <Compile Include="UI\UI_011_StaffDashBoard.cs" />
     <Compile Include="UI\UI_010_IndividualPage.cs" />
@@ -178,7 +179,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="XMLFile1.xml" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\GSI32.png" />
   </ItemGroup>
