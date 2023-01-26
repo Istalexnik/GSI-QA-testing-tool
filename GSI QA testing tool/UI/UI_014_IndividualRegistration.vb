@@ -14,7 +14,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//a[@id='ctl00_Main_content_lnkCompleteHeader']") Then
+            If Finder.FindItByCSS(driver, "[id='ctl00_Main_content_lnkCompleteHeader']") Then
                 Debug.WriteLine("IndividualRegistration is On")
             Else
                 Debug.WriteLine("IndividualRegistration is Off")

@@ -15,7 +15,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//select[@id='ctl00_Main_content_ucNotificationMethod_ddlPrefDelMethods']") Then
+            If Finder.FindItByCSS(driver, "*[id='ctl00_Main_content_ucNotificationMethod_ddlPrefDelMethods']") Then
                 Debug.WriteLine("PreferredNotification is On")
             Else
                 Debug.WriteLine("PreferredNotification is Off")

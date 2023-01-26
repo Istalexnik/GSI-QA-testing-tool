@@ -9,6 +9,8 @@ Namespace GSI_QA_testing_tool.UI
                     Data.StopAtDialog()
                 End If
 
+                Finder.ClickIt(driver, "//*[@id='ctl00_Main_content_ucStaffSignNotice_btnAgree']")
+
                 Finder.ClickIt(driver, "//*[@id='btnPopupclose']")
                 driver.FindElement(By.CssSelector(".fa-bars")).Click()
                 driver.FindElement(By.CssSelector("*[id^='ctl00_MstPageSideMenu_r_hlManageClaimants']")).Click()

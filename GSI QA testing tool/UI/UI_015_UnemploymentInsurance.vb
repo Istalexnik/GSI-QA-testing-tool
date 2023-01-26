@@ -14,7 +14,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//label[@for='ctl00_Main_content_radFilingUI_0']") Then
+            If Finder.FindItByCSS(driver, "#ctl00_Main_content_radFilingUI_0") Then
                 Debug.WriteLine("UnemploymentInsurance is On")
             Else
                 Debug.WriteLine("UnemploymentInsurance is Off")

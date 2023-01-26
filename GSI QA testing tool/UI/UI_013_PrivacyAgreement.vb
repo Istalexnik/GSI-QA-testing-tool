@@ -14,7 +14,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//input[@id='ctl00_Main_content_ucPrivacyAgreement_btnAgree']") Then
+            If Finder.FindItByCSS(driver, "*[id='ctl00_Main_content_ucPrivacyAgreement_btnAgree']") Then
                 Debug.WriteLine("PrivacyAgreement is On")
             Else
                 Debug.WriteLine("PrivacyAgreement is Off")

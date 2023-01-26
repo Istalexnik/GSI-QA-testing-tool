@@ -18,7 +18,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//select[@id='ctl00_Main_content_ucEmployment_ddlEmployStatus']") Then
+            If Finder.FindItByCSS(driver, "*[id='ctl00_Main_content_ucEmployment_ddlEmployStatus']") Then
                 Debug.WriteLine("EmploymentInformation is On")
             Else
                 Debug.WriteLine("EmploymentInformation is Off")
@@ -29,6 +29,7 @@ Namespace GSI_QA_testing_tool.UI
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEmployment_ddlEmployStatus']", 3)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEmployment_ddlTypeBusiness']", 1)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEmployment_ddlUnemploymentInsurance']", 1, wait)
+            Thread.Sleep(300)
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucEmployment_rblLookingForWork_0']")
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucEmployment_rblCovid19_1']")
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucEmployment_rblInterestedInRegisteredApprenticeship_1']")

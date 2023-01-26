@@ -21,7 +21,7 @@ Namespace GSI_QA_testing_tool.UI
 
             Thread.Sleep(500)
 
-            If Finder.FindIt(driver, "//input[@id='ctl00_Main_content_ucAddress_txtAddress1']") Then
+            If Finder.FindItByCSS(driver, "*[id='ctl00_Main_content_ucAddress_txtAddress1']") Then
                 Debug.WriteLine("ResidentialAddress is On")
             Else
                 Debug.WriteLine("ResidentialAddress is Off")

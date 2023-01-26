@@ -15,7 +15,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//input[@id='ctl00_Main_content_Wizard1_ucSSN_txtSSN']") Then
+            If Finder.FindItByCSS(driver, "*[id='ctl00_Main_content_Wizard1_ucSSN_txtSSN']") Then
                 Debug.WriteLine("SocialSecurityNumber is On")
             Else
                 Debug.WriteLine("SocialSecurityNumber is Off")

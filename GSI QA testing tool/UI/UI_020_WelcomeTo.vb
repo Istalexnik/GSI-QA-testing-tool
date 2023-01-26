@@ -14,7 +14,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StartNavigationTemplateContainerID_StartNextButton']") Then
+            If Finder.FindItByCSS(driver, "[id='ctl00_Main_content_Wizard1_StartNavigationTemplateContainerID_StartNextButton']") Then
                 Debug.WriteLine("WelcomeTo is On")
             Else
                 Debug.WriteLine("WelcomeTo is Off")

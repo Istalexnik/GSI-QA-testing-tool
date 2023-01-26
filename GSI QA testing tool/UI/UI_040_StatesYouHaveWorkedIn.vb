@@ -12,18 +12,22 @@ Imports System.Threading.Tasks
 Namespace GSI_QA_testing_tool.UI
     Friend Class UI_040_StatesYouHaveWorkedIn
         Public Shared Sub [GoTo](ByVal driver As IWebDriver)
-            If Data._StopAt.Contains("States You Have Worked In") Then
-                Data.StopAtDialog()
-            End If
 
-            If Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblStatesWorkedIn_1']") Then
+
+            If Finder.FindItByCSS(driver, "*[for='ctl00_Main_content_Wizard1_rblStatesWorkedIn_1']") Then
                 Debug.WriteLine("StatesYouHaveWorkedIn is On")
             Else
                 Debug.WriteLine("StatesYouHaveWorkedIn is Off")
                 Return
             End If
 
+            If Data._StopAt.Contains("States You Have Worked In") Then
+                Data.StopAtDialog()
+            End If
+
+
             If Data._claimType = 4 Then
+
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblStatesWorkedIn_0']")
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_chkStateHostState']")
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_chkStateList_9']")
@@ -34,7 +38,7 @@ Namespace GSI_QA_testing_tool.UI
                     Data.StopAtDialog()
                 End If
 
-                If Finder.FindIt(driver, "//*[@id='ctl00_Main_content_Wizard1_ucEnterOOSCreditWeeks_rptCreditWeeks_ctl00_txtQ1']") Then
+                If Finder.FindItByCSS(driver, "#ctl00_Main_content_Wizard1_ucEnterOOSCreditWeeks_rptCreditWeeks_ctl00_txtQ1") Then
                     Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucEnterOOSCreditWeeks_rptCreditWeeks_ctl00_txtQ1']", Data._CreditWeeks)
                     Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucEnterOOSCreditWeeks_rptCreditWeeks_ctl00_txtQ2']", Data._CreditWeeks)
                     Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucEnterOOSCreditWeeks_rptCreditWeeks_ctl00_txtQ3']", Data._CreditWeeks)

@@ -18,7 +18,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblFederalCivilianEmployee_1']") Then
+            If Finder.FindItByCSS(driver, "[for='ctl00_Main_content_Wizard1_rblFederalCivilianEmployee_1']") Then
                 Debug.WriteLine("FederalService is On")
             Else
                 Debug.WriteLine("FederalService is Off")

@@ -7,6 +7,7 @@ Imports System.Text
 Imports System.Threading.Tasks
 Imports System.Diagnostics
 Imports GSI_QA_testing_tool.Utilities
+Imports System.Threading
 
 Namespace GSI_QA_testing_tool.UI
     Friend Class UI_095_EmploymentStatus
@@ -27,6 +28,7 @@ Namespace GSI_QA_testing_tool.UI
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIEmployment_rblAvailableToWork_0']")
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIEmployment_rblSelfEmployed_1']")
             Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucUIEmployment_rblElectedOfficial_1']")
+            Thread.Sleep(300)
             Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']")
         End Sub
     End Class

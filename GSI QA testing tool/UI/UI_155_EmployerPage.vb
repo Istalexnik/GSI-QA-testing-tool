@@ -17,11 +17,10 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName' or 'ctl00_Main_content_ucIndEmpHistory_txtEmpName']") Then
+            If Finder.FindItByCSS(driver, "*[id='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName'], [for='ctl00_Main_content_ucIndEmpHistory_txtEmpName']") Then
                 Debug.WriteLine("EmployerPage is On")
             Else
                 Debug.WriteLine("EmployerPage is Off")
-                Return
             End If
 
             If Data._Site.Contains("DC PFL") Then
@@ -31,10 +30,10 @@ Namespace GSI_QA_testing_tool.UI
 
             Thread.Sleep(500)
 
-            If Not Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucIndEmpHistory_rblLastEmployer_0']") Then
+            If Not Finder.FindItByCSS(driver, "#ctl00_Main_content_ucIndEmpHistory_rblLastEmployer_0") Then
                 Finder.ActionsSendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtFindEmployerName']", Employer, wait)
 
-                If Finder.FindIt(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_gvFindEmployerResults_ctl02_rbSelectedEmployer']") Then
+                If Finder.FindItByCSS(driver, "*[id='ctl00_Main_content_ucIndEmpHistory_gvFindEmployerResults_ctl02_rbSelectedEmployer']") Then
                     Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_gvFindEmployerResults_ctl02_rbSelectedEmployer']")
                     Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_btnSelectEmployer']")
                 End If

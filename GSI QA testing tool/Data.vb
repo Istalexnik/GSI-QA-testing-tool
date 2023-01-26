@@ -94,7 +94,7 @@ Namespace GSI_QA_testing_tool
         End Sub
 
         Sub UpdateDataPane()
-            _DataPane = $"{_Login} {_SSN} {_Site} \n" & _DataPane
+            _DataPane = $"{_Login} {_SSN} {_Site + vbNewLine}" & _DataPane
         End Sub
 
         Sub CheckForStateAndAbbr()

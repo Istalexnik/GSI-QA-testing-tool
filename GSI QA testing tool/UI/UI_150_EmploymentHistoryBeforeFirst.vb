@@ -16,6 +16,12 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
+            If Finder.FindItByCSS(driver, "*[for='ctl00_Main_content_rblAddAnotherEntry_0']") Then
+                Debug.WriteLine("Employment History Before First is On")
+            Else
+                Debug.WriteLine("Employment History Before First is Off")
+            End If
+
             Dim EmpReverse As String
             Dim EmpStartDateReverse As String
             Dim EmpLastDatReverse As String
@@ -34,7 +40,7 @@ Namespace GSI_QA_testing_tool.UI
                 End If
             Else
 
-                If Finder.FindIt(driver, "//a[@id='ctl00_Main_content_lbHaveNotWorked']") Then
+                If Finder.FindItByCSS(driver, "#ctl00_Main_content_lbHaveNotWorked") Then
 
                     Try
                         Finder.ClickIt(driver, "//td[contains(text(),'" & Data._Employer1 & "')]/following-sibling::td/a")

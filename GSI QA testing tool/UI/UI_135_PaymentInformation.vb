@@ -12,6 +12,8 @@ Imports System.Windows.Controls
 Namespace GSI_QA_testing_tool.UI
     Friend Class UI_135_PaymentInformation
         Public Shared Sub [GoTo](ByVal driver As IWebDriver, ByVal js As IJavaScriptExecutor)
+            Thread.Sleep(300)
+
             If Data._StopAt.Contains("Payment Information") Then
                 Data.StopAtDialog()
             End If

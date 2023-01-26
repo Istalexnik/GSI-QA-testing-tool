@@ -15,7 +15,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucPFLAuthorizedRepresentative_rblWhoIsFiling_0']") Then
+            If Finder.FindItByCSS(driver, "[for='ctl00_Main_content_Wizard1_ucPFLAuthorizedRepresentative_rblWhoIsFiling_0']") Then
                 Debug.WriteLine("PFL_WhoIsFiling is On")
             Else
                 Debug.WriteLine("PFL_WhoIsFiling is Off")

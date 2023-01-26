@@ -15,7 +15,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//label[@for='ctl00_Main_content_ucUIEmploymentStatus_rblAttendingTraining_1']") Then
+            If Finder.FindItByCSS(driver, "#ctl00_Main_content_ucUIEmploymentStatus_rblAttendingTraining_1") Then
                 Debug.WriteLine("EmploymentMiscellaneous is On")
             Else
                 Debug.WriteLine("EmploymentMiscellaneous is Off")

@@ -19,6 +19,11 @@ Namespace GSI_QA_testing_tool
             Return driver.FindElements(By.XPath(path)).Count <> 0
         End Function
 
+        Public Shared Function FindItByCSS(ByVal driver As IWebDriver, ByVal CSSPath As String) As Boolean
+            Return driver.FindElements(By.CssSelector(CSSPath)).Count <> 0
+        End Function
+
+
         Public Shared Sub JSClickIt(ByVal driver As IWebDriver, ByVal CSSpath As String, ByVal js As IJavaScriptExecutor)
             If driver.FindElements(By.CssSelector(CSSpath)).Count <> 0 Then
                 js.ExecuteScript("arguments[0].click();", driver.FindElement(By.CssSelector(CSSpath)))
@@ -87,6 +92,7 @@ Namespace GSI_QA_testing_tool
                 act.SendKeys(text)
                 act.DoubleClick()
                 act.Pause(New TimeSpan(1000))
+                act.SendKeys(Keys.Down)
                 act.SendKeys(Keys.Down)
                 act.SendKeys(Keys.Enter)
                 act.Build().Perform()

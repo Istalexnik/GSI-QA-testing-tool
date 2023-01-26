@@ -20,7 +20,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//input[@id='ctl00_Main_content_ucLogin_txtUsername']") Then
+            If Finder.FindItByCSS(driver, "*[id='ctl00_Main_content_ucLogin_txtUsername']") Then
                 Debug.WriteLine("LoginInformation is On")
             Else
                 Debug.WriteLine("LoginInformation is Off")

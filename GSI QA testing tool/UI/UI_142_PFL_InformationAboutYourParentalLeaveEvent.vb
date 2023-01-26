@@ -19,7 +19,7 @@ Namespace GSI_QA_testing_tool.UI
 
             Thread.Sleep(500)
 
-            If Finder.FindIt(driver, "//input[@id='ctl00_Main_content_Wizard1_ucPFLParentalLeave_txtPFLBeginDate']") Then
+            If Finder.FindItByCSS(driver, "#ctl00_Main_content_Wizard1_ucPFLParentalLeave_txtPFLBeginDate") Then
                 Debug.WriteLine("PFL_InformationAboutYourParentalLeaveEvent is On")
             Else
                 Debug.WriteLine("PFL_InformationAboutYourParentalLeaveEvent is Off")

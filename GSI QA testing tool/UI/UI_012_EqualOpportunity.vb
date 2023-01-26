@@ -14,7 +14,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//input[@id='ctl00_Main_content_btnAgree']") Then
+            If Finder.FindItByCSS(driver, "#ctl00_Main_content_btnAgree") Then
                 Debug.WriteLine("EqualOpportunity is On")
             Else
                 Debug.WriteLine("EqualOpportunity is Off")

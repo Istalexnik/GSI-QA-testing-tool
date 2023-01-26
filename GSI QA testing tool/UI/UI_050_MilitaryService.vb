@@ -19,7 +19,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblMilitaryService_1']") Then
+            If Finder.FindItByCSS(driver, "*[for='ctl00_Main_content_Wizard1_rblMilitaryService_1']") Then
                 Debug.WriteLine("MilitaryService is On")
             Else
                 Debug.WriteLine("MilitaryService is Off")
@@ -29,7 +29,7 @@ Namespace GSI_QA_testing_tool.UI
             If Data._claimType = 2 Then
                 Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblMilitaryService_0']")
 
-                If Finder.FindIt(driver, "//select[@id='ctl00_Main_content_Wizard1_ddlPhysicalLocation']") Then
+                If Finder.FindItByCSS(driver, "[id='ctl00_Main_content_Wizard1_ddlPhysicalLocation']") Then
                     Finder.UseDropDownByText(driver, "//select[@id='ctl00_Main_content_Wizard1_ddlPhysicalLocation']", Data._State)
                     Finder.ClickIt(driver, "//button[@id='btn-dialog-ok']")
                 End If
