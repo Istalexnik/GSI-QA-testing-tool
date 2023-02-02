@@ -6,11 +6,10 @@ Imports System.Diagnostics
 Imports System.Linq
 Imports System.Text
 Imports System.Threading.Tasks
-Imports GSI_QA_testing_tool.Utilities
 
 Namespace GSI_QA_testing_tool.UI
     Friend Class UI_141_PFL_PaidFamilyLeaveTypes
-        Public Shared Sub [GoTo](ByVal driver As IWebDriver, ByVal wait As WebDriverWait)
+        Public Shared Sub [GoTo](ByVal driver As IWebDriver, ByVal wait As WebDriverWait, ByVal js As IJavaScriptExecutor)
             If Data._StopAt.Contains("PFL Paid Family Leave Types") Then
                 Data.StopAtDialog()
             End If
@@ -22,9 +21,9 @@ Namespace GSI_QA_testing_tool.UI
                 Return
             End If
 
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucPFLClaimType_rblPFLClaimType_0']")
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucPFLClaimType_rblPFLMethod_0']")
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']")
+            Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_ucPFLClaimType_rblPFLClaimType_0", js)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_ucPFLClaimType_rblPFLMethod_0", js)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton", js)
         End Sub
     End Class
 End Namespace

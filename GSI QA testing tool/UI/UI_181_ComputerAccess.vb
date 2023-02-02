@@ -8,7 +8,7 @@ Imports System.Threading.Tasks
 
 Namespace GSI_QA_testing_tool.UI
     Class UI_181_ComputerAccess
-        Public Shared Sub [GoTo](ByVal driver As IWebDriver)
+        Public Shared Sub [GoTo](ByVal driver As IWebDriver, ByVal js As IJavaScriptExecutor)
             If Data._StopAt.Contains("Computer Access") Then
                 Data.StopAtDialog()
             End If
@@ -20,8 +20,8 @@ Namespace GSI_QA_testing_tool.UI
                 Return
             End If
 
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_rblClaimantHasComputerAccess_1']")
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_FinishNavigationTemplateContainerID_FinishCompleteButton']")
+            Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_rblClaimantHasComputerAccess_1", js)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_FinishNavigationTemplateContainerID_FinishCompleteButton", js)
         End Sub
     End Class
 End Namespace

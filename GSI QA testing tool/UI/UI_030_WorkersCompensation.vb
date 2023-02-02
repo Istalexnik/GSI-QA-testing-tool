@@ -1,5 +1,4 @@
-﻿Imports GSI_QA_testing_tool.Utilities
-Imports OpenQA.Selenium
+﻿Imports OpenQA.Selenium
 Imports System
 Imports System.Collections.Generic
 Imports System.Diagnostics
@@ -21,7 +20,7 @@ Namespace GSI_QA_testing_tool.UI
                 Return
             End If
 
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucWorkersCompensation_rblWCReceived_1']")
+            Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_ucWorkersCompensation_rblWCReceived_1", js)
             js.ExecuteScript("arguments[0].click();", driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']")))
         End Sub
     End Class

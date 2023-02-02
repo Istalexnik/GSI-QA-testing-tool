@@ -8,7 +8,7 @@ Imports System.Threading.Tasks
 
 Namespace GSI_QA_testing_tool.UI
     Friend Class UI_185_UnemploymentClaimConfirmation
-        Public Shared Sub [GoTo](ByVal driver As IWebDriver)
+        Public Shared Sub [GoTo](ByVal driver As IWebDriver, ByVal js As IJavaScriptExecutor)
             If Data._StopAt.Contains("Unemployment Claim Confirmation") Then
                 Data.StopAtDialog()
             End If
@@ -20,7 +20,7 @@ Namespace GSI_QA_testing_tool.UI
                 Throw New Exception("The claim is not completed")
             End If
 
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']")
+            Finder.JSClickIt(driver, "#ctl00_Main_content_btnNext", js)
         End Sub
     End Class
 End Namespace

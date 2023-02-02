@@ -1,5 +1,4 @@
-﻿Imports GSI_QA_testing_tool.Utilities
-Imports OpenQA.Selenium
+﻿Imports OpenQA.Selenium
 Imports System
 Imports System.Collections.Generic
 Imports System.Diagnostics

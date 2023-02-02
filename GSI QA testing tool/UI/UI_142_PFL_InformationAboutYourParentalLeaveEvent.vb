@@ -6,7 +6,6 @@ Imports System.Diagnostics
 Imports System.Linq
 Imports System.Text
 Imports System.Threading.Tasks
-Imports GSI_QA_testing_tool.Utilities
 Imports System.Threading
 Imports GSI_QA_testing_tool.GSI_QA_testing_tool.Utilities
 
@@ -28,7 +27,7 @@ Namespace GSI_QA_testing_tool.UI
 
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucPFLParentalLeave_txtPFLBeginDate']", DateMaker.Today())
             Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_Wizard1_ucPFLParentalLeave_ddlPFLParentalDaysPerWeek']", "5")
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucPFLParentalLeave_rblPFLParentalNormalWorkSunday_1']")
+            Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_ucPFLParentalLeave_rblPFLParentalNormalWorkSunday_1", js)
             Dim parentWindow As String = driver.CurrentWindowHandle
             js.ExecuteScript("arguments[0].click();", driver.FindElement(By.XPath("//a[@id='ctl00_Main_content_Wizard1_ucPFLParentalLeave_lnkButton']")))
             Dim allWindows As IList(Of String) = New List(Of String)(driver.WindowHandles)
@@ -48,7 +47,7 @@ Namespace GSI_QA_testing_tool.UI
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucPFLParentalLeave_txtPFLParentalFirstName']", "Test")
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucPFLParentalLeave_txtPFLParentalLastName']", "Test")
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucPFLParentalLeave_txtPFLParentalDOB']", DateMaker.Today())
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_Wizard1_ucPFLParentalLeave_rblPFLParentalGender_1']")
+            Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_ucPFLParentalLeave_rblPFLParentalGender_1", js)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_Wizard1_ucPFLParentalLeave_ddlPFLParentalEvidence']", 1)
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucPFLParentalLeave_ucSupportingDocumentation_filUpload1']", "C:/Test/a.png")
             Thread.Sleep(3000)

@@ -1,5 +1,4 @@
-﻿Imports GSI_QA_testing_tool.Utilities
-Imports OpenQA.Selenium
+﻿Imports OpenQA.Selenium
 Imports System
 Imports System.Collections.Generic
 Imports System.Diagnostics
@@ -9,7 +8,7 @@ Imports System.Threading.Tasks
 
 Namespace GSI_QA_testing_tool.UI
     Friend Class UI_015_UnemploymentInsurance
-        Public Shared Sub [GoTo](ByVal driver As IWebDriver)
+        Public Shared Sub [GoTo](ByVal driver As IWebDriver, ByVal js As IJavaScriptExecutor)
             If Data._StopAt.Contains("Unemployment Insurance Compensation") Then
                 Data.StopAtDialog()
             End If
@@ -21,8 +20,8 @@ Namespace GSI_QA_testing_tool.UI
                 Return
             End If
 
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_radFilingUI_0']")
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']")
+            Finder.JSClickIt(driver, "#ctl00_Main_content_radFilingUI_0", js)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_btnNext", js)
         End Sub
     End Class
 End Namespace

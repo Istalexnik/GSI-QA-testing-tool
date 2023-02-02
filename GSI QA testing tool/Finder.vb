@@ -15,9 +15,9 @@ Imports System.Net.Mime.MediaTypeNames
 
 Namespace GSI_QA_testing_tool
     Public Class Finder
-        Public Shared Function FindIt(ByVal driver As IWebDriver, ByVal path As String) As Boolean
-            Return driver.FindElements(By.XPath(path)).Count <> 0
-        End Function
+        'Public Shared Function FindIt(ByVal driver As IWebDriver, ByVal path As String) As Boolean
+        '    Return driver.FindElements(By.XPath(path)).Count <> 0
+        'End Function
 
         Public Shared Function FindItByCSS(ByVal driver As IWebDriver, ByVal CSSPath As String) As Boolean
             Return driver.FindElements(By.CssSelector(CSSPath)).Count <> 0
@@ -30,29 +30,58 @@ Namespace GSI_QA_testing_tool
             End If
         End Sub
 
+        Public Shared Sub JSClickIt(ByVal driver As IWebDriver, ByVal CSSpath As String, ByVal js As IJavaScriptExecutor,
+                                    ByVal wait As WebDriverWait)
+            If driver.FindElements(By.CssSelector(CSSpath)).Count <> 0 Then
+                js.ExecuteScript("arguments[0].click();", driver.FindElement(By.CssSelector(CSSpath)))
+                wait.Until(ExpectedConditions.StalenessOf(driver.FindElement(By.CssSelector(CSSpath))))
+            End If
+        End Sub
+
         Public Shared Sub ClickIt(ByVal driver As IWebDriver, ByVal path As String)
             If driver.FindElements(By.XPath(path)).Count <> 0 Then
                 driver.FindElement(By.XPath(path)).Click()
             End If
         End Sub
 
-        Public Shared Sub ClickIt(ByVal driver As IWebDriver, ByVal path As String, ByVal wait As WebDriverWait)
-            If driver.FindElements(By.XPath(path)).Count <> 0 Then
-                wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(path))).Click()
-                wait.Until(ExpectedConditions.StalenessOf(driver.FindElement(By.XPath(path))))
+        'Public Shared Sub ClickIt(ByVal driver As IWebDriver, ByVal path As String, ByVal wait As WebDriverWait)
+        '    If driver.FindElements(By.XPath(path)).Count <> 0 Then
+        '        wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(path))).Click()
+        '        wait.Until(ExpectedConditions.StalenessOf(driver.FindElement(By.XPath(path))))
+        '    End If
+        'End Sub
+
+
+        Public Shared Sub ClickItByCSS(ByVal driver As IWebDriver, ByVal CSSpath As String)
+            If driver.FindElements(By.CssSelector(CSSpath)).Count <> 0 Then
+                driver.FindElement(By.CssSelector(CSSpath)).Click()
             End If
         End Sub
 
-        Public Shared Sub WaitStaleClickIt(ByVal driver As IWebDriver, ByVal path As String, ByVal wait As WebDriverWait)
-            If driver.FindElements(By.XPath(path)).Count <> 0 Then
-                wait.Until(ExpectedConditions.StalenessOf(driver.FindElement(By.XPath(path))))
-                wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(path))).Click()
+        Public Shared Sub ClickItByCSS(ByVal driver As IWebDriver, ByVal CSSpath As String, ByVal wait As WebDriverWait)
+            If driver.FindElements(By.CssSelector(CSSpath)).Count <> 0 Then
+                wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(CSSpath))).Click()
+                wait.Until(ExpectedConditions.StalenessOf(driver.FindElement(By.CssSelector(CSSpath))))
             End If
         End Sub
 
-        Public Shared Sub WaitClickableClickIt(ByVal driver As IWebDriver, ByVal path As String, ByVal wait As WebDriverWait)
-            If driver.FindElements(By.XPath(path)).Count <> 0 Then
-                wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(path))).Click()
+
+        'Public Shared Sub WaitStaleClickIt(ByVal driver As IWebDriver, ByVal path As String, ByVal wait As WebDriverWait)
+        '    If driver.FindElements(By.XPath(path)).Count <> 0 Then
+        '        wait.Until(ExpectedConditions.StalenessOf(driver.FindElement(By.XPath(path))))
+        '        wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(path))).Click()
+        '    End If
+        'End Sub
+
+        'Public Shared Sub WaitClickableClickIt(ByVal driver As IWebDriver, ByVal path As String, ByVal wait As WebDriverWait)
+        '    If driver.FindElements(By.XPath(path)).Count <> 0 Then
+        '        wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(path))).Click()
+        '    End If
+        'End Sub
+
+        Public Shared Sub WaitClickableClickItByCSS(ByVal driver As IWebDriver, ByVal CSSpath As String, ByVal wait As WebDriverWait)
+            If driver.FindElements(By.CssSelector(CSSpath)).Count <> 0 Then
+                wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(CSSpath))).Click()
             End If
         End Sub
 

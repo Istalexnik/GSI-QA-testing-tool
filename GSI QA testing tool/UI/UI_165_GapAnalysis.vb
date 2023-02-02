@@ -1,5 +1,4 @@
-﻿Imports GSI_QA_testing_tool.Utilities
-Imports OpenQA.Selenium
+﻿Imports OpenQA.Selenium
 Imports OpenQA.Selenium.Support.UI
 Imports SeleniumExtras.WaitHelpers
 Imports System
@@ -33,16 +32,16 @@ Namespace GSI_QA_testing_tool.UI
             Thread.Sleep(800)
 
             If Finder.FindItByCSS(driver, "*[id='ctl00_Main_content_ucEmployerGapAnalysis_grdEmploymentGaps_ctl02_btnGapSummary']") Then
-                Finder.ClickIt(driver, "//*[@id='ctl00_Main_content_ucEmployerGapAnalysis_grdEmploymentGaps_ctl02_btnGapSummary']")
+                Finder.JSClickIt(driver, "#ctl00_Main_content_ucEmployerGapAnalysis_grdEmploymentGaps_ctl02_btnGapSummary", js)
                 Thread.Sleep(1000)
                 Finder.SendText(driver, "//*[@id='ctl00_Main_content_ucEmployerGapAnalysis_txtGapExplanation']", "test")
-                Finder.ClickIt(driver, "//*[@id='ctl00_Main_content_ucEmployerGapAnalysis_btnSave']", wait)
+                Finder.JSClickIt(driver, "#ctl00_Main_content_ucEmployerGapAnalysis_btnSave", js, wait)
             End If
 
             If Finder.FindItByCSS(driver, "*[id='ctl00_Main_content_ucEmployerGapAnalysis_grdEmploymentGaps_ctl03_btnGapSummary']") Then
-                Finder.ClickIt(driver, "//*[@id='ctl00_Main_content_ucEmployerGapAnalysis_grdEmploymentGaps_ctl03_btnGapSummary']", wait)
+                Finder.JSClickIt(driver, "#ctl00_Main_content_ucEmployerGapAnalysis_grdEmploymentGaps_ctl03_btnGapSummary", js, wait)
                 Finder.SendText(driver, "//*[@id='ctl00_Main_content_ucEmployerGapAnalysis_txtGapExplanation']", "test")
-                Finder.ClickIt(driver, "//*[@id='ctl00_Main_content_ucEmployerGapAnalysis_btnSave']")
+                Finder.JSClickIt(driver, "#ctl00_Main_content_ucEmployerGapAnalysis_btnSave", js)
             End If
 
             driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_btnNextMonetaryReview']")).Click()

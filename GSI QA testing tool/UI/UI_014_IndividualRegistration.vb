@@ -1,5 +1,4 @@
-﻿Imports GSI_QA_testing_tool.Utilities
-Imports OpenQA.Selenium
+﻿Imports OpenQA.Selenium
 Imports System
 Imports System.Collections.Generic
 Imports System.Diagnostics
@@ -9,7 +8,7 @@ Imports System.Threading.Tasks
 
 Namespace GSI_QA_testing_tool.UI
     Friend Class UI_014_IndividualRegistration
-        Public Shared Sub [GoTo](ByVal driver As IWebDriver)
+        Public Shared Sub [GoTo](ByVal driver As IWebDriver, ByVal js As IJavaScriptExecutor)
             If Data._StopAt.Contains("Individual Registration Type") Then
                 Data.StopAtDialog()
             End If
@@ -21,7 +20,7 @@ Namespace GSI_QA_testing_tool.UI
                 Return
             End If
 
-            Finder.ClickIt(driver, "//a[@id='ctl00_Main_content_lnkCompleteHeader']")
+            Finder.JSClickIt(driver, "#ctl00_Main_content_lnkCompleteHeader", js)
         End Sub
     End Class
 End Namespace

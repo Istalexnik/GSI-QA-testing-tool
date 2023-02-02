@@ -1,5 +1,4 @@
-﻿Imports GSI_QA_testing_tool.Utilities
-Imports OpenQA.Selenium
+﻿Imports OpenQA.Selenium
 Imports OpenQA.Selenium.Support.UI
 Imports SeleniumExtras.WaitHelpers
 Imports System
@@ -14,7 +13,7 @@ Imports System.Windows.Controls.Primitives
 
 Namespace GSI_QA_testing_tool.UI
     Friend Class UI_065_ResidentialAddress
-        Public Shared Sub [GoTo](ByVal driver As IWebDriver, ByVal wait As WebDriverWait)
+        Public Shared Sub [GoTo](ByVal driver As IWebDriver, ByVal wait As WebDriverWait, ByVal js As IJavaScriptExecutor)
             If Data._StopAt.Contains("Residential Address") Then
                 Data.StopAtDialog()
             End If
@@ -28,16 +27,16 @@ Namespace GSI_QA_testing_tool.UI
                 Return
             End If
 
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_rbACPEnrollment_1']")
+            Finder.JSClickIt(driver, "#ctl00_Main_content_ucAddress_rbACPEnrollment_1", js)
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucAddress_txtAddress1']", Data._Address)
             Thread.Sleep(3000)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucAddress_ddlAltGeo']", 2)
             Thread.Sleep(4000)
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_chkPopulateMailAddress']")
+            Finder.JSClickIt(driver, "#ctl00_Main_content_ucAddress_chkPopulateMailAddress", js)
             Thread.Sleep(5000)
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_rdoCorrectedResidentialAddress_0']", wait)
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_ucAddress_rdoCorrectedMailingAddress_0']", wait)
-            Finder.WaitClickableClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']", wait)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_ucAddress_rdoCorrectedResidentialAddress_0", js, wait)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_ucAddress_rdoCorrectedMailingAddress_0", js, wait)
+            Finder.WaitClickableClickItByCSS(driver, "#ctl00_Main_content_btnNext", wait)
         End Sub
     End Class
 End Namespace

@@ -1,5 +1,4 @@
-﻿Imports GSI_QA_testing_tool.Utilities
-Imports OpenQA.Selenium
+﻿Imports OpenQA.Selenium
 Imports OpenQA.Selenium.Support.UI
 Imports SeleniumExtras.WaitHelpers
 Imports System
@@ -18,7 +17,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//input[@id='ctl00_Main_content_Wizard1_FinishNavigationTemplateContainerID_FinishCompleteButton' or @*='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']") Then
+            If Finder.FindItByCSS(driver, "#ctl00_Main_content_Wizard1_FinishNavigationTemplateContainerID_FinishCompleteButton, #ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton") Then
                 Debug.WriteLine("WhatYouMustDo is On")
             Else
                 Debug.WriteLine("WhatYouMustDo is Off")
@@ -33,14 +32,14 @@ Namespace GSI_QA_testing_tool.UI
 
             Thread.Sleep(500)
 
-            If Finder.FindIt(driver, "//input[@id='ctl00_Main_content_Wizard1_ucAcknowledgements_txtBRISignName']") Then
+            If Finder.FindItByCSS(driver, "#ctl00_Main_content_Wizard1_ucAcknowledgements_txtBRISignName") Then
                 Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucAcknowledgements_txtBRISignName']", "Sam")
-                Finder.ClickIt(driver, "//a[@id='ctl00_Main_content_Wizard1_ucAcknowledgements_txtBRISignDate_DateInputImage']")
+                Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_ucAcknowledgements_txtBRISignDate_DateInputImage", js)
             End If
 
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_Wizard1_FinishNavigationTemplateContainerID_FinishCompleteButton']")
-            Finder.ClickIt(driver, "//*[@*='ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton']")
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_ucGSIButtons_btnNext']")
+            Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_FinishNavigationTemplateContainerID_FinishCompleteButton", js)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton", js)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_ucGSIButtons_btnNext", js)
         End Sub
     End Class
 End Namespace

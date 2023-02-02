@@ -1,5 +1,4 @@
-﻿Imports GSI_QA_testing_tool.Utilities
-Imports OpenQA.Selenium
+﻿Imports OpenQA.Selenium
 Imports System
 Imports System.Collections.Generic
 Imports System.Diagnostics
@@ -11,14 +10,14 @@ Imports System.Windows.Controls.Primitives
 
 Namespace GSI_QA_testing_tool.UI
     Friend Class UI_070_PhoneNumber
-        Public Shared Sub [GoTo](ByVal driver As IWebDriver)
+        Public Shared Sub [GoTo](ByVal driver As IWebDriver, ByVal js As IJavaScriptExecutor)
             Thread.Sleep(800)
 
             If Data._StopAt.Contains("Phone Numbers") Then
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//input[@id='ctl00_Main_content_ucPhone_txtPrimePhone1']") Then
+            If Finder.FindItByCSS(driver, "#ctl00_Main_content_ucPhone_txtPrimePhone1") Then
                 Debug.WriteLine("PhoneNumber is On")
             Else
                 Debug.WriteLine("PhoneNumber is Off")
@@ -30,7 +29,7 @@ Namespace GSI_QA_testing_tool.UI
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucPhone_txtPrimePhone3']", Data._Phone.Substring(6, 4))
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucPhone_ddlPrimePhoneType']", 1)
             Thread.Sleep(500)
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']")
+            Finder.JSClickIt(driver, "#ctl00_Main_content_btnNext", js)
         End Sub
     End Class
 End Namespace

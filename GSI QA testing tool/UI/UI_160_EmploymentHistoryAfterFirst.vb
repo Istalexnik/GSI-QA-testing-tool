@@ -1,5 +1,4 @@
-﻿Imports GSI_QA_testing_tool.Utilities
-Imports OpenQA.Selenium
+﻿Imports OpenQA.Selenium
 Imports OpenQA.Selenium.Support.UI
 Imports System
 Imports System.Collections.Generic
@@ -18,7 +17,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            If Finder.FindIt(driver, "//label[@for='ctl00_Main_content_rblAddAnotherEntry_0']") Then
+            If Finder.FindItByCSS(driver, "#ctl00_Main_content_rblAddAnotherEntry_0") Then
                 Debug.WriteLine("EmploymentHistoryAfterFirst is On")
             Else
                 Debug.WriteLine("EmploymentHistoryAfterFirst is Off")
@@ -27,26 +26,27 @@ Namespace GSI_QA_testing_tool.UI
 
             If Data._SecondEmployer = True AndAlso Data._Emp2EnteredWhenUCXandWagesin = False Then
 
-                If Finder.FindIt(driver, "/a[@id='ctl00_Main_content_lbHaveNotWorked']") Then
-                    Finder.ClickIt(driver, "//td[contains(text(),'" & Data._Employer2 & "')]/following-sibling::td/a")
-                    Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_rblBasePeriodEmployerConfirm_0']")
-                    Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']")
+                If Finder.FindItByCSS(driver, "#ctl00_Main_content_lbHaveNotWorked") Then
+                    'NE ZABUD~ OTKOMENTIT~!!!
+                    'Finder.ClickIt(driver, "//td[contains(text(),'" & Data._Employer2 & "')]/following-sibling::td/a")
+                    Finder.JSClickIt(driver, "#ctl00_Main_content_rblBasePeriodEmployerConfirm_0", js)
+                    Finder.JSClickIt(driver, "#ctl00_Main_content_btnNext", js)
                 End If
 
-                If Finder.FindIt(driver, "//label[@for='ctl00_Main_content_rblBasePeriodEmployerConfirm_0']") Then
-                    Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_rblBasePeriodEmployerConfirm_0']")
-                    Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']")
+                If Finder.FindItByCSS(driver, "#ctl00_Main_content_rblBasePeriodEmployerConfirm_0") Then
+                    Finder.JSClickIt(driver, "#ctl00_Main_content_rblBasePeriodEmployerConfirm_0", js)
+                    Finder.JSClickIt(driver, "#ctl00_Main_content_btnNext", js)
                 Else
-                    Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_rblAddAnotherEntry_0']")
-                    Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']")
+                    Finder.JSClickIt(driver, "#ctl00_Main_content_rblAddAnotherEntry_0", js)
+                    Finder.JSClickIt(driver, "#ctl00_Main_content_btnNext", js)
                 End If
 
                 Data._claimType = 1
                 UI_155_EmployerPage.CreateUIEmployer(driver, wait, js, Data._Employer2, Data._WorkedFrom2, Data._WorkedTo2)
             End If
 
-            Finder.ClickIt(driver, "//label[@for='ctl00_Main_content_rblAddAnotherEntry_1']")
-            Finder.ClickIt(driver, "//input[@id='ctl00_Main_content_btnNext']")
+            Finder.JSClickIt(driver, "#ctl00_Main_content_rblAddAnotherEntry_1", js)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_btnNext", js)
             Finder.UseAlert(driver, 300)
         End Sub
     End Class
