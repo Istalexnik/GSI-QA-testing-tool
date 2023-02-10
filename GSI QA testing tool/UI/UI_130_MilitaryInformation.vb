@@ -21,16 +21,21 @@ Namespace GSI_QA_testing_tool.UI
                 Debug.WriteLine("MilitaryInformation is maybe On")
             End If
 
+
+
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucVeteran_rblSpouseactivedutyBase_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucVeteran_rblCaregiver_1", js)
             Finder.JSClickIt(driver, "*[for='ctl00_Main_content_ucVeteran_rblSpouse_1']", js)
 
             Finder.JSClickIt(driver, "*[for='ctl00_Main_content_ucVeteran_rblMilitaryService_1']", js)
-            Finder.JSClickIt(driver, "*[for='ctl00_Main_content_ucVeteran_rblTAPWorkshop_1']", js)
+
 
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucVeteran_rblServedConsecutiveDaysInActiveDuty_1", js)
-            Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucVeteran_ddlClassifiedAsDisabledVeteran']", 1)
+            Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_ucVeteran_ddlClassifiedAsDisabledVeteran']", "0")
             Finder.JSClickIt(driver, "*[for='ctl00_Main_content_ucVeteran_rblWounded_1']", js)
+
+            Finder.JSClickIt(driver, "*[for='ctl00_Main_content_ucVeteran_rblTAPWorkshop_1']", js)
+
             Finder.WaitClickableClickItByCSS(driver, "#ctl00_Main_content_btnNext", wait)
         End Sub
     End Class
