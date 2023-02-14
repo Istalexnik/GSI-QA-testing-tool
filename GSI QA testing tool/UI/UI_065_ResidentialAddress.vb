@@ -1,4 +1,5 @@
 ﻿Imports OpenQA.Selenium
+Imports OpenQA.Selenium.Interactions
 Imports OpenQA.Selenium.Support.UI
 Imports SeleniumExtras.WaitHelpers
 Imports System
@@ -29,6 +30,9 @@ Namespace GSI_QA_testing_tool.UI
 
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucAddress_rbACPEnrollment_1", js)
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucAddress_txtAddress1']", Data._Address)
+            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucAddress_txtAddress2']", Data._Address)
+
+
             Thread.Sleep(3000)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucAddress_ddlAltGeo']", 2)
             Thread.Sleep(4000)
