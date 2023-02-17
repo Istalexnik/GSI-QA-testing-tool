@@ -31,6 +31,7 @@
         <Label Name="LblURL" Content="URL:" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top"/>
         <Label Name="LblEmail" Content="Email:" HorizontalAlignment="Left" Margin="10,370,0,0" VerticalAlignment="Top"/>
         <Label Name="LblPhone" Content="Phone:" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblAddress" Content="Address:" HorizontalAlignment="Left" Margin="10,430,0,0" VerticalAlignment="Top"/>
 
         <TextBox Name="TxtSSN" Text="" HorizontalAlignment="Left" Height="23" Margin="100,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="TxtFirstName" Text="" HorizontalAlignment="Left" Height="23" Margin="100,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -46,6 +47,7 @@
         <TextBox Name="TxtURL" Text="" HorizontalAlignment="Left" Height="23" Margin="100,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="430"/>
         <TextBox Name="TxtEmail" Text="" HorizontalAlignment="Left" Height="23" Margin="100,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
         <TextBox Name="TxtPhone" Text="" HorizontalAlignment="Left" Height="23" Margin="100,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
+        <TextBox Name="txtAddress" Text="" HorizontalAlignment="Left" Height="23" Margin="100,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="430"/>
 
         <TextBox Name="TxtDataPane" Text="" HorizontalAlignment="Left" Height="173" Margin="265,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277" IsReadOnly="True"/>
         <CheckBox Name="ChbStaff" HorizontalAlignment="Left" Margin="225,45,0,0" VerticalAlignment="Top"/>

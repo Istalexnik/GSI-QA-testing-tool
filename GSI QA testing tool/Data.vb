@@ -40,7 +40,7 @@ Namespace GSI_QA_testing_tool
         Public _Pass As String = "Olga2011!!!!!"
         Public _Email As String = "Random"
         Public _Phone As String = "Random"
-        Public _Address As String = "1010 Street Avenue"
+        Public _Address As String = "Random"
         Public _JobTitle As String = "test"
         Public _DriverLicense As String = "D234765456"
         Public _StaffLogin As String
@@ -67,6 +67,10 @@ Namespace GSI_QA_testing_tool
 
         Function MakePhone()
             _Phone = "5" & Utilities.Rand.GenerateRandom("0123456789", 9)
+        End Function
+
+        Function MakeAddress()
+            _Address = Utilities.Rand.GenerateRandom("0123456789", 5) & " Street"
         End Function
 
         Sub NewSSN()

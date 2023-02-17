@@ -55,6 +55,7 @@ Namespace GSI_QA_testing_tool
             ChbStaff.IsChecked = Data._Staff
             TxtEmail.Text = "Random"
             TxtPhone.Text = "Random"
+            txtAddress.Text = "Random"
         End Sub
 
         Public Sub ScreenBeforeRunning()
@@ -138,6 +139,8 @@ Namespace GSI_QA_testing_tool
             Data.NewLogin()
             Data.MakeEmail()
             Data.MakePhone()
+            Data.MakeAddress()
+
 
             If TxtEmail.Text <> "Random" AndAlso TxtEmail.Text <> "" Then
                 Data._Email = TxtEmail.Text
@@ -145,6 +148,10 @@ Namespace GSI_QA_testing_tool
 
             If TxtPhone.Text <> "Random" AndAlso TxtPhone.Text <> "" Then
                 Data._Phone = TxtPhone.Text
+            End If
+
+            If txtAddress.Text <> "Random" AndAlso txtAddress.Text <> "" Then
+                Data._Address = txtAddress.Text
             End If
 
             Data.CheckForStateAndAbbr()

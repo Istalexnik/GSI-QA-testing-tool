@@ -55,9 +55,13 @@ Namespace GSI_QA_testing_tool.UI
 
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblLastEmployer_0", js, wait)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblEmployerLiable_0", js)
-            Finder.WaitClickableClickItByCSS(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", wait)
 
-            If Data._claimType = 2 OrElse Data._claimType = 3 Then
+            If Data._claimType = 1 Then
+                Finder.WaitClickableClickItByCSS(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", wait)
+            End If
+
+            If Data._claimType <> 1 Then
+                Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", js)
 
                 If driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtNameOnCheckStub']")).GetAttribute("value").Equals("") Then
                     driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtNameOnCheckStub']")).SendKeys("U.S. SENATE")
@@ -65,6 +69,9 @@ Namespace GSI_QA_testing_tool.UI
 
                 Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblCurrentlyEmployed_1", js, wait)
             End If
+
+
+
 
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Data._JobTitle)
             Thread.Sleep(2500)
