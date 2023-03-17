@@ -29,6 +29,10 @@ Namespace GSI_QA_testing_tool.UI
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucUIEmploymentStatus_rblWorkedAsProfessionalAthlete_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucUIEmploymentStatus_rblCommuterClaim_0", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucUIEmploymentStatus_rblFilingClaimDueToCOVID19_1", js)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_ucUIEmploymentStatus_rblRelocatedOutsideState_1", js)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_ucUIEmploymentStatus_rblPlanToCommuteToSearchForWork_1", js)
+
+
             Finder.JSClickIt(driver, "#ctl00_Main_content_btnNext", js)
         End Sub
     End Class

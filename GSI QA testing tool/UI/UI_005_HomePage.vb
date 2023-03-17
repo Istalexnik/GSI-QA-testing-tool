@@ -25,7 +25,7 @@ Namespace GSI_QA_testing_tool.UI
             Else
                 Finder.JSClickIt(driver, "#btnguestlogina", js)
                 Finder.JSClickIt(driver, "#ctl00_hlNotRegistered", js)
-
+                Thread.Sleep(2500)
 
                 'If driver.FindElements(By.CssSelector("*:contains('File a Claim')")).Count <> 0 Then
                 '    js.ExecuteScript("arguments[0].click();", driver.FindElement(By.CssSelector("*:contains('File a Claim')")))

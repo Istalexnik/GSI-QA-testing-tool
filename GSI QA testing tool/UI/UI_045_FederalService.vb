@@ -60,6 +60,12 @@ Namespace GSI_QA_testing_tool.UI
                     Finder.SendText(driver, "//*[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_FedEmpManEntry_txtZip']", "37243")
                 End If
 
+                'If Data._Site.Contains("LA") Then
+                '    Finder.SendText(driver, "//*[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_txtCityOfEmployment']", "Omaha")
+                '    Finder.SendText(driver, "//*[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_txtSeparationDate']", Data._WorkedTo1)
+                'End If
+
+
                 If Data._Site.Contains("PR") Then
                     Finder.ActionsSendText(driver, "//*[@id='cmbCustomFIC']", "AD")
                     Thread.Sleep(3000)
@@ -69,7 +75,7 @@ Namespace GSI_QA_testing_tool.UI
                     Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlDestCodes']", "0001")
                 End If
 
-                Finder.WaitClickableClickItByCSS(driver, "#ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_rblInterveningEmploymentSinceSeparation_1", wait)
+                Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_rblInterveningEmploymentSinceSeparation_1", js)
                 Finder.UseDropDownByText(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlStateOfEmployment']", Data._State)
                 Thread.Sleep(2000)
                 Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_txtOutofCountryCity']", Data._City)

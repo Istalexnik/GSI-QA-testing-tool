@@ -57,7 +57,7 @@ Namespace GSI_QA_testing_tool.UI
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblEmployerLiable_0", js)
 
             If Data._claimType = 1 Then
-                Finder.WaitClickableClickItByCSS(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", wait)
+                Finder.WaitJSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", js, wait)
             End If
 
             If Data._claimType <> 1 Then

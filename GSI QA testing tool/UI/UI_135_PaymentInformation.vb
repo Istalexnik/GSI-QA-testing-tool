@@ -32,6 +32,25 @@ Namespace GSI_QA_testing_tool.UI
             Next
 
             Finder.JSClickIt(driver, "#btn-dialog-ok", js)
+
+
+            If Finder.FindItByCSS(driver, "#predisclosurepdf") Then
+                Dim parentWindow As String = driver.CurrentWindowHandle
+                Finder.JSClickIt(driver, "#predisclosurepdf", js)
+
+                Dim allWindows As IList(Of String) = New List(Of String)(driver.WindowHandles)
+
+                For Each curWindow As String In allWindows
+                    driver.SwitchTo().Window(curWindow)
+                Next
+
+                driver.SwitchTo().Window(parentWindow)
+
+                Finder.JSClickIt(driver, "#ctl00_Main_content_ucUIPayment_cbAcknowledgeDebitOnPage", js)
+            End If
+
+
+
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucUIPayment_cb1099GConsent_0", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucUIPayment_rblWeeklyCert_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucPaymentDeductions_rblStateTaxWithheld_1", js)

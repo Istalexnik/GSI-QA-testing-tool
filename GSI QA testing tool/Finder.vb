@@ -38,6 +38,14 @@ Namespace GSI_QA_testing_tool
             End If
         End Sub
 
+        Public Shared Sub WaitJSClickIt(ByVal driver As IWebDriver, ByVal CSSpath As String, ByVal js As IJavaScriptExecutor,
+                                    ByVal wait As WebDriverWait)
+            If driver.FindElements(By.CssSelector(CSSpath)).Count <> 0 Then
+                wait.Until(ExpectedConditions.StalenessOf(driver.FindElement(By.CssSelector(CSSpath))))
+                js.ExecuteScript("arguments[0].click();", driver.FindElement(By.CssSelector(CSSpath)))
+            End If
+        End Sub
+
         Public Shared Sub ClickIt(ByVal driver As IWebDriver, ByVal path As String)
             If driver.FindElements(By.XPath(path)).Count <> 0 Then
                 driver.FindElement(By.XPath(path)).Click()

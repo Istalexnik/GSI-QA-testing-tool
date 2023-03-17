@@ -33,13 +33,15 @@ Namespace GSI_QA_testing_tool.UI
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucAddress_txtAddress2']", Data._Address)
 
 
-            Thread.Sleep(3000)
+            Thread.Sleep(4000)
+
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucAddress_ddlAltGeo']", 2)
             Thread.Sleep(4000)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucAddress_chkPopulateMailAddress", js)
             Thread.Sleep(5000)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucAddress_rdoCorrectedResidentialAddress_0", js, wait)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucAddress_rdoCorrectedMailingAddress_0", js, wait)
+            Thread.Sleep(1000)
             Finder.WaitClickableClickItByCSS(driver, "#ctl00_Main_content_btnNext", wait)
         End Sub
     End Class
