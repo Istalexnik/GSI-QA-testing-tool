@@ -61,13 +61,20 @@ Namespace GSI_QA_testing_tool.UI
             End If
 
             If Data._claimType <> 1 Then
-                Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", js)
 
                 If driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtNameOnCheckStub']")).GetAttribute("value").Equals("") Then
                     driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtNameOnCheckStub']")).SendKeys("U.S. SENATE")
                 End If
 
-                Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblCurrentlyEmployed_1", js, wait)
+                Thread.Sleep(500)
+                Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", js)
+                Thread.Sleep(500)
+                'workaround
+                Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", js)
+
+                'remoed WAIT cause timeout in IA GUS UAT CWC
+                Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblCurrentlyEmployed_1", js)
+                Thread.Sleep(3500)
             End If
 
 
@@ -127,6 +134,9 @@ Namespace GSI_QA_testing_tool.UI
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_ucPensionRetirement_rbl401k_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_ucPensionRetirement_rblMilitaryDisabilityCompensation_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblWCReceived_1", js)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rdoWCNewReceived_1", js)
+
+
 
             If driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmployerPhone1']")).Text = "" Then
                 driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtEmployerPhone1']")).SendKeys("333")

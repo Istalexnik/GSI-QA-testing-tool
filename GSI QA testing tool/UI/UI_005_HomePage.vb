@@ -17,7 +17,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            Thread.Sleep(500)
+            Thread.Sleep(3000)
 
             If Data._claimType = 6 Then
                 driver.FindElement(By.PartialLinkText("File a PUA Claim")).Click()

@@ -37,7 +37,7 @@ Namespace GSI_QA_testing_tool
         Public _FIC As String = "CA"
         Public _City As String = "City"
         Public _Wages As String = "5000"
-        Public _Pass As String = "Olga2011!!!!!"
+        Public _Pass As String = "Olga2011!!!!!!"
         Public _Email As String = "Random"
         Public _Phone As String = "Random"
         Public _Address As String = "Random"

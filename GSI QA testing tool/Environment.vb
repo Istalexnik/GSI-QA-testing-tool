@@ -30,11 +30,11 @@ Namespace GSI_QA_testing_tool
 
         Public Shared Function CreateEnvironments() As List(Of Environment)
             Dim list As List(Of Environment) = New List(Of Environment) From {
-                New Environment("IA UAT", "https://uat-app-vos19000000-gus.geosolinc.com/vosnet/default.aspx", "50031", "Iowa", "IA", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
+                New Environment("IA UAT", "https://uat-app-vos19000000-gus.geosolinc.com/vosnet/default.aspx", "60031", "Iowa", "IA", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("IA QA", "https://qa-app-vos19000000-gus.geosolinc.com/vosnet/default.aspx", "50031", "Iowa", "IA", "Target", "Amazon Com Services Inc", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("PR UAT", "https://uat-app-vos72000000.geosolinc.com/vosnet/default.aspx", "00780", "Puerto Rico", "PR", "Publix", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("PR QA", "https://qa-app-vos72000000.geosolinc.com/vosnet/default.aspx", "00780", "Puerto Rico", "PR", "Publix", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
-                New Environment("PR STAGING", "https://staging-app-vos72000000.geosolinc.com/vosnet/default.aspx", "00780", "Puerto Rico", "PR", "Publix", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
+                New Environment("PR STAGING", "https://staging-app-vos72000000.geosolinc.com/vosnet/default.aspx", "00780", "Puerto Rico", "PR", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("DC UI UAT", "https://uat-app-vos11000000-ui.geosolinc.com/vosnet/default.aspx", "20010", "District of Columbia", "DC", "SERDINO INC", "Toyota", "GSISA0", "GeoDCGUSSol22*@"),
                 New Environment("DC UI QA", "https://qa-app-vos11000000-ui.geosolinc.com/vosnet/default.aspx", "20010", "District of Columbia", "DC", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("DC PFL UAT", "https://uat-app-vos11980000.geosolinc.com/vosnet/default.aspx", "20010", "District of Columbia", "DC", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
