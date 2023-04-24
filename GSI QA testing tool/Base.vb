@@ -52,9 +52,7 @@ Namespace GSI_QA_testing_tool
             'ChromeDriverService.HideCommandPromptWindow = True
             Dim chromeOptions = New ChromeOptions()
             chromeOptions.AddArguments(New List(Of String)() From {
-                "no-sandbox"
-            })
-            chromeOptions.AddArguments(New List(Of String)() From {
+                "no-sandbox",
                 $"--user-data-dir={Path.GetFullPath("C:/ChromeProfile/")}"
             })
             chromeOptions.AddExcludedArgument("enable-automation")

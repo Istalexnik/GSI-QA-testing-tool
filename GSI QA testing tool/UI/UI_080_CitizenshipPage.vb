@@ -21,6 +21,7 @@ Namespace GSI_QA_testing_tool.UI
                 Debug.WriteLine("CitizenshipPage is Off")
                 Return
             End If
+
             Thread.Sleep(300)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucDemographics_rblDependents_1", js, wait)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucDemographics_ddlHowManyDependents']", 1)
