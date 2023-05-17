@@ -25,7 +25,10 @@ Namespace GSI_QA_testing_tool.UI
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucSSN_txtSSN']", Data._SSN)
             Thread.Sleep(500)
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucSSN_txtSSNReenter']", Data._SSN)
-            Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton", js)
+
+            'just for testing JSexecutor
+            CType(driver, IJavaScriptExecutor).ExecuteScript("arguments[0].click()", driver.FindElement(By.Id("ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton")))
+            'Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton", js)
         End Sub
     End Class
 End Namespace

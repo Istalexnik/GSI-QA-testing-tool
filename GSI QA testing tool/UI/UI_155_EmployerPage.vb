@@ -100,6 +100,7 @@ Namespace GSI_QA_testing_tool.UI
             If Data._claimType <> 3 Then
                 Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboSeparationReason']", "0001", wait)
             End If
+            Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ddlLeaveReasonSubType']", "40", wait)
 
             Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ddlLackOfWorkEvent']", "1")
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblVoluntaryLayoff_1", js)
@@ -149,11 +150,36 @@ Namespace GSI_QA_testing_tool.UI
             End If
 
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucWizardButtons_btnSave", js)
+
+
+            'Thread.Sleep(3000)
+            'Finder.JSClickIt(driver, "#btn-dialog-save", js)
+            'Thread.Sleep(3000)
+
+            'Finder.JSClickIt(driver, "#btn-dialog-save", js)
+            'Thread.Sleep(3000)
+
+            'Finder.JSClickIt(driver, "#btn-dialog-save", js)
+
+
             Dim forms = driver.FindElements(By.XPath("//button[@id='btn-dialog-save']"))
 
             For Each form In forms
                 js.ExecuteScript("arguments[0].click();", form)
             Next
+
+            Dim forms2 = driver.FindElements(By.XPath("//button[@id='btn-dialog-save']"))
+
+            For Each form In forms2
+                js.ExecuteScript("arguments[0].click();", form)
+            Next
+
+            Dim forms3 = driver.FindElements(By.XPath("//button[@id='btn-dialog-save']"))
+
+            For Each form In forms3
+                js.ExecuteScript("arguments[0].click();", form)
+            Next
+
 
             wait.Until(ExpectedConditions.ElementExists(By.XPath("//label[@for='ctl00_Main_content_rblAddAnotherEntry_1']")))
 
