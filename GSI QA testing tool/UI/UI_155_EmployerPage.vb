@@ -66,21 +66,21 @@ Namespace GSI_QA_testing_tool.UI
                     driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtNameOnCheckStub']")).SendKeys("U.S. SENATE")
                 End If
 
-                Thread.Sleep(500)
-                Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", js)
-                Thread.Sleep(500)
-                'workaround
-                Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", js)
+                If driver.FindElements(By.CssSelector("[for = 'ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1']")).Count <> 0 Then
+                    CType(driver, IJavaScriptExecutor).ExecuteScript("arguments[0].click();", driver.FindElement(By.CssSelector("[for = 'ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1']")))
+                End If
 
-                'remoed WAIT cause timeout in IA GUS UAT CWC
+                'Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", js)
+
+
                 Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblCurrentlyEmployed_1", js)
-                Thread.Sleep(3500)
-            End If
+                    Thread.Sleep(3500)
+                End If
 
 
 
 
-            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Data._JobTitle)
+                Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Data._JobTitle)
             Thread.Sleep(2500)
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Keys.ArrowDown + Keys.Enter, wait)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ONETDropDownList']", 1)

@@ -51,7 +51,8 @@ Namespace GSI_QA_testing_tool
                 New Environment("LA QA", "https://qa-app-vos22000000.geosolinc.com/vosnet/default.aspx", "70803", "Louisiana", "LA", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("TN UAT", "https://uat-app-vos47000000.geosolinc.com/vosnet/default.aspx", "37243", "Tennessee", "TN", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("TN QA", "https://qa-app-vos47000000.geosolinc.com/vosnet/default.aspx", "37243", "Tennessee", "TN", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
-                New Environment("AZ UAT", "https://uat-app-vos04990000.geosolinc.com/vosnet/default.aspx", "86438", "Arizona", "AZ", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@")
+                New Environment("AZ UAT", "https://uat-app-vos04000000.geosolinc.com/vosnet/default.aspx", "86438", "Arizona", "AZ", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
+                New Environment("AZ PUA UAT", "https://uat-app-vos04990000.geosolinc.com/vosnet/default.aspx", "86438", "Arizona", "AZ", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@")
             }
             Return list
         End Function

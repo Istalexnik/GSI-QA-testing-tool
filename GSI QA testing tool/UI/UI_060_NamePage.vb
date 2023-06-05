@@ -26,6 +26,10 @@ Namespace GSI_QA_testing_tool.UI
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucName_txtLastName']", Data._LastName)
             Thread.Sleep(700)
             Finder.JSClickIt(driver, "#ctl00_Main_content_btnNext", js)
+
+            'workaround the bug
+            Thread.Sleep(1500)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_btnNext", js)
         End Sub
     End Class
 End Namespace

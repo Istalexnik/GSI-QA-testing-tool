@@ -114,7 +114,7 @@ Namespace GSI_QA_testing_tool
                 End If
             Next
 
-            If currentSite = "AZ UAT" Then
+            If currentSite = "AZ PUA UAT" Then
                 CbxClaimType.SelectedItem = "DUA"
             End If
         End Sub
