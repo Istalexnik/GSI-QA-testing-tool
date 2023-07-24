@@ -34,6 +34,10 @@ Namespace GSI_QA_testing_tool.UI
                 End If
 
                 Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_rblPhysicallyInState_0", js)
+                Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_txtMilitaryAddress1']", Data._Address)
+                Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_txtMilitaryZip']", Data._ZIP)
+                Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_txtMilitaryCity']", Data._City)
+
                 Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton", js)
 
                 If Data._StopAt.Contains("Military Service Work 1") Then

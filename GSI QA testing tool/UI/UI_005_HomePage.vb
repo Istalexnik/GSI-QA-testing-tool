@@ -22,6 +22,17 @@ Namespace GSI_QA_testing_tool.UI
             If Data._claimType = 6 Then
                 driver.FindElement(By.PartialLinkText("File a PUA Claim")).Click()
                 Finder.JSClickIt(driver, "#ctl00_hlNotRegistered", js)
+            ElseIf Data._Site.Contains("AZ") Then
+                driver.FindElement(By.PartialLinkText("File a regular unemployment claim")).Click()
+                Dim originalWindow As String = driver.CurrentWindowHandle
+                For Each window In driver.WindowHandles
+                    If originalWindow <> window Then
+                        driver.Close()
+                        driver.SwitchTo().Window(window)
+                    End If
+                Next
+
+
             Else
                 Finder.JSClickIt(driver, "#btnguestlogina", js)
                 Finder.JSClickIt(driver, "#ctl00_hlNotRegistered", js)

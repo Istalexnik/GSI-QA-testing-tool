@@ -60,6 +60,8 @@ Namespace GSI_QA_testing_tool.UI
                 Finder.WaitJSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", js, wait)
             End If
 
+
+
             If Data._claimType <> 1 Then
 
                 If driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtNameOnCheckStub']")).GetAttribute("value").Equals("") Then
@@ -70,17 +72,18 @@ Namespace GSI_QA_testing_tool.UI
                     CType(driver, IJavaScriptExecutor).ExecuteScript("arguments[0].click();", driver.FindElement(By.CssSelector("[for = 'ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1']")))
                 End If
 
-                'Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", js)
+                Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", js)
 
 
                 Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblCurrentlyEmployed_1", js)
-                    Thread.Sleep(3500)
-                End If
+                Thread.Sleep(3500)
+            End If
 
 
+            'Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblAgency_1", js)
+            Thread.Sleep(5000)
 
-
-                Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Data._JobTitle)
+            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Data._JobTitle)
             Thread.Sleep(2500)
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Keys.ArrowDown + Keys.Enter, wait)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ONETDropDownList']", 1)
@@ -88,7 +91,7 @@ Namespace GSI_QA_testing_tool.UI
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboFullPartTime']", 1)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ddlScheduleOfWork']", 1)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ddlWholeHours']", 2)
-            Finder.SendText(driver, "//*[@id='ctl00_Main_content_ucIndEmpHistory_txtSalary']", "10")
+            Finder.SendText(driver, "//*[@id='ctl00_Main_content_ucIndEmpHistory_txtSalary']", "20")
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboSalaryBase']", 1)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblSalaryCommission_1", js)
             Finder.SendText(driver, "//*[@id='ctl00_Main_content_ucIndEmpHistory_txtStartDate']", From)
@@ -180,8 +183,14 @@ Namespace GSI_QA_testing_tool.UI
                 js.ExecuteScript("arguments[0].click();", form)
             Next
 
+            Dim forms4 = driver.FindElements(By.XPath("//button[@id='btn-dialog-save']"))
 
-            wait.Until(ExpectedConditions.ElementExists(By.XPath("//label[@for='ctl00_Main_content_rblAddAnotherEntry_1']")))
+            For Each form In forms4
+                js.ExecuteScript("arguments[0].click();", form)
+            Next
+
+
+            ' wait.Until(ExpectedConditions.ElementExists(By.XPath("//label[@for='ctl00_Main_content_rblAddAnotherEntry_1']")))
 
             If Employer = Data._Employer2 Then
 
@@ -220,6 +229,12 @@ Namespace GSI_QA_testing_tool.UI
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtStartDate']", From)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblReceivedPFLProgramNotice_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblCurrentlyEmployed_1", js, wait)
+
+            'workaround for PA only(revisit later and remove when not needed)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", js)
+
+
+
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucWizardButtons_btnSave", js)
 
             If Employer = Data._Employer2 Then

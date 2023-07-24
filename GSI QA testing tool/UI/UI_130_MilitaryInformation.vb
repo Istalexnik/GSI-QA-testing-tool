@@ -27,10 +27,16 @@ Namespace GSI_QA_testing_tool.UI
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucVeteran_rblCaregiver_1", js)
             Finder.JSClickIt(driver, "*[for='ctl00_Main_content_ucVeteran_rblSpouse_1']", js)
 
-            Finder.JSClickIt(driver, "*[for='ctl00_Main_content_ucVeteran_rblMilitaryService_1']", js)
+            If Data._claimType <> 2 Then
+                Finder.JSClickIt(driver, "*[for='ctl00_Main_content_ucVeteran_rblMilitaryService_1']", js)
+            Else
+                Finder.JSClickIt(driver, "*[for='ctl00_Main_content_ucVeteran_rblMilitaryService_1']", js)
+                driver.SwitchTo().Alert().Accept()
+            End If
 
 
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucVeteran_rblServedConsecutiveDaysInActiveDuty_1", js)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_ucVeteran_rblTransitioningServiceMember_1", js)
             Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_ucVeteran_ddlClassifiedAsDisabledVeteran']", "0")
             Finder.JSClickIt(driver, "*[for='ctl00_Main_content_ucVeteran_rblWounded_1']", js)
 

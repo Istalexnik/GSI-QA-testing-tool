@@ -30,20 +30,21 @@ Namespace GSI_QA_testing_tool
 
         Public Shared Function CreateEnvironments() As List(Of Environment)
             Dim list As List(Of Environment) = New List(Of Environment) From {
-                New Environment("IA UAT", "https://uat-app-vos19000000-gus.geosolinc.com/vosnet/default.aspx", "50031", "Iowa", "IA", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
+                New Environment("IA UAT", "https://uat-app-vos19000000-gus.geosolinc.com/vosnet/default.aspx", "50031", "Iowa", "IA", "SERDINO INC", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("IA QA", "https://qa-app-vos19000000-gus.geosolinc.com/vosnet/default.aspx", "50031", "Iowa", "IA", "Target", "Amazon Com Services Inc", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("PR UAT", "https://uat-app-vos72000000.geosolinc.com/vosnet/default.aspx", "00780", "Puerto Rico", "PR", "Publix", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("PR QA", "https://qa-app-vos72000000.geosolinc.com/vosnet/default.aspx", "00780", "Puerto Rico", "PR", "Publix", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("PR STAGING", "https://staging-app-vos72000000.geosolinc.com/vosnet/default.aspx", "00780", "Puerto Rico", "PR", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("DC UI UAT", "https://uat-app-vos11000000-ui.geosolinc.com/vosnet/default.aspx", "20010", "District of Columbia", "DC", "SERDINO INC", "Toyota", "GSISA0", "GeoDCGUSSol22*@"),
                 New Environment("DC UI QA", "https://qa-app-vos11000000-ui.geosolinc.com/vosnet/default.aspx", "20010", "District of Columbia", "DC", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
+                New Environment("DC UI STAGING", "https://staging-app-vos11000000-ui.geosolinc.com/vosnet/default.aspx", "20010", "District of Columbia", "DC", "Publix", "Toyota", "GSISA0", "GeoDCGUSSol22*@"),
                 New Environment("DC PFL UAT", "https://uat-app-vos11980000.geosolinc.com/vosnet/default.aspx", "20010", "District of Columbia", "DC", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("DC PFL CUAT", "https://cuat-app-vos11980000.geosolinc.com/vosnet/default.aspx", "20010", "District of Columbia", "DC", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("DC PFL STAGING", "https://staging-app-vos11980000.geosolinc.com/vosnet/default.aspx", "20010", "District of Columbia", "DC", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("PA UAT", "https://uat-app-vos42000000.geosolinc.com/vosnet/default.aspx", "17104", "Pennsylvania", "PA", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("PA CIT", "https://cit.benefits.uc.pa.gov/vosnet/default.aspx", "17104", "Pennsylvania", "PA", "Target", "Toyota", "Gsisa02", "UIgsiA1*"),
                 New Environment("PA CUAT", "https://uat.benefits.uc.pa.gov/vosnet/default.aspx", "17104", "Pennsylvania", "PA", "Target", "Toyota", "gsisa0", "UIgsiA1*"),
-                New Environment("PA QA", "https://qa-app-vos42000000.geosolinc.com/vosnet/default.aspx", "17104", "Pennsylvania", "PA", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
+                New Environment("PA QA", "https://qa-app-vos42000000.geosolinc.com/vosnet/default.aspx", "17104", "Pennsylvania", "PA", "SERDINO INC", "Publix", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("NE UAT", "https://uat-app-vos31000000.geosolinc.com/vosnet/default.aspx", "68104", "Nebraska", "NE", "GSIUITAX1110S", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("NE QA", "https://qa-app-vos31000000.geosolinc.com/vosnet/default.aspx", "68104", "Nebraska", "NE", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("NE STAGING", "https://staging-app-vos31000000.geosolinc.com/vosnet/default.aspx", "68104", "Nebraska", "NE", "gsitaxmc080701", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
@@ -52,7 +53,10 @@ Namespace GSI_QA_testing_tool
                 New Environment("TN UAT", "https://uat-app-vos47000000.geosolinc.com/vosnet/default.aspx", "37243", "Tennessee", "TN", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("TN QA", "https://qa-app-vos47000000.geosolinc.com/vosnet/default.aspx", "37243", "Tennessee", "TN", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
                 New Environment("AZ UAT", "https://uat-app-vos04000000.geosolinc.com/vosnet/default.aspx", "86438", "Arizona", "AZ", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
-                New Environment("AZ PUA UAT", "https://uat-app-vos04990000.geosolinc.com/vosnet/default.aspx", "86438", "Arizona", "AZ", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@")
+                New Environment("AZ QA", "https://qa-app-vos04000000.geosolinc.com/vosnet/default.aspx", "86438", "Arizona", "AZ", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
+                New Environment("AZ PUA UAT", "https://uat-app-vos04990000.geosolinc.com/vosnet/default.aspx", "86438", "Arizona", "AZ", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
+                New Environment("GU UAT", "https://uat-app-vos66000000.geosolinc.com/vosnet/default.aspx", "86438", "Guam", "GU", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@"),
+                New Environment("GU QA", "https://qa-app-vos66000000.geosolinc.com/vosnet/default.aspx", "86438", "Guam", "GU", "Target", "Toyota", "GSISA0", "GeoIAGUSSol22*@")
             }
             Return list
         End Function

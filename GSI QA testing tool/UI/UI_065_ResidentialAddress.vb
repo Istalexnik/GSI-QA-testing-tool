@@ -19,7 +19,7 @@ Namespace GSI_QA_testing_tool.UI
                 Data.StopAtDialog()
             End If
 
-            Thread.Sleep(500)
+            Thread.Sleep(1000)
 
             If Finder.FindItByCSS(driver, "*[id='ctl00_Main_content_ucAddress_txtAddress1']") Then
                 Debug.WriteLine("ResidentialAddress is On")
@@ -30,17 +30,22 @@ Namespace GSI_QA_testing_tool.UI
 
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucAddress_rbACPEnrollment_1", js)
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucAddress_txtAddress1']", Data._Address)
-            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucAddress_txtAddress2']", Data._Address)
+            Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucAddress_txtAddress2']", Data._Address + "Address 2")
 
 
             Thread.Sleep(4000)
 
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucAddress_ddlAltGeo']", 2)
             Thread.Sleep(4000)
-            Finder.JSClickIt(driver, "#ctl00_Main_content_ucAddress_chkPopulateMailAddress", js)
-            Thread.Sleep(5000)
-            Finder.JSClickIt(driver, "#ctl00_Main_content_ucAddress_rdoCorrectedResidentialAddress_0", js, wait)
-            Finder.JSClickIt(driver, "#ctl00_Main_content_ucAddress_rdoCorrectedMailingAddress_0", js, wait)
+            Try
+                Finder.JSClickIt(driver, "#ctl00_Main_content_ucAddress_chkPopulateMailAddress", js, wait)
+            Catch ex As Exception
+                Thread.Sleep(500)
+            End Try
+
+            Finder.JSClickIt(driver, "[for='ctl00_Main_content_ucAddress_rdoCorrectedMailingAddress_0']", js, wait)
+            Finder.JSClickIt(driver, "[for='ctl00_Main_content_ucAddress_rdoCorrectedResidentialAddress_0']", js, wait)
+
             Thread.Sleep(1000)
             Finder.WaitClickableClickItByCSS(driver, "#ctl00_Main_content_btnNext", wait)
         End Sub
