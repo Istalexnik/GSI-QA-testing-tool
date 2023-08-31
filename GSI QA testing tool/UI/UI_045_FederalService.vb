@@ -1,4 +1,5 @@
 ﻿Imports OpenQA.Selenium
+Imports OpenQA.Selenium.Interactions
 Imports OpenQA.Selenium.Support.UI
 Imports System
 Imports System.Collections.Generic
@@ -13,6 +14,8 @@ Imports System.Windows.Controls.Primitives
 Namespace GSI_QA_testing_tool.UI
     Friend Class UI_045_FederalService
         Public Shared Sub [GoTo](ByVal driver As IWebDriver, ByVal wait As WebDriverWait, ByVal js As IJavaScriptExecutor)
+
+
             If Data._StopAt.Contains("Federal Service") Then
                 Data.StopAtDialog()
             End If
@@ -69,9 +72,23 @@ Namespace GSI_QA_testing_tool.UI
                 If Data._Site.Contains("PR") Then
                     Finder.ActionsSendText(driver, "//*[@id='cmbCustomFIC']", "AD")
                     Thread.Sleep(3000)
+                ElseIf Data._Site.Contains("NE") Then
+                    Debug.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA is On")
+
+                    Dim el = driver.FindElement(By.XPath("//a[@title='Show All Items']/span"))
+                    el.SendKeys("SE")
+                    el.SendKeys(Keys.Down)
+                    el.SendKeys(Keys.Down)
+                    el.SendKeys(Keys.Enter)
+
+
+
+
+
+                    'Finder.ActionsSendText(driver, "//*[@id='cmbCustomFIC']", Data._FIC)
+                    Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlDestCodes']", "0001")
                 Else
                     Finder.ActionsSendText(driver, "//*[@id='cmbCustomFIC']", Data._FIC)
-                    Thread.Sleep(3000)
                     Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlDestCodes']", "0001")
                 End If
 

@@ -12,7 +12,7 @@
         <Button Name="BtnStopAt" Content="Select a page to pause on" HorizontalAlignment="Center"  Margin="20,480,21,84" VerticalAlignment="Center" Width="500" Height="30" Click="BtnStopAt_Click" />
 
 
-        <ComboBox Name="CbxSite" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbxSite_SelectionChanged" >
+        <ComboBox MaxDropDownHeight="880" Name="CbxSite" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbxSite_SelectionChanged" >
         </ComboBox>
         <ComboBox Name="CbxClaimType" HorizontalAlignment="Left" Margin="140,10,0,0" VerticalAlignment="Top" Width="120" >
         </ComboBox>

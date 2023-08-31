@@ -53,11 +53,15 @@ Namespace GSI_QA_testing_tool.UI
                 End If
             End If
 
+            'new, for DC UI
+            Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblAgency_1", js, wait)
+
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblLastEmployer_0", js, wait)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblEmployerLiable_0", js)
 
             If Data._claimType = 1 Then
-                Finder.WaitJSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", js, wait)
+                Thread.Sleep(5000)
+                Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", js)
             End If
 
 

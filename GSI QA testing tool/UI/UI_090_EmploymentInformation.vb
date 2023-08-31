@@ -32,6 +32,7 @@ Namespace GSI_QA_testing_tool.UI
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucEmployment_rblLookingForWork_0", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucEmployment_rblCovid19_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucEmployment_rblInterestedInRegisteredApprenticeship_1", js)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_ucEmployment_rblFilingclaimDueToDomesticViolence_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucEmployment_rblCertifications_1", js)
             Finder.JSClickIt(driver, "*[for='ctl00_Main_content_ucEmployment_rblMigrant_1']", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_btnNext", js)

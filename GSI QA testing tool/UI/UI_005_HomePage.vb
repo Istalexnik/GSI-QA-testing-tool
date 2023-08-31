@@ -35,6 +35,7 @@ Namespace GSI_QA_testing_tool.UI
 
             Else
                 Finder.JSClickIt(driver, "#btnguestlogina", js)
+                Finder.JSClickIt(driver, "#btnguestloginb", js)
                 Finder.JSClickIt(driver, "#ctl00_hlNotRegistered", js)
                 Thread.Sleep(2500)
 
