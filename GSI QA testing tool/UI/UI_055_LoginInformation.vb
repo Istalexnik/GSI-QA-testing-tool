@@ -41,7 +41,12 @@ Namespace GSI_QA_testing_tool.UI
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucRegDemographics_txtCityOfBirth']", Data._City)
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucRegDemographics_txtMothersMaidenName']", "Mother")
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucRegDemographics_rblGender_0", js)
-            Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucRegDemographics_ddlDraftStatus']", 2, wait)
+
+            Try
+                Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucRegDemographics_ddlDraftStatus']", 2, wait)
+            Catch ex As Exception
+            End Try
+
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucRegDemographics_rblArrested_1", js)
 
             If Data._StopAt.Contains("Login Information Filled Out") Then

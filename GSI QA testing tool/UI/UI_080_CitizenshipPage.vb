@@ -23,7 +23,10 @@ Namespace GSI_QA_testing_tool.UI
             End If
 
             Thread.Sleep(300)
-            Finder.JSClickIt(driver, "#ctl00_Main_content_ucDemographics_rblDependents_1", js, wait)
+            Try
+                Finder.JSClickIt(driver, "#ctl00_Main_content_ucDemographics_rblDependents_1", js, wait)
+            Catch ex As Exception
+            End Try
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucDemographics_ddlHowManyDependents']", 1)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucDemographics_ddlMaritalStatus']", 1)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucDemographics_rblDisability_1", js)
@@ -36,7 +39,11 @@ Namespace GSI_QA_testing_tool.UI
                 Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucDemographics_txt_UI_DocumentExpDate']", "11/11/2033")
                 Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucDemographics_txt_UI_AlienReceiptNumber']", Data.NewUSCISNumber())
             Else
-                Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucDemographics_ddl_UI_Citizen' or @id='ctl00_Main_content_ucDemographics_ddlCitizen']", 1, wait)
+                Try
+                    Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucDemographics_ddl_UI_Citizen' or @id='ctl00_Main_content_ucDemographics_ddlCitizen']", 1, wait)
+                Catch ex As Exception
+                End Try
+
             End If
 
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucDemographics_rblChildSupport_1", js)

@@ -56,7 +56,13 @@ Namespace GSI_QA_testing_tool.UI
             'new, for DC UI
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblAgency_1", js, wait)
 
-            Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblLastEmployer_0", js, wait)
+
+            Try
+                Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblLastEmployer_0", js, wait)
+            Catch ex As Exception
+            End Try
+
+
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblEmployerLiable_0", js)
 
             If Data._claimType = 1 Then
@@ -91,7 +97,10 @@ Namespace GSI_QA_testing_tool.UI
             Thread.Sleep(2500)
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Keys.ArrowDown + Keys.Enter, wait)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ONETDropDownList']", 1)
-            Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboEmpType']", 1, wait)
+            Try
+                Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboEmpType']", 1, wait)
+            Catch ex As Exception
+            End Try
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboFullPartTime']", 1)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ddlScheduleOfWork']", 1)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ddlWholeHours']", 2)
@@ -105,9 +114,23 @@ Namespace GSI_QA_testing_tool.UI
             Finder.SendText(driver, "//*[@id='ctl00_Main_content_ucIndEmpHistory_txtHoursWorkedThisWeek']", "0")
 
             If Data._claimType <> 3 Then
-                Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboSeparationReason']", "0001", wait)
+
+                Try
+                    Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboSeparationReason']", "0001", wait)
+                Catch ex As Exception
+                    Finder.UseDropDownByText(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboSeparationReason']", "Layoff", wait)
+                End Try
+
+
+
             End If
-            Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ddlLeaveReasonSubType']", "40", wait)
+
+
+            If Data._Site.Contains("PA") Then
+                Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ddlLeaveReasonSubType']", "10", wait)
+            Else
+                Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ddlLeaveReasonSubType']", "40", wait)
+            End If
 
             Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ddlLackOfWorkEvent']", "1")
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblVoluntaryLayoff_1", js)
@@ -117,6 +140,9 @@ Namespace GSI_QA_testing_tool.UI
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblFamilyResponsibilities_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblEducationalInstitution_1", js)
             Thread.Sleep(300)
+
+            Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblCorporateOfficer_1", js)
+
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblCorporateOfficer_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblTransferOutOfCountry_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblLackOfTransportation_1", js)
@@ -193,6 +219,11 @@ Namespace GSI_QA_testing_tool.UI
                 js.ExecuteScript("arguments[0].click();", form)
             Next
 
+            Dim forms5 = driver.FindElements(By.XPath("//button[@id='btn-dialog-save']"))
+
+            For Each form In forms5
+                js.ExecuteScript("arguments[0].click();", form)
+            Next
 
             ' wait.Until(ExpectedConditions.ElementExists(By.XPath("//label[@for='ctl00_Main_content_rblAddAnotherEntry_1']")))
 

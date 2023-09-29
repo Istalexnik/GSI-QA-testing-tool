@@ -12,7 +12,7 @@ Namespace GSI_QA_testing_tool.UI
     Friend Class UI_040_StatesYouHaveWorkedIn
         Public Shared Sub [GoTo](ByVal driver As IWebDriver, ByVal js As IJavaScriptExecutor)
 
-
+            Thread.Sleep(300)
 
             If Finder.FindItByCSS(driver, "*[for='ctl00_Main_content_Wizard1_rblStatesWorkedIn_1']") Then
                 Debug.WriteLine("StatesYouHaveWorkedIn is On")

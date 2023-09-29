@@ -194,5 +194,31 @@ Namespace GSI_QA_testing_tool
                 wait.Until(ExpectedConditions.StalenessOf(driver.FindElement(By.XPath(path))))
             End If
         End Sub
+
+
+        Public Shared Sub ActionsSendTextDropDown(ByVal driver As IWebDriver, ByVal path As String, ByVal text As String, ByVal Optional wait As WebDriverWait = Nothing)
+            If driver.FindElements(By.XPath(path)).Count <> 0 Then
+                Dim act As Actions = New Actions(driver)
+                act.MoveToElement(driver.FindElement(By.XPath(path)))
+                act.Click()
+                act.SendKeys(text)
+                Thread.Sleep(500)
+                act.SendKeys(Keys.Down)
+                Thread.Sleep(500)
+                act.SendKeys(Keys.Down)
+                act.DoubleClick()
+                act.Pause(New TimeSpan(1000))
+                act.SendKeys(Keys.Down)
+                act.SendKeys(Keys.Down)
+                act.SendKeys(Keys.Enter)
+                act.Build().Perform()
+            End If
+
+            If wait IsNot Nothing Then
+                wait.Until(ExpectedConditions.StalenessOf(driver.FindElement(By.XPath(path))))
+            End If
+        End Sub
+
+
     End Class
 End Namespace

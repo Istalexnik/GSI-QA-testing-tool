@@ -20,7 +20,7 @@ Namespace GSI_QA_testing_tool.UI
                 Return
             End If
 
-            Thread.Sleep(800)
+            Thread.Sleep(1000)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucDrvLicense_rblValidLicense_0", js)
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucDrvLicense_txtDrvLicenseNumber']", Data._DriverLicense)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucDrvLicense_ddlStateIssued']", 5)

@@ -27,8 +27,12 @@ Namespace GSI_QA_testing_tool.UI
             Thread.Sleep(500)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEmployment_ddlEmployStatus']", 3)
             Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEmployment_ddlTypeBusiness']", 1)
-            Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEmployment_ddlUnemploymentInsurance']", 1, wait)
-            Thread.Sleep(300)
+            Try
+                Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEmployment_ddlUnemploymentInsurance']", 1, wait)
+            Catch ex As Exception
+            End Try
+
+
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucEmployment_rblLookingForWork_0", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucEmployment_rblCovid19_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucEmployment_rblInterestedInRegisteredApprenticeship_1", js)

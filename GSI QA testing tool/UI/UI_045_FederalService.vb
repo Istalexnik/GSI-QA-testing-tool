@@ -14,7 +14,7 @@ Imports System.Windows.Controls.Primitives
 Namespace GSI_QA_testing_tool.UI
     Friend Class UI_045_FederalService
         Public Shared Sub [GoTo](ByVal driver As IWebDriver, ByVal wait As WebDriverWait, ByVal js As IJavaScriptExecutor)
-
+            Thread.Sleep(300)
 
             If Data._StopAt.Contains("Federal Service") Then
                 Data.StopAtDialog()
@@ -41,6 +41,7 @@ Namespace GSI_QA_testing_tool.UI
                 Finder.SendText(driver, "//*[@id='ctl00_Main_content_Wizard1_txtLastOfficialDutyStationLocation']", Data._State)
                 Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton", js)
 
+                Thread.Sleep(300)
                 If Data._StopAt.Contains("Federal Service Federal Work 1") Then
                     Data.StopAtDialog()
                 End If
@@ -68,33 +69,20 @@ Namespace GSI_QA_testing_tool.UI
                 '    Finder.SendText(driver, "//*[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_txtSeparationDate']", Data._WorkedTo1)
                 'End If
 
+                Thread.Sleep(300)
 
                 If Data._Site.Contains("PR") Then
                     Finder.ActionsSendText(driver, "//*[@id='cmbCustomFIC']", "AD")
                     Thread.Sleep(3000)
-                ElseIf Data._Site.Contains("NE") Then
-                    Debug.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA is On")
 
-                    Dim el = driver.FindElement(By.XPath("//a[@title='Show All Items']/span"))
-                    el.SendKeys("SE")
-                    el.SendKeys(Keys.Down)
-                    el.SendKeys(Keys.Down)
-                    el.SendKeys(Keys.Enter)
-
-
-
-
-
-                    'Finder.ActionsSendText(driver, "//*[@id='cmbCustomFIC']", Data._FIC)
-                    Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlDestCodes']", "0001")
                 Else
-                    Finder.ActionsSendText(driver, "//*[@id='cmbCustomFIC']", Data._FIC)
+                    Finder.ActionsSendTextDropDown(driver, "//*[@id='cmbCustomFIC']", Data._FIC, wait)
                     Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlDestCodes']", "0001")
                 End If
 
                 Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_rblInterveningEmploymentSinceSeparation_1", js)
                 Finder.UseDropDownByText(driver, "//select[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_ddlStateOfEmployment']", Data._State)
-                Thread.Sleep(2000)
+                Thread.Sleep(3000)
                 Finder.SendText(driver, "//input[@id='ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_txtOutofCountryCity']", Data._City)
                 Thread.Sleep(2500)
                 Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_ucFederalGovernmentEmployment_rblReceiveStandardForm8_0", js)

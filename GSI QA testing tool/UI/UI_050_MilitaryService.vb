@@ -67,6 +67,10 @@ Namespace GSI_QA_testing_tool.UI
                 Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_ucMilitaryService_rblCompletedFirstFullTermDuty_1", js)
                 Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_ucMilitaryService_rblSubsistenceVocRehabTraining_1", js)
                 Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_ucMilitaryService_rblWarOrphanWidowsEducationAllowance_1", js)
+                If Data._StopAt.Contains("Military Service Work 2") Then
+                    Data.StopAtDialog()
+                End If
+
                 Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton", js)
 
                 If Data._StopAt.Contains("Military Service Work 2") Then
@@ -76,6 +80,8 @@ Namespace GSI_QA_testing_tool.UI
                 Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_ucMilitaryServiceHistory_rbAddNewEmp_1", js)
                 Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton", js)
             Else
+
+
                 Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_rblMilitaryService_1", js)
                 Finder.JSClickIt(driver, "#ctl00_Main_content_Wizard1_StepNavigationTemplateContainerID_StepNextButton", js)
             End If

@@ -21,8 +21,17 @@ Namespace GSI_QA_testing_tool.UI
                 Return
             End If
 
-            Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEducation_ddlIndEduLevel']", 5, wait)
-            Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEducation_ddlSchoolStatus']", 4, wait)
+            Try
+                Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEducation_ddlIndEduLevel']", 5, wait)
+            Catch ex As Exception
+            End Try
+
+            Try
+                Finder.UseDropDownByIndex(driver, "//select[@id='ctl00_Main_content_ucEducation_ddlSchoolStatus']", 4, wait)
+            Catch ex As Exception
+            End Try
+
+
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucEducation_rblPlanSchoolIn12Months_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_btnNext", js)
         End Sub

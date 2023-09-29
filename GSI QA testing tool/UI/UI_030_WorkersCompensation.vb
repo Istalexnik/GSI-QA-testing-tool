@@ -4,11 +4,13 @@ Imports System.Collections.Generic
 Imports System.Diagnostics
 Imports System.Linq
 Imports System.Text
+Imports System.Threading
 Imports System.Threading.Tasks
 
 Namespace GSI_QA_testing_tool.UI
     Friend Class UI_030_WorkersCompensation
         Public Shared Sub [GoTo](ByVal driver As IWebDriver, ByVal js As IJavaScriptExecutor)
+            Thread.Sleep(300)
             If Data._StopAt.Contains("Worker's Compensation") Then
                 Data.StopAtDialog()
             End If
