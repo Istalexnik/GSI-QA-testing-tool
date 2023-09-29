@@ -3,6 +3,7 @@ Imports OpenQA.Selenium.Support.UI
 Imports SeleniumExtras.WaitHelpers
 Imports System
 Imports System.Collections.Generic
+Imports System.Collections.ObjectModel
 Imports System.Diagnostics
 Imports System.Linq
 Imports System.Text
@@ -115,12 +116,16 @@ Namespace GSI_QA_testing_tool.UI
 
             If Data._claimType <> 3 Then
 
-                Try
-                    Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboSeparationReason']", "0001", wait)
-                Catch ex As Exception
-                    Finder.UseDropDownByText(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_cboSeparationReason']", "Layoff", wait)
-                End Try
 
+                Dim dropdown As IWebElement = driver.FindElement(By.Id("your-dropdown-id"))
+                Dim options As ReadOnlyCollection(Of IWebElement) = dropdown.FindElements(By.TagName("option"))
+
+                For Each opt As IWebElement In options
+                    If opt.Text.Contains("Lay") Then
+                        OptionOn.Click()
+                        Exit For
+                    End If
+                Next
 
 
             End If
