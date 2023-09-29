@@ -122,7 +122,7 @@ Namespace GSI_QA_testing_tool.UI
 
                 For Each opt As IWebElement In options
                     If opt.Text.Contains("Lay") Then
-                        OptionOn.Click()
+                        opt.Click()
                         Exit For
                     End If
                 Next
