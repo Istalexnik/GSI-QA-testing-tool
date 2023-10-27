@@ -58,7 +58,7 @@ Namespace GSI_QA_testing_tool
             chromeOptions.AddExcludedArgument("enable-automation")
             driver = New ChromeDriver(service, chromeOptions)
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(120)
-            Dim wait As WebDriverWait = New WebDriverWait(driver, TimeSpan.FromSeconds(20))
+            Dim wait As WebDriverWait = New WebDriverWait(driver, TimeSpan.FromSeconds(30))
             Dim js As IJavaScriptExecutor = CType(driver, IJavaScriptExecutor)
             driver.Url = Data._URL
             UI.UI_000.FileUI(driver, wait, js)

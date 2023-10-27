@@ -1,5 +1,6 @@
 ﻿Imports OpenQA.Selenium
 Imports OpenQA.Selenium.Support.UI
+Imports SeleniumExtras.WaitHelpers
 Imports System
 Imports System.Collections.Generic
 Imports System.Diagnostics
@@ -39,8 +40,11 @@ Namespace GSI_QA_testing_tool.UI
             If Data._claimType <> 2 Then
                 Finder.JSClickIt(driver, "[for='ctl00_Main_content_ucVeteran_rblMilitaryService_1']", js)
             Else
-                Finder.JSClickIt(driver, "[for='ctl00_Main_content_ucVeteran_rblMilitaryService_1']", js)
-                driver.SwitchTo().Alert().Accept()
+                Try
+                    Finder.JSClickIt(driver, "[for='ctl00_Main_content_ucVeteran_rblMilitaryService_1']", js)
+                    driver.SwitchTo().Alert().Accept()
+                Catch ex As Exception
+                End Try
             End If
 
 
@@ -55,7 +59,15 @@ Namespace GSI_QA_testing_tool.UI
 
             Finder.JSClickIt(driver, "[for='ctl00_Main_content_ucVeteran_rblTAPWorkshop_1']", js)
 
-            Finder.WaitClickableClickItByCSS(driver, "#ctl00_Main_content_btnNext", wait)
+            Try
+                Finder.WaitClickableClickItByCSS(driver, "#ctl00_Main_content_btnNext", wait)
+            Catch ex As Exception
+                wait.Until(ExpectedConditions.StalenessOf(driver.FindElement(By.Id("ctl00_Main_content_btnNext"))))
+                Finder.JSClickIt(driver, "#ctl00_Main_content_btnNext", js)
+
+            End Try
+
+
         End Sub
     End Class
 End Namespace

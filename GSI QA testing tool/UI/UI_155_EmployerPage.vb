@@ -75,24 +75,28 @@ Namespace GSI_QA_testing_tool.UI
 
             If Data._claimType <> 1 Then
 
-                If driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtNameOnCheckStub']")).GetAttribute("value").Equals("") Then
-                    driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtNameOnCheckStub']")).SendKeys("U.S. SENATE")
+                If Data._claimType <> 2 Then
+                    If driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtNameOnCheckStub']")).GetAttribute("value").Equals("") Then
+                        driver.FindElement(By.XPath("//input[@id='ctl00_Main_content_ucIndEmpHistory_txtNameOnCheckStub']")).SendKeys("U.S. SENATE")
+                    End If
                 End If
 
                 If driver.FindElements(By.CssSelector("[for = 'ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1']")).Count <> 0 Then
                     CType(driver, IJavaScriptExecutor).ExecuteScript("arguments[0].click();", driver.FindElement(By.CssSelector("[for = 'ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1']")))
                 End If
 
+                Thread.Sleep(3500)
+
                 Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblIsThisEmployerTempOrAgency_1", js)
 
 
                 Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblCurrentlyEmployed_1", js)
-                Thread.Sleep(3500)
-            End If
+                    Thread.Sleep(3500)
+                End If
 
 
-            'Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblAgency_1", js)
-            Thread.Sleep(5000)
+                'Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblAgency_1", js)
+                Thread.Sleep(5000)
 
             Finder.SendText(driver, "//input[@id='ctl00_Main_content_ucIndEmpHistory_txtJobTitle']", Data._JobTitle)
             Thread.Sleep(2500)
@@ -116,26 +120,43 @@ Namespace GSI_QA_testing_tool.UI
 
             If Data._claimType <> 3 Then
 
-
-                Dim dropdown As IWebElement = driver.FindElement(By.Id("your-dropdown-id"))
+                Dim dropdown As IWebElement = driver.FindElement(By.Id("ctl00_Main_content_ucIndEmpHistory_cboSeparationReason"))
                 Dim options As ReadOnlyCollection(Of IWebElement) = dropdown.FindElements(By.TagName("option"))
 
                 For Each opt As IWebElement In options
-                    If opt.Text.Contains("Lay") Then
+                    If opt.Text.Contains("Lay") OrElse opt.Text.Contains("Lack") Then
                         opt.Click()
                         Exit For
                     End If
                 Next
 
+                wait.Until(ExpectedConditions.StalenessOf(dropdown))
+            End If
+            Debug.WriteLine("zzz")
+
+
+            If Finder.FindItById(driver, "ctl00_Main_content_ucIndEmpHistory_ddlLeaveReasonSubType") Then
+                Debug.WriteLine("aaa")
+                Dim dropdown2 As IWebElement = driver.FindElement(By.Id("ctl00_Main_content_ucIndEmpHistory_ddlLeaveReasonSubType"))
+                Dim options2 As ReadOnlyCollection(Of IWebElement) = dropdown2.FindElements(By.TagName("option"))
+
+                For Each opt As IWebElement In options2
+                    Debug.WriteLine("bbb")
+
+                    If opt.Text.Contains("Lay") Then
+                        Debug.WriteLine("ccc")
+
+                        opt.Click()
+                        Exit For
+                    End If
+                Next
+
+                wait.Until(ExpectedConditions.StalenessOf(dropdown2))
 
             End If
 
+            Debug.WriteLine("ddd")
 
-            If Data._Site.Contains("PA") Then
-                Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ddlLeaveReasonSubType']", "10", wait)
-            Else
-                Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ddlLeaveReasonSubType']", "40", wait)
-            End If
 
             Finder.UseDropDownByValue(driver, "//select[@id='ctl00_Main_content_ucIndEmpHistory_ddlLackOfWorkEvent']", "1")
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblVoluntaryLayoff_1", js)
@@ -149,6 +170,7 @@ Namespace GSI_QA_testing_tool.UI
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblCorporateOfficer_1", js)
 
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblCorporateOfficer_1", js)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblSchoolBusCompanyEmp_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblTransferOutOfCountry_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucIndEmpHistory_rblLackOfTransportation_1", js)
 
@@ -218,6 +240,10 @@ Namespace GSI_QA_testing_tool.UI
                 js.ExecuteScript("arguments[0].click();", form)
             Next
 
+            Thread.Sleep(500)
+
+
+
             Dim forms4 = driver.FindElements(By.XPath("//button[@id='btn-dialog-save']"))
 
             For Each form In forms4
@@ -226,9 +252,20 @@ Namespace GSI_QA_testing_tool.UI
 
             Dim forms5 = driver.FindElements(By.XPath("//button[@id='btn-dialog-save']"))
 
+            Thread.Sleep(500)
+
             For Each form In forms5
                 js.ExecuteScript("arguments[0].click();", form)
             Next
+
+            Thread.Sleep(500)
+
+            Dim forms6 = driver.FindElements(By.XPath("//button[@id='btn-dialog-save']"))
+
+            For Each form In forms6
+                js.ExecuteScript("arguments[0].click();", form)
+            Next
+
 
             ' wait.Until(ExpectedConditions.ElementExists(By.XPath("//label[@for='ctl00_Main_content_rblAddAnotherEntry_1']")))
 

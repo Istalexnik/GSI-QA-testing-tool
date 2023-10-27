@@ -23,6 +23,9 @@ Namespace GSI_QA_testing_tool
             Return driver.FindElements(By.CssSelector(CSSPath)).Count <> 0
         End Function
 
+        Public Shared Function FindItById(ByVal driver As IWebDriver, ByVal id As String) As Boolean
+            Return driver.FindElements(By.Id(id)).Count <> 0
+        End Function
 
         Public Shared Sub JSClickIt(ByVal driver As IWebDriver, ByVal CSSpath As String, ByVal js As IJavaScriptExecutor)
             If driver.FindElements(By.CssSelector(CSSpath)).Count <> 0 Then

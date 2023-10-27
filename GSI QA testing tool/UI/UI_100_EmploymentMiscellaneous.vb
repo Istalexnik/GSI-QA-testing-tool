@@ -24,6 +24,9 @@ Namespace GSI_QA_testing_tool.UI
             Thread.Sleep(500)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucUIEmploymentStatus_rblCommissionBasis_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucUIEmploymentStatus_rblAttendingTraining_1", js)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_ucUIEmploymentStatus_rblRefusedAJobOffer_1", js)
+            Finder.JSClickIt(driver, "#ctl00_Main_content_ucUIEmploymentStatus_rblRefusedAReferralToWork_1", js)
+
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucUIEmploymentStatus_rblCertifiedTrade_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucUIEmploymentStatus_rblEmployedBySchool_1", js)
             Finder.JSClickIt(driver, "#ctl00_Main_content_ucUIEmploymentStatus_rblWorkedAsProfessionalAthlete_1", js)

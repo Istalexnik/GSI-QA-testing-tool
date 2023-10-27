@@ -86,7 +86,7 @@ Namespace GSI_QA_testing_tool
         End Function
 
         Sub NewLogin()
-            _Login = "GSIUI" & HostName().Substring(0, 2) & Utilities.Rand.GenerateRandom("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 7) & _claimType.ToString()
+            _Login = "GSIUI" & HostName().Substring(0, 2) & Utilities.Rand.GenerateRandom("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 7) & 0 & _claimType.ToString()
         End Sub
 
         Function HostName() As String
